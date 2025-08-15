@@ -373,12 +373,12 @@ class TestChildProcessCleanup:
                 import time
 
                 # Grandchild just writes to file
-                grandchild_script = """import time
+                grandchild_script = \"\"\"import time
                 with open({escape_path_for_python(grandchild_file)}, 'a') as f:
                     while True:
                         f.write(f"gc {{time.time()}}")
                         f.flush()
-                        time.sleep(0.1)"""
+                        time.sleep(0.1)\"\"\"
 
                 # Spawn grandchild
                 subprocess.Popen([sys.executable, '-c', grandchild_script])
