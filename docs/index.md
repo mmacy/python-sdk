@@ -1,3 +1,3 @@
-# MCP Server
+# MCP Python SDK
 
-This is the MCP Server implementation in Python.
+A Python implementation of the Model Context Protocol (MCP).
