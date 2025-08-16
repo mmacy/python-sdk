@@ -75,7 +75,7 @@ def greet_user(name: str, style: str = "friendly") -> str:
         "formal": "Please write a formal, professional greeting",
         "casual": "Please write a casual, relaxed greeting",
     }
-    
+
     style_instruction = styles.get(style, styles["friendly"])
     return f"{style_instruction} for someone named {name}."
 
@@ -93,7 +93,7 @@ Test the server using the MCP Inspector:
 uv run mcp dev server.py
 ```
 
-This opens an interactive web interface where you can:
+After installing any required dependencies, your default web browser should open the MCP Inspector where you can:
 
 - Call tools (`add` and `multiply`)
 - Read resources (`greeting://YourName` and `info://server`)
