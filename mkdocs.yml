@@ -12,7 +12,7 @@ site_url: https://mmacy.github.io/python-sdk
 
 nav:
   - Home: index.md
-  - Examples:
+  - Code examples:
     - Getting started: examples-quickstart.md
     - Echo servers: examples-echo-servers.md
     - Server development:
