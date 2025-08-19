@@ -1310,7 +1310,7 @@ class Context(BaseModel, Generic[ServerSessionT, LifespanContextT, RequestT]):
 
     @property
     def session(self):
-        """Access to the underlying session for advanced usage."""
+        """Access to the underlying [`ServerSession`][mcp.server.session.ServerSession] for advanced usage."""
         return self.request_context.session
 
     # Convenience methods for common log levels
