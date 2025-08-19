@@ -23,58 +23,59 @@ Complete API documentation is auto-generated from the source code and available 
 
 | File | Transport | Resources | Prompts | Tools | Completions | Sampling | Elicitation | Progress | Logging | Authentication | Configuration |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| fastmcp/complex_inputs.py | stdio | — | — | ✅ | — | — | — | — | — | — | — |
-| fastmcp/desktop.py | stdio | ✅ | — | ✅ | — | — | — | — | — | — | — |
-| fastmcp/echo.py | stdio | ✅ | ✅ | ✅ | — | — | — | — | — | — | — |
-| fastmcp/memory.py | stdio | — | — | ✅ | — | — | — | — | — | — | ✅ |
-| fastmcp/parameter_descriptions.py | stdio | — | — | ✅ | — | — | — | — | — | — | — |
-| fastmcp/readme-quickstart.py | stdio | ✅ | — | ✅ | — | — | — | — | — | — | — |
-| fastmcp/screenshot.py | stdio | — | — | ✅ | — | — | — | — | — | — | — |
-| fastmcp/simple_echo.py | stdio | — | — | ✅ | — | — | — | — | — | — | — |
-| fastmcp/text_me.py | stdio | — | — | ✅ | — | — | — | — | — | — | ✅ |
-| fastmcp/unicode_example.py | stdio | — | — | ✅ | — | — | — | — | — | — | — |
-| fastmcp/weather_structured.py | stdio | — | — | ✅ | — | — | — | — | — | — | — |
-| servers/simple-auth/mcp_simple_auth/auth_server.py | stdio | — | — | — | — | — | — | — | — | ✅ | — |
-| servers/simple-auth/mcp_simple_auth/legacy_as_server.py | streamable-http | — | — | ✅ | — | — | — | — | — | ✅ | ✅ |
-| servers/simple-auth/mcp_simple_auth/server.py | streamable-http | — | — | ✅ | — | — | — | — | — | ✅ | ✅ |
-| servers/simple-prompt/mcp_simple_prompt/server.py | stdio | — | ✅ | — | — | — | — | — | — | — | — |
-| servers/simple-resource/mcp_simple_resource/server.py | stdio | ✅ | — | — | — | — | — | — | — | — | — |
-| servers/simple-streamablehttp-stateless/mcp_simple_streamablehttp_stateless/server.py | streamable-http | — | — | ✅ | — | — | — | — | ✅ | — | ✅ |
-| servers/simple-streamablehttp/mcp_simple_streamablehttp/server.py | streamable-http | — | — | ✅ | — | — | — | — | ✅ | — | ✅ |
-| servers/simple-tool/mcp_simple_tool/server.py | stdio | — | — | ✅ | — | — | — | — | — | — | — |
-| servers/structured_output_lowlevel.py | stdio | — | — | ✅ | — | — | — | — | — | — | — |
-| snippets/servers/basic_prompt.py | stdio | — | ✅ | — | — | — | — | — | — | — | — |
-| snippets/servers/basic_resource.py | stdio | ✅ | — | — | — | — | — | — | — | — | — |
-| snippets/servers/basic_tool.py | stdio | — | — | ✅ | — | — | — | — | — | — | — |
-| snippets/servers/completion.py | stdio | ✅ | ✅ | — | ✅ | — | — | — | — | — | — |
-| snippets/servers/direct_execution.py | stdio | — | — | ✅ | — | — | — | — | — | — | — |
-| snippets/servers/elicitation.py | stdio | — | — | ✅ | — | — | ✅ | — | — | — | — |
-| snippets/servers/fastmcp_quickstart.py | stdio | ✅ | ✅ | ✅ | — | — | — | — | — | — | — |
-| snippets/servers/images.py | stdio | — | — | ✅ | — | — | — | — | — | — | — |
-| snippets/servers/lifespan_example.py | stdio | — | — | ✅ | — | — | — | — | — | — | ✅ |
-| snippets/servers/lowlevel/basic.py | stdio | — | ✅ | — | — | — | — | — | — | — | — |
-| snippets/servers/lowlevel/lifespan.py | stdio | — | — | ✅ | — | — | — | — | — | — | ✅ |
-| snippets/servers/lowlevel/structured_output.py | stdio | — | — | ✅ | — | — | — | — | — | — | — |
-| snippets/servers/notifications.py | stdio | — | — | ✅ | — | — | — | — | ✅ | — | — |
-| snippets/servers/oauth_server.py | streamable-http | — | — | ✅ | — | — | — | — | — | ✅ | — |
-| snippets/servers/sampling.py | stdio | — | — | ✅ | — | ✅ | — | — | — | — | — |
-| snippets/servers/streamable_config.py | streamable-http | — | — | ✅ | — | — | — | — | — | — | ✅ |
-| snippets/servers/streamable_starlette_mount.py | streamable-http | — | — | ✅ | — | — | — | — | — | — | ✅ |
-| snippets/servers/structured_output.py | stdio | — | — | ✅ | — | — | — | — | — | — | — |
-| snippets/servers/tool_progress.py | stdio | — | — | ✅ | — | — | — | ✅ | ✅ | — | — |
+| [Complex input handling](examples-server-tools.md#complex-input-handling) | stdio | — | — | ✅ | — | — | — | — | — | — | — |
+| [Desktop integration](examples-server-tools.md#desktop-integration) | stdio | ✅ | — | ✅ | — | — | — | — | — | — | — |
+| [Enhanced echo server](examples-echo-servers.md#enhanced-echo-server) | stdio | ✅ | ✅ | ✅ | — | — | — | — | — | — | — |
+| [Memory and state management](examples-server-resources.md#memory-and-state-management) | stdio | — | — | ✅ | — | — | — | — | — | — | ✅ |
+| [Parameter descriptions](examples-server-tools.md#parameter-descriptions) | stdio | — | — | ✅ | — | — | — | — | — | — | — |
+| [Basic readme example](examples-quickstart.md#basic-readme-example) | stdio | ✅ | — | ✅ | — | — | — | — | — | — | — |
+| [Screenshot tools](examples-server-tools.md#screenshot-tools) | stdio | — | — | ✅ | — | — | — | — | — | — | — |
+| [Simple echo server](examples-echo-servers.md#simple-echo-server) | stdio | — | — | ✅ | — | — | — | — | — | — | — |
+| [Text processing tools](examples-server-tools.md#text-processing-tools) | stdio | — | — | ✅ | — | — | — | — | — | — | ✅ |
+| [Unicode and internationalization](examples-server-tools.md#unicode-and-internationalization) | stdio | — | — | ✅ | — | — | — | — | — | — | — |
+| [Weather service with structured output](examples-structured-output.md#weather-service-with-structured-output) | stdio | — | — | ✅ | — | — | — | — | — | — | — |
+| [Complete authentication server](examples-authentication.md#complete-authentication-server) | stdio | — | — | — | — | — | — | — | — | ✅ | — |
+| [Legacy Authorization Server](examples-authentication.md#legacy-authorization-server) | streamable-http | — | — | ✅ | — | — | — | — | — | ✅ | ✅ |
+| [Resource server with introspection](examples-authentication.md#resource-server-with-introspection) | streamable-http | — | — | ✅ | — | — | — | — | — | ✅ | ✅ |
+| [Simple prompt server](examples-server-prompts.md#simple-prompt-server) | stdio | — | ✅ | — | — | — | — | — | — | — | — |
+| [Simple resource server](examples-server-resources.md#simple-resource-server) | stdio | ✅ | — | — | — | — | — | — | — | — | — |
+| [Stateless HTTP server](examples-transport-http.md#stateless-http-server) | streamable-http | — | — | ✅ | — | — | — | — | ✅ | — | ✅ |
+| [Stateful HTTP server](examples-transport-http.md#stateful-http-server) | streamable-http | — | — | ✅ | — | — | — | — | ✅ | — | ✅ |
+| [Simple tool server](examples-lowlevel-servers.md#simple-tool-server) | stdio | — | — | ✅ | — | — | — | — | — | — | — |
+| [Low-level structured output](examples-structured-output.md#low-level-structured-output) | stdio | — | — | ✅ | — | — | — | — | — | — | — |
+| [Basic prompts](examples-server-prompts.md#basic-prompts) | stdio | — | ✅ | — | — | — | — | — | — | — | — |
+| [Basic resources](examples-server-resources.md#basic-resources) | stdio | ✅ | — | — | — | — | — | — | — | — | — |
+| [Basic tools](examples-server-tools.md#basic-tools) | stdio | — | — | ✅ | — | — | — | — | — | — | — |
+| [Completion support](examples-server-advanced.md#completion-support) | stdio | ✅ | ✅ | — | ✅ | — | — | — | — | — | — |
+| [Direct execution](examples-quickstart.md#direct-execution) | stdio | — | — | ✅ | — | — | — | — | — | — | — |
+| [User interaction and elicitation](examples-server-advanced.md#user-interaction-and-elicitation) | stdio | — | — | ✅ | — | — | ✅ | — | — | — | — |
+| [FastMCP quickstart](examples-quickstart.md#fastmcp-quickstart) | stdio | ✅ | ✅ | ✅ | — | — | — | — | — | — | — |
+| [Image handling](examples-server-advanced.md#image-handling) | stdio | — | — | ✅ | — | — | — | — | — | — | — |
+| [Lifespan management](examples-server-advanced.md#lifespan-management) | stdio | — | — | ✅ | — | — | — | — | — | — | ✅ |
+| [Basic low-level server](examples-lowlevel-servers.md#basic-low-level-server) | stdio | — | ✅ | — | — | — | — | — | — | — | — |
+| [Low-level server with lifespan](examples-lowlevel-servers.md#low-level-server-with-lifespan) | stdio | — | — | ✅ | — | — | — | — | — | — | ✅ |
+| [Low-level structured output](examples-structured-output.md#low-level-structured-output) | stdio | — | — | ✅ | — | — | — | — | — | — | — |
+| [Logging and notifications](examples-server-advanced.md#logging-and-notifications) | stdio | — | — | ✅ | — | — | — | — | ✅ | — | — |
+| [OAuth server implementation](examples-authentication.md#oauth-server-implementation) | streamable-http | — | — | ✅ | — | — | — | — | — | ✅ | — |
+| [LLM sampling and integration](examples-server-advanced.md#llm-sampling-and-integration) | stdio | — | — | ✅ | — | ✅ | — | — | — | — | — |
+| [Streamable HTTP configuration](examples-transport-http.md#streamable-http-configuration) | streamable-http | — | — | ✅ | — | — | — | — | — | — | ✅ |
+| [Mounting multiple servers](examples-transport-http.md#mounting-multiple-servers) | streamable-http | — | — | ✅ | — | — | — | — | — | — | ✅ |
+| [FastMCP structured output](examples-structured-output.md#fastmcp-structured-output) | stdio | — | — | ✅ | — | — | — | — | — | — | — |
+| [Tools with context and progress reporting](examples-server-tools.md#tools-with-context-and-progress-reporting) | stdio | — | — | ✅ | — | — | — | ✅ | ✅ | — | — |
+
 
 ### Clients
 
 | File | Transport | Resources | Prompts | Tools | Completions | Sampling | Authentication |
 |---|---|---|---|---|---|---|---|
-| clients/simple-auth-client/mcp_simple_auth_client/main.py | streamable-http | — | — | ✅ | — | — | ✅ |
-| clients/simple-chatbot/mcp_simple_chatbot/main.py | stdio | — | — | ✅ | — | — | — |
-| snippets/clients/completion_client.py | stdio | ✅ | ✅ | — | ✅ | — | — |
-| snippets/clients/display_utilities.py | stdio | ✅ | — | ✅ | — | — | — |
-| snippets/clients/oauth_client.py | streamable-http | ✅ | — | ✅ | — | — | ✅ |
-| snippets/clients/parsing_tool_results.py | stdio | — | — | ✅ | — | — | — |
-| snippets/clients/stdio_client.py | stdio | ✅ | ✅ | ✅ | — | ✅ | — |
-| snippets/clients/streamable_basic.py | streamable-http | — | — | ✅ | — | — | — |
+| [Authentication client](examples-clients.md#authentication-client) | streamable-http | — | — | ✅ | — | — | ✅ |
+| [Complete chatbot client](examples-clients.md#complete-chatbot-client) | stdio | — | — | ✅ | — | — | — |
+| [Completion client](examples-clients.md#completion-client) | stdio | ✅ | ✅ | — | ✅ | — | — |
+| [Display utilities](examples-clients.md#display-utilities) | stdio | ✅ | — | ✅ | — | — | — |
+| [OAuth authentication client](examples-clients.md#oauth-authentication-client) | streamable-http | ✅ | — | ✅ | — | — | ✅ |
+| [Tool result parsing](examples-clients.md#tool-result-parsing) | stdio | — | — | ✅ | — | — | — |
+| [Basic stdio client](examples-clients.md#basic-stdio-client) | stdio | ✅ | ✅ | ✅ | — | ✅ | — |
+| [Streamable HTTP client](examples-clients.md#streamable-http-client) | streamable-http | — | — | ✅ | — | — | — |
 
 Notes:
 
