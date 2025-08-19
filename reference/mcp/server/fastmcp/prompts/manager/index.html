@@ -3601,8 +3601,70 @@
 <a id="mcp.server.fastmcp.prompts.manager"></a>
     <div class="doc doc-contents first">
 
-        <p>Prompt management functionality.</p>
+        <p>Prompt management functionality for FastMCP servers.</p>
+<p>This module provides the PromptManager class, which serves as the central registry
+for managing prompts in FastMCP servers. Prompts are reusable templates that generate
+structured messages for AI model interactions, enabling consistent and parameterized
+communication patterns.</p>
+<p>The PromptManager handles the complete lifecycle of prompts:</p>
+<ul>
+<li>Registration and storage of prompt templates</li>
+<li>Retrieval by name for use in MCP protocol handlers</li>
+<li>Rendering with arguments to produce message sequences</li>
+<li>Duplicate detection and management</li>
+</ul>
+<p>Key concepts:</p>
+<ul>
+<li>Prompts are created from functions using Prompt.from_function()</li>
+<li>Each prompt has a unique name used for registration and retrieval</li>
+<li>Prompts can accept typed arguments for dynamic content generation</li>
+<li>Rendered prompts return Message objects ready for AI model consumption</li>
+</ul>
 
+
+<p><span class="doc-section-title">Examples:</span></p>
+    <p>Basic prompt management workflow:</p>
+<div class="language-python highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">mcp.server.fastmcp.prompts</span><span class="w"> </span><span class="kn">import</span> <span class="n">PromptManager</span><span class="p">,</span> <span class="n">Prompt</span>
+
+<span class="c1"># Initialize the manager</span>
+<span class="n">manager</span> <span class="o">=</span> <span class="n">PromptManager</span><span class="p">()</span>
+
+<span class="c1"># Create a prompt from a function</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">analysis_prompt</span><span class="p">(</span><span class="n">topic</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">context</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
+    <span class="k">return</span> <span class="p">[</span>
+        <span class="sa">f</span><span class="s2">&quot;Please analyze the following topic: </span><span class="si">{</span><span class="n">topic</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+        <span class="sa">f</span><span class="s2">&quot;Additional context: </span><span class="si">{</span><span class="n">context</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Provide a detailed analysis with key insights.&quot;</span>
+    <span class="p">]</span>
+
+<span class="c1"># Register the prompt</span>
+<span class="n">prompt</span> <span class="o">=</span> <span class="n">Prompt</span><span class="o">.</span><span class="n">from_function</span><span class="p">(</span><span class="n">analysis_prompt</span><span class="p">)</span>
+<span class="n">manager</span><span class="o">.</span><span class="n">add_prompt</span><span class="p">(</span><span class="n">prompt</span><span class="p">)</span>
+
+<span class="c1"># Render the prompt with arguments</span>
+<span class="n">messages</span> <span class="o">=</span> <span class="k">await</span> <span class="n">manager</span><span class="o">.</span><span class="n">render_prompt</span><span class="p">(</span>
+    <span class="s2">&quot;analysis_prompt&quot;</span><span class="p">,</span>
+    <span class="p">{</span><span class="s2">&quot;topic&quot;</span><span class="p">:</span> <span class="s2">&quot;AI Safety&quot;</span><span class="p">,</span> <span class="s2">&quot;context&quot;</span><span class="p">:</span> <span class="s2">&quot;Enterprise deployment&quot;</span><span class="p">}</span>
+<span class="p">)</span>
+</code></pre></div>
+<p>Integration with FastMCP servers:</p>
+<div class="language-python highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">mcp.server.fastmcp</span><span class="w"> </span><span class="kn">import</span> <span class="n">FastMCP</span>
+
+<span class="n">mcp</span> <span class="o">=</span> <span class="n">FastMCP</span><span class="p">(</span><span class="s2">&quot;My Server&quot;</span><span class="p">)</span>
+
+<span class="nd">@mcp</span><span class="o">.</span><span class="n">prompt</span><span class="p">()</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">code_review</span><span class="p">(</span><span class="n">language</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">code</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+    <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;Review this </span><span class="si">{</span><span class="n">language</span><span class="si">}</span><span class="s2"> code for best practices:</span><span class="se">\n\n</span><span class="si">{</span><span class="n">code</span><span class="si">}</span><span class="s2">&quot;</span>
+
+<span class="c1"># The prompt is automatically registered with the server&#39;s PromptManager</span>
+</code></pre></div>
+
+
+<details class="note" open>
+  <summary>Note</summary>
+  <p>This module is primarily used internally by FastMCP servers, but can be used
+directly for advanced prompt management scenarios or custom MCP implementations.</p>
+</details>
 
 
 
@@ -3645,7 +3707,92 @@
     <div class="doc doc-contents ">
 
 
-        <p>Manages FastMCP prompts.</p>
+        <p>Manages prompt registration, storage, and rendering for FastMCP servers.</p>
+<p>The PromptManager is the central registry for all prompts in a FastMCP server. It handles
+prompt registration, retrieval by name, listing all available prompts, and rendering
+prompts with provided arguments. Prompts are templates that can generate structured
+messages for AI model interactions.</p>
+<p>This class is typically used internally by FastMCP servers but can be used directly
+for advanced prompt management scenarios.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>warn_on_duplicate_prompts</code>
+            </td>
+            <td>
+                  <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#bool">bool</a></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Whether to log warnings when attempting to register
+a prompt with a name that already exists. Defaults to True.</p>
+              </div>
+            </td>
+            <td>
+                  <code>True</code>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+<p><span class="doc-section-title">Attributes:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td><code><span title="mcp.server.fastmcp.prompts.manager.PromptManager.warn_on_duplicate_prompts">warn_on_duplicate_prompts</span></code></td>
+            <td>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Whether duplicate prompt warnings are enabled.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+<p><span class="doc-section-title">Examples:</span></p>
+    <p>Basic usage:</p>
+<div class="language-python highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">mcp.server.fastmcp.prompts</span><span class="w"> </span><span class="kn">import</span> <span class="n">PromptManager</span><span class="p">,</span> <span class="n">Prompt</span>
+
+<span class="c1"># Create a manager</span>
+<span class="n">manager</span> <span class="o">=</span> <span class="n">PromptManager</span><span class="p">()</span>
+
+<span class="c1"># Create and add a prompt</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">greeting_prompt</span><span class="p">(</span><span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+    <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;Hello, </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">! How can I help you today?&quot;</span>
+
+<span class="n">prompt</span> <span class="o">=</span> <span class="n">Prompt</span><span class="o">.</span><span class="n">from_function</span><span class="p">(</span><span class="n">greeting_prompt</span><span class="p">)</span>
+<span class="n">manager</span><span class="o">.</span><span class="n">add_prompt</span><span class="p">(</span><span class="n">prompt</span><span class="p">)</span>
+
+<span class="c1"># Render the prompt</span>
+<span class="n">messages</span> <span class="o">=</span> <span class="k">await</span> <span class="n">manager</span><span class="o">.</span><span class="n">render_prompt</span><span class="p">(</span><span class="s2">&quot;greeting_prompt&quot;</span><span class="p">,</span> <span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Alice&quot;</span><span class="p">})</span>
+</code></pre></div>
+<p>Disabling duplicate warnings:</p>
+<div class="language-python highlight"><pre><span></span><code><span class="c1"># Useful in testing scenarios or when you need to replace prompts</span>
+<span class="n">manager</span> <span class="o">=</span> <span class="n">PromptManager</span><span class="p">(</span><span class="n">warn_on_duplicate_prompts</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</code></pre></div>
 
 
 
@@ -3677,7 +3824,61 @@
 
     <div class="doc doc-contents ">
 
-        <p>Get prompt by name.</p>
+        <p>Retrieve a registered prompt by its name.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>name</code>
+            </td>
+            <td>
+                  <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The name of the prompt to retrieve.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                  <code><a class="autorefs autorefs-internal" title="Prompt (mcp.server.fastmcp.prompts.base.Prompt)" href="../base/#mcp.server.fastmcp.prompts.base.Prompt">Prompt</a> | None</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The Prompt object if found, None if no prompt exists with the given name.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
 
 
     </div>
@@ -3702,7 +3903,40 @@
 
     <div class="doc doc-contents ">
 
-        <p>List all registered prompts.</p>
+        <p>Get a list of all registered prompts.</p>
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                  <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#list">list</a>[<a class="autorefs autorefs-internal" title="Prompt (mcp.server.fastmcp.prompts.base.Prompt)" href="../base/#mcp.server.fastmcp.prompts.base.Prompt">Prompt</a>]</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>A list containing all Prompt objects currently registered with this manager.</p>
+              </div>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                  <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#list">list</a>[<a class="autorefs autorefs-internal" title="Prompt (mcp.server.fastmcp.prompts.base.Prompt)" href="../base/#mcp.server.fastmcp.prompts.base.Prompt">Prompt</a>]</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Returns an empty list if no prompts are registered.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
 
 
     </div>
@@ -3727,7 +3961,73 @@
 
     <div class="doc doc-contents ">
 
-        <p>Add a prompt to the manager.</p>
+        <p>Register a prompt with the manager.</p>
+<p>If a prompt with the same name already exists, the existing prompt is returned
+without modification. A warning is logged if warn_on_duplicate_prompts is True.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>prompt</code>
+            </td>
+            <td>
+                  <code><a class="autorefs autorefs-internal" title="Prompt (mcp.server.fastmcp.prompts.base.Prompt)" href="../base/#mcp.server.fastmcp.prompts.base.Prompt">Prompt</a></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The Prompt object to register.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                  <code><a class="autorefs autorefs-internal" title="Prompt (mcp.server.fastmcp.prompts.base.Prompt)" href="../base/#mcp.server.fastmcp.prompts.base.Prompt">Prompt</a></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The registered Prompt object. If a prompt with the same name already exists,</p>
+              </div>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                  <code><a class="autorefs autorefs-internal" title="Prompt (mcp.server.fastmcp.prompts.base.Prompt)" href="../base/#mcp.server.fastmcp.prompts.base.Prompt">Prompt</a></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>returns the existing prompt instead of the new one.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
 
 
     </div>
@@ -3758,7 +4058,126 @@
 
     <div class="doc doc-contents ">
 
-        <p>Render a prompt by name with arguments.</p>
+        <p>Render a prompt into a list of messages ready for AI model consumption.</p>
+<p>This method looks up the prompt by name, validates that all required arguments
+are provided, executes the prompt function with the given arguments, and converts
+the result into a standardized list of Message objects.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>name</code>
+            </td>
+            <td>
+                  <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The name of the prompt to render.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>arguments</code>
+            </td>
+            <td>
+                  <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#dict">dict</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>, <a class="autorefs autorefs-external" title="typing.Any" href="https://docs.python.org/3/library/typing.html#typing.Any">Any</a>] | None</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Optional dictionary of arguments to pass to the prompt function.
+Must include all required arguments defined by the prompt.</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                  <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#list">list</a>[<a class="autorefs autorefs-internal" title="Message (mcp.server.fastmcp.prompts.base.Message)" href="../base/#mcp.server.fastmcp.prompts.base.Message">Message</a>]</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>A list of Message objects containing the rendered prompt content.</p>
+              </div>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                  <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#list">list</a>[<a class="autorefs autorefs-internal" title="Message (mcp.server.fastmcp.prompts.base.Message)" href="../base/#mcp.server.fastmcp.prompts.base.Message">Message</a>]</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Each Message has a role ("user" or "assistant") and content.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+<p><span class="doc-section-title">Raises:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                  <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/exceptions.html#ValueError">ValueError</a></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>If the prompt name is not found or if required arguments are missing.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+<p><span class="doc-section-title">Examples:</span></p>
+    <p>Simple prompt without arguments:</p>
+<div class="language-python highlight"><pre><span></span><code><span class="n">messages</span> <span class="o">=</span> <span class="k">await</span> <span class="n">manager</span><span class="o">.</span><span class="n">render_prompt</span><span class="p">(</span><span class="s2">&quot;welcome&quot;</span><span class="p">)</span>
+</code></pre></div>
+<p>Prompt with arguments:</p>
+<div class="language-python highlight"><pre><span></span><code><span class="n">messages</span> <span class="o">=</span> <span class="k">await</span> <span class="n">manager</span><span class="o">.</span><span class="n">render_prompt</span><span class="p">(</span>
+    <span class="s2">&quot;greeting&quot;</span><span class="p">,</span>
+    <span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Alice&quot;</span><span class="p">,</span> <span class="s2">&quot;language&quot;</span><span class="p">:</span> <span class="s2">&quot;en&quot;</span><span class="p">}</span>
+<span class="p">)</span>
+</code></pre></div>
 
 
     </div>

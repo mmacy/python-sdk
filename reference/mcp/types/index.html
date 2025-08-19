@@ -12800,8 +12800,117 @@ for notes on _meta usage.</p>
               Bases: <code><a class="autorefs autorefs-external" title="pydantic.BaseModel" href="https://docs.pydantic.dev/latest/api/base_model/#pydantic.BaseModel">BaseModel</a></code></p>
 
 
-        <p>Describes a message issued to or received from an LLM API.</p>
+        <p>Represents a message in an LLM conversation for sampling/generation requests.</p>
+<p>SamplingMessage is used to structure conversation history when requesting LLM
+text generation through the MCP sampling protocol. Each message represents a
+single turn in the conversation with a specific role and content.</p>
+<p>This class is primarily used with <a class="autorefs autorefs-internal" title="create_message
 
+
+  
+      async
+  " href="../server/session/#mcp.server.session.ServerSession.create_message"><code>ServerSession.create_message</code></a> to send
+conversation context to LLMs via MCP clients. The message format follows
+standard LLM conversation patterns with distinct roles for users and assistants.</p>
+
+
+<p><span class="doc-section-title">Attributes:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td><code><span title="mcp.types.SamplingMessage.role">role</span></code></td>
+            <td>
+                  <code><span title="mcp.types.Role">Role</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The speaker role, either "user" for human input or "assistant" for AI responses.</p>
+              </div>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code><span title="mcp.types.SamplingMessage.content">content</span></code></td>
+            <td>
+                  <code><a class="autorefs autorefs-internal" title="TextContent (mcp.types.TextContent)" href="#mcp.types.TextContent">TextContent</a> | <a class="autorefs autorefs-internal" title="ImageContent (mcp.types.ImageContent)" href="#mcp.types.ImageContent">ImageContent</a> | <a class="autorefs autorefs-internal" title="AudioContent (mcp.types.AudioContent)" href="#mcp.types.AudioContent">AudioContent</a></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The message content, which can be <a class="autorefs autorefs-internal" title="TextContent" href="#mcp.types.TextContent"><code>TextContent</code></a>, 
+<a class="autorefs autorefs-internal" title="ImageContent" href="#mcp.types.ImageContent"><code>ImageContent</code></a>, or <a class="autorefs autorefs-internal" title="AudioContent" href="#mcp.types.AudioContent"><code>AudioContent</code></a>.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+<p><span class="doc-section-title">Examples:</span></p>
+    <p>Creating a simple text message:</p>
+<div class="language-python highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">mcp.types</span><span class="w"> </span><span class="kn">import</span> <span class="n">SamplingMessage</span><span class="p">,</span> <span class="n">TextContent</span>
+
+<span class="n">user_msg</span> <span class="o">=</span> <span class="n">SamplingMessage</span><span class="p">(</span>
+    <span class="n">role</span><span class="o">=</span><span class="s2">&quot;user&quot;</span><span class="p">,</span>
+    <span class="n">content</span><span class="o">=</span><span class="n">TextContent</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="s2">&quot;text&quot;</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;Hello, how are you?&quot;</span><span class="p">)</span>
+<span class="p">)</span>
+</code></pre></div>
+<p>Creating an assistant response:</p>
+<div class="language-python highlight"><pre><span></span><code><span class="n">assistant_msg</span> <span class="o">=</span> <span class="n">SamplingMessage</span><span class="p">(</span>
+    <span class="n">role</span><span class="o">=</span><span class="s2">&quot;assistant&quot;</span><span class="p">,</span>
+    <span class="n">content</span><span class="o">=</span><span class="n">TextContent</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="s2">&quot;text&quot;</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;I&#39;m doing well, thank you!&quot;</span><span class="p">)</span>
+<span class="p">)</span>
+</code></pre></div>
+<p>Creating a message with image content:</p>
+<div class="language-python highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">base64</span>
+
+<span class="c1"># Assuming you have image_bytes containing image data</span>
+<span class="n">image_data</span> <span class="o">=</span> <span class="n">base64</span><span class="o">.</span><span class="n">b64encode</span><span class="p">(</span><span class="n">image_bytes</span><span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">()</span>
+
+<span class="n">image_msg</span> <span class="o">=</span> <span class="n">SamplingMessage</span><span class="p">(</span>
+    <span class="n">role</span><span class="o">=</span><span class="s2">&quot;user&quot;</span><span class="p">,</span>
+    <span class="n">content</span><span class="o">=</span><span class="n">ImageContent</span><span class="p">(</span>
+        <span class="nb">type</span><span class="o">=</span><span class="s2">&quot;image&quot;</span><span class="p">,</span>
+        <span class="n">data</span><span class="o">=</span><span class="n">image_data</span><span class="p">,</span>
+        <span class="n">mimeType</span><span class="o">=</span><span class="s2">&quot;image/jpeg&quot;</span>
+    <span class="p">)</span>
+<span class="p">)</span>
+</code></pre></div>
+<p>Building a conversation history:</p>
+<div class="language-python highlight"><pre><span></span><code><span class="n">conversation</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">SamplingMessage</span><span class="p">(</span>
+        <span class="n">role</span><span class="o">=</span><span class="s2">&quot;user&quot;</span><span class="p">,</span>
+        <span class="n">content</span><span class="o">=</span><span class="n">TextContent</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="s2">&quot;text&quot;</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;What&#39;s 2+2?&quot;</span><span class="p">)</span>
+    <span class="p">),</span>
+    <span class="n">SamplingMessage</span><span class="p">(</span>
+        <span class="n">role</span><span class="o">=</span><span class="s2">&quot;assistant&quot;</span><span class="p">,</span>
+        <span class="n">content</span><span class="o">=</span><span class="n">TextContent</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="s2">&quot;text&quot;</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;2+2 equals 4.&quot;</span><span class="p">)</span>
+    <span class="p">),</span>
+    <span class="n">SamplingMessage</span><span class="p">(</span>
+        <span class="n">role</span><span class="o">=</span><span class="s2">&quot;user&quot;</span><span class="p">,</span> 
+        <span class="n">content</span><span class="o">=</span><span class="n">TextContent</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="s2">&quot;text&quot;</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;Now what&#39;s 4+4?&quot;</span><span class="p">)</span>
+    <span class="p">)</span>
+<span class="p">]</span>
+
+<span class="c1"># Use in create_message call  </span>
+<span class="n">result</span> <span class="o">=</span> <span class="k">await</span> <span class="n">session</span><span class="o">.</span><span class="n">create_message</span><span class="p">(</span>
+    <span class="n">messages</span><span class="o">=</span><span class="n">conversation</span><span class="p">,</span>
+    <span class="n">max_tokens</span><span class="o">=</span><span class="mi">50</span>
+<span class="p">)</span>
+</code></pre></div>
+
+
+<details class="note" open>
+  <summary>Note</summary>
+  <p>The role field is constrained to "user" or "assistant" only. The content
+supports multiple media types, but actual support depends on the LLM provider
+and client implementation.</p>
+</details>
 
 
 
