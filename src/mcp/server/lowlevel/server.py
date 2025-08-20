@@ -245,7 +245,73 @@ class Server(Generic[LifespanResultT, RequestT]):
     def request_context(
         self,
     ) -> RequestContext[ServerSession, LifespanResultT, RequestT]:
-        """If called outside of a request context, this will raise a LookupError."""
+        """Access the current request context for low-level MCP server operations.
+
+        This property provides access to the [`RequestContext`][mcp.shared.context.RequestContext]
+        for the current request, which contains the session, request metadata, lifespan
+        context, and other request-scoped information. This is the primary way to access
+        MCP capabilities when using the low-level SDK.
+
+        You typically access this property from within handler functions (tool handlers,
+        resource handlers, prompt handlers, etc.) to get the context for the current
+        client request. The context is automatically managed by the server and is only
+        available during request processing.
+
+        ## Common usage patterns
+
+        **Logging and communication**:
+
+        ```python  
+        @app.call_tool()
+        async def my_tool(name: str, arguments: dict[str, Any]) -> list[types.ContentBlock]:
+            ctx = app.request_context
+            await ctx.session.send_log_message(
+                level="info", 
+                data="Starting tool processing",
+                related_request_id=ctx.request_id
+            )
+        ```
+
+        **Capability checking**:
+
+        ```python
+        @app.call_tool() 
+        async def advanced_tool(name: str, arguments: dict[str, Any]) -> list[types.ContentBlock]:
+            ctx = app.request_context
+            if ctx.session.check_client_capability(
+                types.ClientCapabilities(sampling=types.SamplingCapability())
+            ):
+                # Use advanced features
+                response = await ctx.session.create_message(messages, max_tokens=100)
+            else:
+                # Fall back to basic functionality
+                pass
+        ```
+
+        **Accessing lifespan resources**:
+
+        ```python
+        @app.call_tool()
+        async def database_query(name: str, arguments: dict[str, Any]) -> list[types.ContentBlock]:
+            ctx = app.request_context
+            db = ctx.lifespan_context["database"]  # Access startup resource
+            results = await db.query(arguments["sql"])
+            return [types.TextContent(type="text", text=str(results))]
+        ```
+
+        Returns:
+            [`RequestContext`][mcp.shared.context.RequestContext] for the current request,
+            containing session, metadata, and lifespan context.
+
+        Raises:
+            LookupError: If called outside of a request context (e.g., during server
+                initialization, shutdown, or from code not handling a client request).
+
+        Note:
+            For FastMCP applications, consider using the injected [`Context`][mcp.server.fastmcp.Context]
+            parameter instead, which provides the same functionality with additional
+            convenience methods and better ergonomics.
+        """
         return request_ctx.get()
 
     def list_prompts(self):
