@@ -3024,18 +3024,18 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#mcp.server.streaming_asgi_transport.StreamingASGITransport" class="md-nav__link">
+  <a href="#mcp.server.streaming_asgi_transport.StreamingASGIResponseStream" class="md-nav__link">
     <span class="md-ellipsis">
-      StreamingASGITransport
+      StreamingASGIResponseStream
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#mcp.server.streaming_asgi_transport.StreamingASGIResponseStream" class="md-nav__link">
+  <a href="#mcp.server.streaming_asgi_transport.StreamingASGITransport" class="md-nav__link">
     <span class="md-ellipsis">
-      StreamingASGIResponseStream
+      StreamingASGITransport
     </span>
   </a>
   
@@ -3489,18 +3489,18 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#mcp.server.streaming_asgi_transport.StreamingASGITransport" class="md-nav__link">
+  <a href="#mcp.server.streaming_asgi_transport.StreamingASGIResponseStream" class="md-nav__link">
     <span class="md-ellipsis">
-      StreamingASGITransport
+      StreamingASGIResponseStream
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#mcp.server.streaming_asgi_transport.StreamingASGIResponseStream" class="md-nav__link">
+  <a href="#mcp.server.streaming_asgi_transport.StreamingASGITransport" class="md-nav__link">
     <span class="md-ellipsis">
-      StreamingASGIResponseStream
+      StreamingASGITransport
     </span>
   </a>
   
@@ -3557,8 +3557,8 @@ the connection is closed.</p>
 
 
 
-<h2 id="mcp.server.streaming_asgi_transport.StreamingASGITransport" class="doc doc-heading">
-            <span class="doc doc-object-name doc-class-name">StreamingASGITransport</span>
+<h2 id="mcp.server.streaming_asgi_transport.StreamingASGIResponseStream" class="doc doc-heading">
+            <span class="doc doc-object-name doc-class-name">StreamingASGIResponseStream</span>
 
 
 </h2>
@@ -3566,28 +3566,13 @@ the connection is closed.</p>
 
     <div class="doc doc-contents ">
             <p class="doc doc-class-bases">
-              Bases: <code><span title="httpx._transports.base.AsyncBaseTransport">AsyncBaseTransport</span></code></p>
+              Bases: <code><span title="httpx._types.AsyncByteStream">AsyncByteStream</span></code></p>
 
 
-        <p>A custom AsyncTransport that handles sending requests directly to an ASGI app
-and supports streaming responses like SSE.</p>
-<p>Unlike the standard ASGITransport, this transport runs the ASGI app in a
-separate anyio task, allowing it to handle responses from apps that don't
-terminate immediately (like SSE endpoints).</p>
-<p>Arguments:</p>
-<ul>
-<li><code>app</code> - The ASGI application.</li>
-<li><code>raise_app_exceptions</code> - Boolean indicating if exceptions in the application
-   should be raised. Default to <code>True</code>. Can be set to <code>False</code> for use cases
-   such as testing the content of a client 500 response.</li>
-<li><code>root_path</code> - The root path on which the ASGI application should be mounted.</li>
-<li><code>client</code> - A two-tuple indicating the client IP and port of incoming requests.</li>
-<li><code>response_timeout</code> - Timeout in seconds to wait for the initial response.
-   Default is 10 seconds.</li>
-</ul>
-<p>TODO: https://github.com/encode/httpx/pull/3059 is adding something similar to
-upstream httpx. When that merges, we should delete this &amp; switch back to the
-upstream implementation.</p>
+        <p>A modified ASGIResponseStream that supports streaming responses.</p>
+<p>This class extends the standard ASGIResponseStream to handle cases where
+the response body continues to be generated after the initial response
+is returned.</p>
 
 
 
@@ -3619,8 +3604,8 @@ upstream implementation.</p>
 
 
 
-<h2 id="mcp.server.streaming_asgi_transport.StreamingASGIResponseStream" class="doc doc-heading">
-            <span class="doc doc-object-name doc-class-name">StreamingASGIResponseStream</span>
+<h2 id="mcp.server.streaming_asgi_transport.StreamingASGITransport" class="doc doc-heading">
+            <span class="doc doc-object-name doc-class-name">StreamingASGITransport</span>
 
 
 </h2>
@@ -3628,13 +3613,28 @@ upstream implementation.</p>
 
     <div class="doc doc-contents ">
             <p class="doc doc-class-bases">
-              Bases: <code><span title="httpx._types.AsyncByteStream">AsyncByteStream</span></code></p>
+              Bases: <code><span title="httpx._transports.base.AsyncBaseTransport">AsyncBaseTransport</span></code></p>
 
 
-        <p>A modified ASGIResponseStream that supports streaming responses.</p>
-<p>This class extends the standard ASGIResponseStream to handle cases where
-the response body continues to be generated after the initial response
-is returned.</p>
+        <p>A custom AsyncTransport that handles sending requests directly to an ASGI app
+and supports streaming responses like SSE.</p>
+<p>Unlike the standard ASGITransport, this transport runs the ASGI app in a
+separate anyio task, allowing it to handle responses from apps that don't
+terminate immediately (like SSE endpoints).</p>
+<p>Arguments:</p>
+<ul>
+<li><code>app</code> - The ASGI application.</li>
+<li><code>raise_app_exceptions</code> - Boolean indicating if exceptions in the application
+   should be raised. Default to <code>True</code>. Can be set to <code>False</code> for use cases
+   such as testing the content of a client 500 response.</li>
+<li><code>root_path</code> - The root path on which the ASGI application should be mounted.</li>
+<li><code>client</code> - A two-tuple indicating the client IP and port of incoming requests.</li>
+<li><code>response_timeout</code> - Timeout in seconds to wait for the initial response.
+   Default is 10 seconds.</li>
+</ul>
+<p>TODO: https://github.com/encode/httpx/pull/3059 is adding something similar to
+upstream httpx. When that merges, we should delete this &amp; switch back to the
+upstream implementation.</p>
 
 
 

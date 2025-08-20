@@ -3585,6 +3585,7 @@
 
 <h1 id="advanced-server-examples">Advanced server examples</h1>
 <p>This section covers advanced server patterns including lifecycle management, context handling, and interactive capabilities.</p>
+<p>These advanced patterns enable rich, interactive server implementations that go beyond simple request-response workflows.</p>
 <h2 id="lifespan-management">Lifespan management</h2>
 <p>Managing server lifecycle with resource initialization and cleanup:</p>
 <div class="language-python highlight"><pre><span></span><code><span class="sd">&quot;&quot;&quot;Example showing lifespan support for startup/shutdown with strong typing.&quot;&quot;&quot;</span>
@@ -3650,7 +3651,12 @@
 <li>Type-safe lifespan context management</li>
 <li>Resource initialization on startup (database connections, etc.)</li>
 <li>Automatic cleanup on shutdown</li>
-<li>Accessing lifespan context from tools via <code>ctx.request_context.lifespan_context</code></li>
+<li>Accessing lifespan context from tools via <a class="autorefs autorefs-internal" title="request_context
+
+
+  
+      property
+  " href="../reference/mcp/server/fastmcp/#mcp.server.fastmcp.Context.request_context"><code>ctx.request_context.lifespan_context</code></a></li>
 </ul>
 <h2 id="user-interaction-and-elicitation">User interaction and elicitation</h2>
 <p>Tools that can request additional information from users:</p>
@@ -3694,7 +3700,12 @@
 </code></pre></div>
 <p>This example shows:</p>
 <ul>
-<li>Using <code>ctx.elicit()</code> to request user input</li>
+<li>Using <a class="autorefs autorefs-internal" title="elicit
+
+
+  
+      async
+  " href="../reference/mcp/server/fastmcp/#mcp.server.fastmcp.Context.elicit"><code>ctx.elicit()</code></a> to request user input</li>
 <li>Pydantic schemas for validating user responses</li>
 <li>Handling user acceptance, decline, or cancellation</li>
 <li>Interactive booking workflow patterns</li>
@@ -3729,8 +3740,13 @@
 </code></pre></div>
 <p>This demonstrates:</p>
 <ul>
-<li>Using <code>ctx.session.create_message()</code> for LLM interaction</li>
-<li>Structured message creation with <code>SamplingMessage</code> and <code>TextContent</code></li>
+<li>Using <a class="autorefs autorefs-internal" title="create_message
+
+
+  
+      async
+  " href="../reference/mcp/server/session/#mcp.server.session.ServerSession.create_message"><code>ctx.session.create_message()</code></a> for LLM interaction</li>
+<li>Structured message creation with <a class="autorefs autorefs-internal" title="SamplingMessage" href="../reference/mcp/types/#mcp.types.SamplingMessage"><code>SamplingMessage</code></a> and <a class="autorefs autorefs-internal" title="TextContent" href="../reference/mcp/types/#mcp.types.TextContent"><code>TextContent</code></a></li>
 <li>Processing LLM responses within tools</li>
 <li>Chaining LLM interactions for complex workflows</li>
 </ul>
@@ -3759,7 +3775,12 @@
 <p>This example covers:</p>
 <ul>
 <li>Multiple log levels (debug, info, warning, error)</li>
-<li>Resource change notifications via <code>ctx.session.send_resource_list_changed()</code></li>
+<li>Resource change notifications via <a class="autorefs autorefs-internal" title="send_resource_list_changed
+
+
+  
+      async
+  " href="../reference/mcp/server/session/#mcp.server.session.ServerSession.send_resource_list_changed"><code>ctx.session.send_resource_list_changed()</code></a></li>
 <li>Contextual logging within tool execution</li>
 <li>Client communication patterns</li>
 </ul>
@@ -3783,8 +3804,8 @@
 </code></pre></div>
 <p>This shows:</p>
 <ul>
-<li>Using FastMCP's <code>Image</code> class for automatic image handling</li>
-<li>PIL integration for image processing</li>
+<li>Using FastMCP's <a class="autorefs autorefs-internal" title="Image" href="../reference/mcp/server/fastmcp/#mcp.server.fastmcp.Image"><code>Image</code></a> class for automatic image handling</li>
+<li>PIL integration for image processing with <a class="autorefs autorefs-external" href="https://pillow.readthedocs.io/en/stable/reference/Image.html#PIL.Image.open"><code>PIL.Image.open()</code></a></li>
 <li>Returning images from tools</li>
 <li>Image format conversion and optimization</li>
 </ul>
@@ -3847,7 +3868,6 @@
 <li>Resource template parameter completion</li>
 <li>Prompt argument completion</li>
 </ul>
-<p>These advanced patterns enable rich, interactive server implementations that go beyond simple request-response workflows.</p>
 
 
 

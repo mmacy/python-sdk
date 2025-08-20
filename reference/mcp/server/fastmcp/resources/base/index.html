@@ -2405,18 +2405,18 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#mcp.server.fastmcp.resources.base.Resource.set_default_name" class="md-nav__link">
+  <a href="#mcp.server.fastmcp.resources.base.Resource.read" class="md-nav__link">
     <span class="md-ellipsis">
-      set_default_name
+      read
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#mcp.server.fastmcp.resources.base.Resource.read" class="md-nav__link">
+  <a href="#mcp.server.fastmcp.resources.base.Resource.set_default_name" class="md-nav__link">
     <span class="md-ellipsis">
-      read
+      set_default_name
     </span>
   </a>
   
@@ -3518,18 +3518,18 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#mcp.server.fastmcp.resources.base.Resource.set_default_name" class="md-nav__link">
+  <a href="#mcp.server.fastmcp.resources.base.Resource.read" class="md-nav__link">
     <span class="md-ellipsis">
-      set_default_name
+      read
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#mcp.server.fastmcp.resources.base.Resource.read" class="md-nav__link">
+  <a href="#mcp.server.fastmcp.resources.base.Resource.set_default_name" class="md-nav__link">
     <span class="md-ellipsis">
-      read
+      set_default_name
     </span>
   </a>
   
@@ -3693,6 +3693,82 @@ can be retrieved via the read() method.</p>
 <div class="doc doc-object doc-function">
 
 
+<h3 id="mcp.server.fastmcp.resources.base.Resource.read" class="doc doc-heading">
+            <span class="doc doc-object-name doc-function-name">read</span>
+
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-abstractmethod"><code>abstractmethod</code></small>
+      <small class="doc doc-label doc-label-async"><code>async</code></small>
+  </span>
+
+</h3>
+<div class="language-python doc-signature highlight"><pre><span></span><code><span class="nf">read</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n"><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></span> <span class="o">|</span> <span class="n"><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#bytes">bytes</a></span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+        <p>Read the resource content.</p>
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                  <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#bytes">bytes</a></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The resource content as either a string or bytes</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+<p><span class="doc-section-title">Raises:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                  <code><span title="ResourceError">ResourceError</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>If the resource cannot be read</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    </div>
+
+</div>
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
 <h3 id="mcp.server.fastmcp.resources.base.Resource.set_default_name" class="doc doc-heading">
             <span class="doc doc-object-name doc-function-name">set_default_name</span>
 
@@ -3798,82 +3874,6 @@ can be retrieved via the read() method.</p>
             <td>
               <div class="doc-md-description">
                 <p>If neither name nor uri is provided</p>
-              </div>
-            </td>
-          </tr>
-      </tbody>
-    </table>
-
-
-    </div>
-
-</div>
-
-
-
-
-
-
-<div class="doc doc-object doc-function">
-
-
-<h3 id="mcp.server.fastmcp.resources.base.Resource.read" class="doc doc-heading">
-            <span class="doc doc-object-name doc-function-name">read</span>
-
-
-  <span class="doc doc-labels">
-      <small class="doc doc-label doc-label-abstractmethod"><code>abstractmethod</code></small>
-      <small class="doc doc-label doc-label-async"><code>async</code></small>
-  </span>
-
-</h3>
-<div class="language-python doc-signature highlight"><pre><span></span><code><span class="nf">read</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n"><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></span> <span class="o">|</span> <span class="n"><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#bytes">bytes</a></span>
-</code></pre></div>
-
-    <div class="doc doc-contents ">
-
-        <p>Read the resource content.</p>
-
-
-    <p><span class="doc-section-title">Returns:</span></p>
-    <table>
-      <thead>
-        <tr>
-          <th>Type</th>
-          <th>Description</th>
-        </tr>
-      </thead>
-      <tbody>
-          <tr class="doc-section-item">
-            <td>
-                  <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#bytes">bytes</a></code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>The resource content as either a string or bytes</p>
-              </div>
-            </td>
-          </tr>
-      </tbody>
-    </table>
-
-
-<p><span class="doc-section-title">Raises:</span></p>
-    <table>
-      <thead>
-        <tr>
-          <th>Type</th>
-          <th>Description</th>
-        </tr>
-      </thead>
-      <tbody>
-          <tr class="doc-section-item">
-            <td>
-                  <code><span title="ResourceError">ResourceError</span></code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>If the resource cannot be read</p>
               </div>
             </td>
           </tr>

@@ -991,18 +991,18 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#mcp.cli.cli.version" class="md-nav__link">
+  <a href="#mcp.cli.cli.dev" class="md-nav__link">
     <span class="md-ellipsis">
-      version
+      dev
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#mcp.cli.cli.dev" class="md-nav__link">
+  <a href="#mcp.cli.cli.install" class="md-nav__link">
     <span class="md-ellipsis">
-      dev
+      install
     </span>
   </a>
   
@@ -1018,9 +1018,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#mcp.cli.cli.install" class="md-nav__link">
+  <a href="#mcp.cli.cli.version" class="md-nav__link">
     <span class="md-ellipsis">
-      install
+      version
     </span>
   </a>
   
@@ -3507,18 +3507,18 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#mcp.cli.cli.version" class="md-nav__link">
+  <a href="#mcp.cli.cli.dev" class="md-nav__link">
     <span class="md-ellipsis">
-      version
+      dev
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#mcp.cli.cli.dev" class="md-nav__link">
+  <a href="#mcp.cli.cli.install" class="md-nav__link">
     <span class="md-ellipsis">
-      dev
+      install
     </span>
   </a>
   
@@ -3534,9 +3534,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#mcp.cli.cli.install" class="md-nav__link">
+  <a href="#mcp.cli.cli.version" class="md-nav__link">
     <span class="md-ellipsis">
-      install
+      version
     </span>
   </a>
   
@@ -3597,35 +3597,6 @@
 
 
 
-
-
-
-
-<div class="doc doc-object doc-function">
-
-
-<h2 id="mcp.cli.cli.version" class="doc doc-heading">
-            <span class="doc doc-object-name doc-function-name">version</span>
-
-
-</h2>
-<div class="language-python doc-signature highlight"><pre><span></span><code><span class="nf">version</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span>
-</code></pre></div>
-
-    <div class="doc doc-contents ">
-
-        <p>Show the MCP version.</p>
-
-
-    </div>
-
-</div>
-
-
-
-
-
-
 <div class="doc doc-object doc-function">
 
 
@@ -3671,52 +3642,6 @@
 
 
 
-
-
-<div class="doc doc-object doc-function">
-
-
-<h2 id="mcp.cli.cli.run" class="doc doc-heading">
-            <span class="doc doc-object-name doc-function-name">run</span>
-
-
-</h2>
-<div class="language-python doc-signature highlight"><pre><span></span><code><span class="nf">run</span><span class="p">(</span>
-    <span class="n">file_spec</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></span> <span class="o">=</span> <span class="n"><span title="typer.Argument">Argument</span></span><span class="p">(</span>
-        <span class="o">...</span><span class="p">,</span>
-        <span class="n"><span title="typer.Argument(help)">help</span></span><span class="o">=</span><span class="s2">&quot;Python file to run, optionally with :object suffix&quot;</span><span class="p">,</span>
-    <span class="p">),</span>
-    <span class="n">transport</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-external" title="typing.Annotated" href="https://docs.python.org/3/library/typing.html#typing.Annotated">Annotated</a></span><span class="p">[</span>
-        <span class="n"><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></span> <span class="o">|</span> <span class="kc">None</span><span class="p">,</span>
-        <span class="n"><span title="typer.Option">Option</span></span><span class="p">(</span>
-            <span class="o">--</span><span class="n"><span title="transport">transport</span></span><span class="p">,</span>
-            <span class="o">-</span><span class="n"><span title="t">t</span></span><span class="p">,</span>
-            <span class="n"><span title="typer.Option(help)">help</span></span><span class="o">=</span><span class="s2">&quot;Transport protocol to use (stdio or sse)&quot;</span><span class="p">,</span>
-        <span class="p">),</span>
-    <span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
-<span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span>
-</code></pre></div>
-
-    <div class="doc doc-contents ">
-
-        <p>Run a MCP server.</p>
-<p>The server can be specified in two ways:</p>
-<ol>
-<li>
-<p>Module approach: server.py - runs the module directly, expecting a server.run() call.</p>
-</li>
-<li>
-<p>Import approach: server.py:app - imports and runs the specified server object.</p>
-</li>
-</ol>
-<p>Note: This command runs the server directly. You are responsible for ensuring
-all dependencies are available.</p>
-<p>For dependency management, use <code>mcp install</code> or <code>mcp dev</code> instead.</p>
-
-
-    </div>
-
-</div>
 
 
 
@@ -3789,6 +3714,81 @@ all dependencies are available.</p>
         <p>Install a MCP server in the Claude desktop app.</p>
 <p>Environment variables are preserved once added and only updated if new values
 are explicitly provided.</p>
+
+
+    </div>
+
+</div>
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+<h2 id="mcp.cli.cli.run" class="doc doc-heading">
+            <span class="doc doc-object-name doc-function-name">run</span>
+
+
+</h2>
+<div class="language-python doc-signature highlight"><pre><span></span><code><span class="nf">run</span><span class="p">(</span>
+    <span class="n">file_spec</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></span> <span class="o">=</span> <span class="n"><span title="typer.Argument">Argument</span></span><span class="p">(</span>
+        <span class="o">...</span><span class="p">,</span>
+        <span class="n"><span title="typer.Argument(help)">help</span></span><span class="o">=</span><span class="s2">&quot;Python file to run, optionally with :object suffix&quot;</span><span class="p">,</span>
+    <span class="p">),</span>
+    <span class="n">transport</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-external" title="typing.Annotated" href="https://docs.python.org/3/library/typing.html#typing.Annotated">Annotated</a></span><span class="p">[</span>
+        <span class="n"><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></span> <span class="o">|</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n"><span title="typer.Option">Option</span></span><span class="p">(</span>
+            <span class="o">--</span><span class="n"><span title="transport">transport</span></span><span class="p">,</span>
+            <span class="o">-</span><span class="n"><span title="t">t</span></span><span class="p">,</span>
+            <span class="n"><span title="typer.Option(help)">help</span></span><span class="o">=</span><span class="s2">&quot;Transport protocol to use (stdio or sse)&quot;</span><span class="p">,</span>
+        <span class="p">),</span>
+    <span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+        <p>Run a MCP server.</p>
+<p>The server can be specified in two ways:</p>
+<ol>
+<li>
+<p>Module approach: server.py - runs the module directly, expecting a server.run() call.</p>
+</li>
+<li>
+<p>Import approach: server.py:app - imports and runs the specified server object.</p>
+</li>
+</ol>
+<p>Note: This command runs the server directly. You are responsible for ensuring
+all dependencies are available.</p>
+<p>For dependency management, use <code>mcp install</code> or <code>mcp dev</code> instead.</p>
+
+
+    </div>
+
+</div>
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+<h2 id="mcp.cli.cli.version" class="doc doc-heading">
+            <span class="doc doc-object-name doc-function-name">version</span>
+
+
+</h2>
+<div class="language-python doc-signature highlight"><pre><span></span><code><span class="nf">version</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+        <p>Show the MCP version.</p>
 
 
     </div>

@@ -2715,18 +2715,18 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#mcp.server.fastmcp.utilities.logging.get_logger" class="md-nav__link">
+  <a href="#mcp.server.fastmcp.utilities.logging.configure_logging" class="md-nav__link">
     <span class="md-ellipsis">
-      get_logger
+      configure_logging
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#mcp.server.fastmcp.utilities.logging.configure_logging" class="md-nav__link">
+  <a href="#mcp.server.fastmcp.utilities.logging.get_logger" class="md-nav__link">
     <span class="md-ellipsis">
-      configure_logging
+      get_logger
     </span>
   </a>
   
@@ -3493,18 +3493,18 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#mcp.server.fastmcp.utilities.logging.get_logger" class="md-nav__link">
+  <a href="#mcp.server.fastmcp.utilities.logging.configure_logging" class="md-nav__link">
     <span class="md-ellipsis">
-      get_logger
+      configure_logging
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#mcp.server.fastmcp.utilities.logging.configure_logging" class="md-nav__link">
+  <a href="#mcp.server.fastmcp.utilities.logging.get_logger" class="md-nav__link">
     <span class="md-ellipsis">
-      configure_logging
+      get_logger
     </span>
   </a>
   
@@ -3547,6 +3547,66 @@
 
   <div class="doc doc-children">
 
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+<h2 id="mcp.server.fastmcp.utilities.logging.configure_logging" class="doc doc-heading">
+            <span class="doc doc-object-name doc-function-name">configure_logging</span>
+
+
+</h2>
+<div class="language-python doc-signature highlight"><pre><span></span><code><span class="nf">configure_logging</span><span class="p">(</span>
+    <span class="n">level</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-external" title="typing.Literal" href="https://docs.python.org/3/library/typing.html#typing.Literal">Literal</a></span><span class="p">[</span>
+        <span class="s2">&quot;DEBUG&quot;</span><span class="p">,</span> <span class="s2">&quot;INFO&quot;</span><span class="p">,</span> <span class="s2">&quot;WARNING&quot;</span><span class="p">,</span> <span class="s2">&quot;ERROR&quot;</span><span class="p">,</span> <span class="s2">&quot;CRITICAL&quot;</span>
+    <span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;INFO&quot;</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+        <p>Configure logging for MCP.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>level</code>
+            </td>
+            <td>
+                  <code><a class="autorefs autorefs-external" title="typing.Literal" href="https://docs.python.org/3/library/typing.html#typing.Literal">Literal</a>[&#39;DEBUG&#39;, &#39;INFO&#39;, &#39;WARNING&#39;, &#39;ERROR&#39;, &#39;CRITICAL&#39;]</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>the log level to use</p>
+              </div>
+            </td>
+            <td>
+                  <code>&#39;INFO&#39;</code>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    </div>
+
+</div>
 
 
 
@@ -3617,66 +3677,6 @@
               <div class="doc-md-description">
                 <p>a configured logger instance</p>
               </div>
-            </td>
-          </tr>
-      </tbody>
-    </table>
-
-
-    </div>
-
-</div>
-
-
-
-
-
-
-<div class="doc doc-object doc-function">
-
-
-<h2 id="mcp.server.fastmcp.utilities.logging.configure_logging" class="doc doc-heading">
-            <span class="doc doc-object-name doc-function-name">configure_logging</span>
-
-
-</h2>
-<div class="language-python doc-signature highlight"><pre><span></span><code><span class="nf">configure_logging</span><span class="p">(</span>
-    <span class="n">level</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-external" title="typing.Literal" href="https://docs.python.org/3/library/typing.html#typing.Literal">Literal</a></span><span class="p">[</span>
-        <span class="s2">&quot;DEBUG&quot;</span><span class="p">,</span> <span class="s2">&quot;INFO&quot;</span><span class="p">,</span> <span class="s2">&quot;WARNING&quot;</span><span class="p">,</span> <span class="s2">&quot;ERROR&quot;</span><span class="p">,</span> <span class="s2">&quot;CRITICAL&quot;</span>
-    <span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;INFO&quot;</span><span class="p">,</span>
-<span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span>
-</code></pre></div>
-
-    <div class="doc doc-contents ">
-
-        <p>Configure logging for MCP.</p>
-
-
-<p><span class="doc-section-title">Parameters:</span></p>
-    <table>
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Type</th>
-          <th>Description</th>
-          <th>Default</th>
-        </tr>
-      </thead>
-      <tbody>
-          <tr class="doc-section-item">
-            <td>
-                <code>level</code>
-            </td>
-            <td>
-                  <code><a class="autorefs autorefs-external" title="typing.Literal" href="https://docs.python.org/3/library/typing.html#typing.Literal">Literal</a>[&#39;DEBUG&#39;, &#39;INFO&#39;, &#39;WARNING&#39;, &#39;ERROR&#39;, &#39;CRITICAL&#39;]</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>the log level to use</p>
-              </div>
-            </td>
-            <td>
-                  <code>&#39;INFO&#39;</code>
             </td>
           </tr>
       </tbody>

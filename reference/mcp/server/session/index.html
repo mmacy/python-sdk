@@ -2928,27 +2928,18 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#mcp.server.session.ServerSession.send_log_message" class="md-nav__link">
-    <span class="md-ellipsis">
-      send_log_message
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#mcp.server.session.ServerSession.send_resource_updated" class="md-nav__link">
-    <span class="md-ellipsis">
-      send_resource_updated
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#mcp.server.session.ServerSession.create_message" class="md-nav__link">
     <span class="md-ellipsis">
       create_message
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mcp.server.session.ServerSession.elicit" class="md-nav__link">
+    <span class="md-ellipsis">
+      elicit
     </span>
   </a>
   
@@ -2964,9 +2955,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#mcp.server.session.ServerSession.elicit" class="md-nav__link">
+  <a href="#mcp.server.session.ServerSession.send_log_message" class="md-nav__link">
     <span class="md-ellipsis">
-      elicit
+      send_log_message
     </span>
   </a>
   
@@ -2991,6 +2982,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#mcp.server.session.ServerSession.send_prompt_list_changed" class="md-nav__link">
+    <span class="md-ellipsis">
+      send_prompt_list_changed
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#mcp.server.session.ServerSession.send_resource_list_changed" class="md-nav__link">
     <span class="md-ellipsis">
       send_resource_list_changed
@@ -3000,18 +3000,18 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#mcp.server.session.ServerSession.send_tool_list_changed" class="md-nav__link">
+  <a href="#mcp.server.session.ServerSession.send_resource_updated" class="md-nav__link">
     <span class="md-ellipsis">
-      send_tool_list_changed
+      send_resource_updated
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#mcp.server.session.ServerSession.send_prompt_list_changed" class="md-nav__link">
+  <a href="#mcp.server.session.ServerSession.send_tool_list_changed" class="md-nav__link">
     <span class="md-ellipsis">
-      send_prompt_list_changed
+      send_tool_list_changed
     </span>
   </a>
   
@@ -3604,27 +3604,18 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#mcp.server.session.ServerSession.send_log_message" class="md-nav__link">
-    <span class="md-ellipsis">
-      send_log_message
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#mcp.server.session.ServerSession.send_resource_updated" class="md-nav__link">
-    <span class="md-ellipsis">
-      send_resource_updated
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#mcp.server.session.ServerSession.create_message" class="md-nav__link">
     <span class="md-ellipsis">
       create_message
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mcp.server.session.ServerSession.elicit" class="md-nav__link">
+    <span class="md-ellipsis">
+      elicit
     </span>
   </a>
   
@@ -3640,9 +3631,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#mcp.server.session.ServerSession.elicit" class="md-nav__link">
+  <a href="#mcp.server.session.ServerSession.send_log_message" class="md-nav__link">
     <span class="md-ellipsis">
-      elicit
+      send_log_message
     </span>
   </a>
   
@@ -3667,6 +3658,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#mcp.server.session.ServerSession.send_prompt_list_changed" class="md-nav__link">
+    <span class="md-ellipsis">
+      send_prompt_list_changed
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#mcp.server.session.ServerSession.send_resource_list_changed" class="md-nav__link">
     <span class="md-ellipsis">
       send_resource_list_changed
@@ -3676,18 +3676,18 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#mcp.server.session.ServerSession.send_tool_list_changed" class="md-nav__link">
+  <a href="#mcp.server.session.ServerSession.send_resource_updated" class="md-nav__link">
     <span class="md-ellipsis">
-      send_tool_list_changed
+      send_resource_updated
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#mcp.server.session.ServerSession.send_prompt_list_changed" class="md-nav__link">
+  <a href="#mcp.server.session.ServerSession.send_tool_list_changed" class="md-nav__link">
     <span class="md-ellipsis">
-      send_prompt_list_changed
+      send_tool_list_changed
     </span>
   </a>
   
@@ -3783,14 +3783,6 @@ be instantiated directly by users of the MCP framework.</p>
 
 
 
-
-
-
-
-
-
-
-
 <div class="doc doc-object doc-class">
 
 
@@ -3839,71 +3831,159 @@ be instantiated directly by users of the MCP framework.</p>
 
     <div class="doc doc-contents ">
 
-        <p>Check if the client supports a specific capability.</p>
+        <p>Check if the client supports specific capabilities before using advanced MCP features.</p>
+<p>This method allows MCP servers to verify that the connected client supports
+required capabilities before calling methods that depend on them. It performs
+an AND operation - the client must support ALL capabilities specified in the
+request, not just some of them.</p>
+<p>You typically access this method through the session available in your request
+context via <a class="autorefs autorefs-internal" title="RequestContext
 
 
-    </div>
-
-</div>
-
-
-
-
+  
+      dataclass
+  " href="../../shared/context/#mcp.shared.context.RequestContext"><code>app.request_context.session</code></a> 
+within handler functions. Always check capabilities before using features like
+sampling, elicitation, or experimental functionality.</p>
 
 
-<div class="doc doc-object doc-function">
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>capability</code>
+            </td>
+            <td>
+                  <code><a class="autorefs autorefs-internal" title="ClientCapabilities (mcp.types.ClientCapabilities)" href="../../types/#mcp.types.ClientCapabilities">ClientCapabilities</a></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>A <a class="autorefs autorefs-internal" title="ClientCapabilities" href="../../types/#mcp.types.ClientCapabilities"><code>types.ClientCapabilities</code></a> object
+specifying which capabilities to check. Can include:</p>
+<ul>
+<li><code>roots</code>: Check if client supports root listing operations</li>
+<li><code>sampling</code>: Check if client supports LLM sampling via <a class="autorefs autorefs-internal" title="create_message
 
 
-<h3 id="mcp.server.session.ServerSession.send_log_message" class="doc doc-heading">
-            <span class="doc doc-object-name doc-function-name">send_log_message</span>
+  
+      async
+  " href="#mcp.server.session.ServerSession.create_message"><code>create_message</code></a> </li>
+<li><code>elicitation</code>: Check if client supports user interaction via <a class="autorefs autorefs-internal" title="elicit
 
 
-  <span class="doc doc-labels">
-      <small class="doc doc-label doc-label-async"><code>async</code></small>
-  </span>
+  
+      async
+  " href="#mcp.server.session.ServerSession.elicit"><code>elicit</code></a></li>
+<li><code>experimental</code>: Check for non-standard experimental capabilities</li>
+</ul>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+      </tbody>
+    </table>
 
-</h3>
-<div class="language-python doc-signature highlight"><pre><span></span><code><span class="nf">send_log_message</span><span class="p">(</span>
-    <span class="n">level</span><span class="p">:</span> <span class="n"><span title="mcp.types.LoggingLevel">LoggingLevel</span></span><span class="p">,</span>
-    <span class="n">data</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-external" title="typing.Any" href="https://docs.python.org/3/library/typing.html#typing.Any">Any</a></span><span class="p">,</span>
-    <span class="n">logger</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
-    <span class="n">related_request_id</span><span class="p">:</span> <span class="n"><span title="mcp.types.RequestId">RequestId</span></span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
-<span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span>
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+<th>Name</th>          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+<td><code>bool</code></td>            <td>
+                  <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#bool">bool</a></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p><code>True</code> if the client supports ALL requested capabilities, <code>False</code> if
+the client hasn't been initialized yet or lacks any of the requested
+capabilities.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+<p><span class="doc-section-title">Examples:</span></p>
+    <p>Check sampling capability before creating LLM messages:</p>
+<div class="language-python highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Any</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">mcp.server.lowlevel</span><span class="w"> </span><span class="kn">import</span> <span class="n">Server</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">mcp.types</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">types</span>
+
+<span class="n">app</span> <span class="o">=</span> <span class="n">Server</span><span class="p">(</span><span class="s2">&quot;example-server&quot;</span><span class="p">)</span>
+
+<span class="nd">@app</span><span class="o">.</span><span class="n">call_tool</span><span class="p">()</span>
+<span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">call_tool</span><span class="p">(</span><span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">arguments</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="n">types</span><span class="o">.</span><span class="n">ContentBlock</span><span class="p">]:</span>
+    <span class="n">ctx</span> <span class="o">=</span> <span class="n">app</span><span class="o">.</span><span class="n">request_context</span>
+
+    <span class="c1"># Check if client supports LLM sampling</span>
+    <span class="k">if</span> <span class="n">ctx</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">check_client_capability</span><span class="p">(</span>
+        <span class="n">types</span><span class="o">.</span><span class="n">ClientCapabilities</span><span class="p">(</span><span class="n">sampling</span><span class="o">=</span><span class="n">types</span><span class="o">.</span><span class="n">SamplingCapability</span><span class="p">())</span>
+    <span class="p">):</span>
+        <span class="c1"># Safe to use create_message</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="k">await</span> <span class="n">ctx</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">create_message</span><span class="p">(</span>
+            <span class="n">messages</span><span class="o">=</span><span class="p">[</span><span class="n">types</span><span class="o">.</span><span class="n">SamplingMessage</span><span class="p">(</span>
+                <span class="n">role</span><span class="o">=</span><span class="s2">&quot;user&quot;</span><span class="p">,</span> 
+                <span class="n">content</span><span class="o">=</span><span class="n">types</span><span class="o">.</span><span class="n">TextContent</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="s2">&quot;text&quot;</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;Help me analyze this data&quot;</span><span class="p">)</span>
+            <span class="p">)],</span>
+            <span class="n">max_tokens</span><span class="o">=</span><span class="mi">100</span>
+        <span class="p">)</span>
+        <span class="k">return</span> <span class="p">[</span><span class="n">types</span><span class="o">.</span><span class="n">TextContent</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="s2">&quot;text&quot;</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="n">response</span><span class="o">.</span><span class="n">content</span><span class="o">.</span><span class="n">text</span><span class="p">)]</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">[</span><span class="n">types</span><span class="o">.</span><span class="n">TextContent</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="s2">&quot;text&quot;</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;Client doesn&#39;t support LLM sampling&quot;</span><span class="p">)]</span>
+</code></pre></div>
+<p>Check experimental capabilities:</p>
+<div class="language-python highlight"><pre><span></span><code><span class="nd">@app</span><span class="o">.</span><span class="n">call_tool</span><span class="p">()</span>
+<span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">call_tool</span><span class="p">(</span><span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">arguments</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="n">types</span><span class="o">.</span><span class="n">ContentBlock</span><span class="p">]:</span>
+    <span class="n">ctx</span> <span class="o">=</span> <span class="n">app</span><span class="o">.</span><span class="n">request_context</span>
+
+    <span class="c1"># Check for experimental advanced tools capability</span>
+    <span class="k">if</span> <span class="n">ctx</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">check_client_capability</span><span class="p">(</span>
+        <span class="n">types</span><span class="o">.</span><span class="n">ClientCapabilities</span><span class="p">(</span><span class="n">experimental</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;advanced_tools&quot;</span><span class="p">:</span> <span class="p">{}})</span>
+    <span class="p">):</span>
+        <span class="c1"># Use experimental features</span>
+        <span class="k">return</span> <span class="k">await</span> <span class="n">use_advanced_tool_features</span><span class="p">(</span><span class="n">arguments</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="c1"># Fall back to basic functionality</span>
+        <span class="k">return</span> <span class="k">await</span> <span class="n">use_basic_tool_features</span><span class="p">(</span><span class="n">arguments</span><span class="p">)</span>
+</code></pre></div>
+<p>Check multiple capabilities at once:</p>
+<div class="language-python highlight"><pre><span></span><code><span class="c1"># Client must support BOTH sampling AND elicitation</span>
+<span class="k">if</span> <span class="n">ctx</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">check_client_capability</span><span class="p">(</span>
+    <span class="n">types</span><span class="o">.</span><span class="n">ClientCapabilities</span><span class="p">(</span>
+        <span class="n">sampling</span><span class="o">=</span><span class="n">types</span><span class="o">.</span><span class="n">SamplingCapability</span><span class="p">(),</span>
+        <span class="n">elicitation</span><span class="o">=</span><span class="n">types</span><span class="o">.</span><span class="n">ElicitationCapability</span><span class="p">()</span>
+    <span class="p">)</span>
+<span class="p">):</span>
+    <span class="c1"># Safe to use both features</span>
+    <span class="n">user_input</span> <span class="o">=</span> <span class="k">await</span> <span class="n">ctx</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">elicit</span><span class="p">(</span><span class="s2">&quot;What would you like to analyze?&quot;</span><span class="p">,</span> <span class="n">schema</span><span class="p">)</span>
+    <span class="n">llm_response</span> <span class="o">=</span> <span class="k">await</span> <span class="n">ctx</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">create_message</span><span class="p">(</span><span class="n">messages</span><span class="p">,</span> <span class="n">max_tokens</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
 </code></pre></div>
 
-    <div class="doc doc-contents ">
 
-        <p>Send a log message notification.</p>
-
-
-    </div>
-
-</div>
-
-
-
-
-
-
-<div class="doc doc-object doc-function">
-
-
-<h3 id="mcp.server.session.ServerSession.send_resource_updated" class="doc doc-heading">
-            <span class="doc doc-object-name doc-function-name">send_resource_updated</span>
-
-
-  <span class="doc doc-labels">
-      <small class="doc doc-label doc-label-async"><code>async</code></small>
-  </span>
-
-</h3>
-<div class="language-python doc-signature highlight"><pre><span></span><code><span class="nf">send_resource_updated</span><span class="p">(</span><span class="n">uri</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-external" title="pydantic.AnyUrl" href="https://docs.pydantic.dev/latest/api/networks/#pydantic.networks.AnyUrl">AnyUrl</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span>
-</code></pre></div>
-
-    <div class="doc doc-contents ">
-
-        <p>Send a resource updated notification.</p>
-
+<details class="note" open>
+  <summary>Note</summary>
+  <p>This method returns <code>False</code> if the session hasn't been initialized yet
+(before the client sends the initialization request). It also returns
+<code>False</code> if the client lacks ANY of the requested capabilities - all
+specified capabilities must be supported for this method to return <code>True</code>.</p>
+</details>
 
     </div>
 
@@ -4228,6 +4308,214 @@ MCP clients support this, but always check capabilities before use in production
 <div class="doc doc-object doc-function">
 
 
+<h3 id="mcp.server.session.ServerSession.elicit" class="doc doc-heading">
+            <span class="doc doc-object-name doc-function-name">elicit</span>
+
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-async"><code>async</code></small>
+  </span>
+
+</h3>
+<div class="language-python doc-signature highlight"><pre><span></span><code><span class="nf">elicit</span><span class="p">(</span>
+    <span class="n">message</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></span><span class="p">,</span>
+    <span class="n">requestedSchema</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-internal" title="ElicitRequestedSchema
+
+
+  
+      module-attribute
+   (mcp.types.ElicitRequestedSchema)" href="../../types/#mcp.types.ElicitRequestedSchema">ElicitRequestedSchema</a></span><span class="p">,</span>
+    <span class="n">related_request_id</span><span class="p">:</span> <span class="n"><span title="mcp.types.RequestId">RequestId</span></span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n"><a class="autorefs autorefs-internal" title="ElicitResult (mcp.types.ElicitResult)" href="../../types/#mcp.types.ElicitResult">ElicitResult</a></span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+        <p>Send an elicitation request to collect structured information from the client.</p>
+<p>This is the low-level method for client elicitation. For most use cases, prefer
+the higher-level <a class="autorefs autorefs-internal" title="elicit
+
+
+  
+      async
+  " href="../fastmcp/#mcp.server.fastmcp.Context.elicit"><code>Context.elicit</code></a> method
+which provides automatic Pydantic validation and a more convenient interface.</p>
+<p>You typically access this method through the session available in your request
+context via <a class="autorefs autorefs-internal" title="RequestContext
+
+
+  
+      dataclass
+  " href="../../shared/context/#mcp.shared.context.RequestContext"><code>app.request_context.session</code></a> 
+within handler functions. Always check that the client supports elicitation using
+<a class="autorefs autorefs-internal" title="check_client_capability" href="#mcp.server.session.ServerSession.check_client_capability"><code>check_client_capability</code></a> 
+before calling this method.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>message</code>
+            </td>
+            <td>
+                  <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The prompt or question to present to the user.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>requestedSchema</code>
+            </td>
+            <td>
+                  <code><a class="autorefs autorefs-internal" title="ElicitRequestedSchema
+
+
+  
+      module-attribute
+   (mcp.types.ElicitRequestedSchema)" href="../../types/#mcp.types.ElicitRequestedSchema">ElicitRequestedSchema</a></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>A <a class="autorefs autorefs-internal" title="ElicitRequestedSchema
+
+
+  
+      module-attribute
+  " href="../../types/#mcp.types.ElicitRequestedSchema"><code>types.ElicitRequestedSchema</code></a> 
+defining the expected response structure according to JSON Schema.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>related_request_id</code>
+            </td>
+            <td>
+                  <code><span title="mcp.types.RequestId">RequestId</span> | None</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Optional <code>types.RequestId</code> linking 
+this elicitation to a specific client request for tracing.</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                  <code><a class="autorefs autorefs-internal" title="ElicitResult (mcp.types.ElicitResult)" href="../../types/#mcp.types.ElicitResult">ElicitResult</a></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p><a class="autorefs autorefs-internal" title="ElicitResult" href="../../types/#mcp.types.ElicitResult"><code>types.ElicitResult</code></a> containing the client's response</p>
+              </div>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                  <code><a class="autorefs autorefs-internal" title="ElicitResult (mcp.types.ElicitResult)" href="../../types/#mcp.types.ElicitResult">ElicitResult</a></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>and action taken (accept, decline, or cancel).</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+<p><span class="doc-section-title">Raises:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                  <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/exceptions.html#RuntimeError">RuntimeError</a></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>If called before session initialization is complete.</p>
+              </div>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                  <code>Various exceptions</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Depending on client implementation and user interaction.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+<details class="note" open>
+  <summary>Note</summary>
+  <p>Most developers should use <a class="autorefs autorefs-internal" title="elicit
+
+
+  
+      async
+  " href="../fastmcp/#mcp.server.fastmcp.Context.elicit"><code>Context.elicit</code></a> 
+instead, which provides Pydantic model validation and better error handling.</p>
+</details>
+
+    </div>
+
+</div>
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
 <h3 id="mcp.server.session.ServerSession.list_roots" class="doc doc-heading">
             <span class="doc doc-object-name doc-function-name">list_roots</span>
 
@@ -4257,8 +4545,8 @@ MCP clients support this, but always check capabilities before use in production
 <div class="doc doc-object doc-function">
 
 
-<h3 id="mcp.server.session.ServerSession.elicit" class="doc doc-heading">
-            <span class="doc doc-object-name doc-function-name">elicit</span>
+<h3 id="mcp.server.session.ServerSession.send_log_message" class="doc doc-heading">
+            <span class="doc doc-object-name doc-function-name">send_log_message</span>
 
 
   <span class="doc doc-labels">
@@ -4266,21 +4554,47 @@ MCP clients support this, but always check capabilities before use in production
   </span>
 
 </h3>
-<div class="language-python doc-signature highlight"><pre><span></span><code><span class="nf">elicit</span><span class="p">(</span>
-    <span class="n">message</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></span><span class="p">,</span>
-    <span class="n">requestedSchema</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-internal" title="ElicitRequestedSchema
-
-
-  
-      module-attribute
-   (mcp.types.ElicitRequestedSchema)" href="../../types/#mcp.types.ElicitRequestedSchema">ElicitRequestedSchema</a></span><span class="p">,</span>
+<div class="language-python doc-signature highlight"><pre><span></span><code><span class="nf">send_log_message</span><span class="p">(</span>
+    <span class="n">level</span><span class="p">:</span> <span class="n"><span title="mcp.types.LoggingLevel">LoggingLevel</span></span><span class="p">,</span>
+    <span class="n">data</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-external" title="typing.Any" href="https://docs.python.org/3/library/typing.html#typing.Any">Any</a></span><span class="p">,</span>
+    <span class="n">logger</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
     <span class="n">related_request_id</span><span class="p">:</span> <span class="n"><span title="mcp.types.RequestId">RequestId</span></span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
-<span class="p">)</span> <span class="o">-&gt;</span> <span class="n"><a class="autorefs autorefs-internal" title="ElicitResult (mcp.types.ElicitResult)" href="../../types/#mcp.types.ElicitResult">ElicitResult</a></span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span>
 </code></pre></div>
 
     <div class="doc doc-contents ">
 
-        <p>Send an elicitation/create request.</p>
+        <p>Send a log message notification from the server to the client.</p>
+<p>This method allows MCP servers to send log messages to the connected client for
+debugging, monitoring, and error reporting purposes. The client can filter these
+messages based on the logging level it has configured via the logging/setLevel
+request. Check client capabilities using <a class="autorefs autorefs-internal" title="check_client_capability" href="#mcp.server.session.ServerSession.check_client_capability"><code>check_client_capability</code></a>
+if you need to verify logging support.</p>
+<p>You typically access this method through the session available in your request
+context. When using the low-level SDK, access it via 
+<a class="autorefs autorefs-internal" title="RequestContext
+
+
+  
+      dataclass
+  " href="../../shared/context/#mcp.shared.context.RequestContext"><code>app.request_context.session</code></a> within handler
+functions. With FastMCP, use the convenience logging methods on the 
+<a class="autorefs autorefs-internal" title="Context" href="../fastmcp/#mcp.server.fastmcp.Context"><code>Context</code></a> object instead, like
+<a class="autorefs autorefs-internal" title="info
+
+
+  
+      async
+  " href="../fastmcp/#mcp.server.fastmcp.Context.info"><code>ctx.info()</code></a> or 
+<a class="autorefs autorefs-internal" title="error
+
+
+  
+      async
+  " href="../fastmcp/#mcp.server.fastmcp.Context.error"><code>ctx.error()</code></a>.</p>
+<p>Log messages are one-way notifications and do not expect a response from the client.
+They are useful for providing visibility into server operations, debugging issues,
+and tracking the flow of request processing.</p>
 
 
 <p><span class="doc-section-title">Parameters:</span></p>
@@ -4296,14 +4610,24 @@ MCP clients support this, but always check capabilities before use in production
       <tbody>
           <tr class="doc-section-item">
             <td>
-                <code>message</code>
+                <code>level</code>
             </td>
             <td>
-                  <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>
+                  <code><span title="mcp.types.LoggingLevel">LoggingLevel</span></code>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>The message to present to the user</p>
+                <p>The severity level of the log message as a <code>types.LoggingLevel</code>. Must be one of:</p>
+<ul>
+<li><code>debug</code>: Detailed information for debugging</li>
+<li><code>info</code>: General informational messages</li>
+<li><code>notice</code>: Normal but significant conditions</li>
+<li><code>warning</code>: Warning conditions that should be addressed</li>
+<li><code>error</code>: Error conditions that don't prevent operation</li>
+<li><code>critical</code>: Critical conditions requiring immediate attention</li>
+<li><code>alert</code>: Action must be taken immediately</li>
+<li><code>emergency</code>: System is unusable</li>
+</ul>
               </div>
             </td>
             <td>
@@ -4312,23 +4636,60 @@ MCP clients support this, but always check capabilities before use in production
           </tr>
           <tr class="doc-section-item">
             <td>
-                <code>requestedSchema</code>
+                <code>data</code>
             </td>
             <td>
-                  <code><a class="autorefs autorefs-internal" title="ElicitRequestedSchema
-
-
-  
-      module-attribute
-   (mcp.types.ElicitRequestedSchema)" href="../../types/#mcp.types.ElicitRequestedSchema">ElicitRequestedSchema</a></code>
+                  <code><a class="autorefs autorefs-external" title="typing.Any" href="https://docs.python.org/3/library/typing.html#typing.Any">Any</a></code>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>Schema defining the expected response structure</p>
+                <p>The data to log. Can be any JSON-serializable value including:</p>
+<ul>
+<li>Simple strings for text messages</li>
+<li>Objects/dictionaries for structured logging</li>
+<li>Lists for multiple related items</li>
+<li>Numbers, booleans, or null values</li>
+</ul>
               </div>
             </td>
             <td>
                 <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>logger</code>
+            </td>
+            <td>
+                  <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | None</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Optional name to identify the source of the log message.
+Useful for categorizing logs from different components or modules
+within your server (e.g., "database", "auth", "tool_handler").</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>related_request_id</code>
+            </td>
+            <td>
+                  <code><span title="mcp.types.RequestId">RequestId</span> | None</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Optional <code>types.RequestId</code> linking this log to a specific client request.
+Use this to associate log messages with the request they relate to,
+making it easier to trace request processing and debug issues.</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
             </td>
           </tr>
       </tbody>
@@ -4346,17 +4707,148 @@ MCP clients support this, but always check capabilities before use in production
       <tbody>
           <tr class="doc-section-item">
             <td>
-                  <code><a class="autorefs autorefs-internal" title="ElicitResult (mcp.types.ElicitResult)" href="../../types/#mcp.types.ElicitResult">ElicitResult</a></code>
+                  <code>None</code>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>The client's response</p>
+                <p>None</p>
               </div>
             </td>
           </tr>
       </tbody>
     </table>
 
+
+<p><span class="doc-section-title">Raises:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                  <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/exceptions.html#RuntimeError">RuntimeError</a></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>If called before session initialization is complete.</p>
+              </div>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                  <code>Various exceptions</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Depending on serialization or transport errors.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+<p><span class="doc-section-title">Examples:</span></p>
+    <p>In a tool handler using the low-level SDK:</p>
+<div class="language-python highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Any</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">mcp.server.lowlevel</span><span class="w"> </span><span class="kn">import</span> <span class="n">Server</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">mcp.types</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">types</span>
+
+<span class="n">app</span> <span class="o">=</span> <span class="n">Server</span><span class="p">(</span><span class="s2">&quot;example-server&quot;</span><span class="p">)</span>
+
+<span class="nd">@app</span><span class="o">.</span><span class="n">call_tool</span><span class="p">()</span>
+<span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">call_tool</span><span class="p">(</span><span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">arguments</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="n">types</span><span class="o">.</span><span class="n">ContentBlock</span><span class="p">]:</span>
+    <span class="c1"># Access the request context to get the session</span>
+    <span class="n">ctx</span> <span class="o">=</span> <span class="n">app</span><span class="o">.</span><span class="n">request_context</span>
+
+    <span class="c1"># Log the start of processing</span>
+    <span class="k">await</span> <span class="n">ctx</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">send_log_message</span><span class="p">(</span>
+        <span class="n">level</span><span class="o">=</span><span class="s2">&quot;info&quot;</span><span class="p">,</span>
+        <span class="n">data</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;Processing tool call: </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+        <span class="n">logger</span><span class="o">=</span><span class="s2">&quot;tool_handler&quot;</span><span class="p">,</span>
+        <span class="n">related_request_id</span><span class="o">=</span><span class="n">ctx</span><span class="o">.</span><span class="n">request_id</span>
+    <span class="p">)</span>
+
+    <span class="c1"># Process and log any issues</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">perform_operation</span><span class="p">(</span><span class="n">arguments</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="k">await</span> <span class="n">ctx</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">send_log_message</span><span class="p">(</span>
+            <span class="n">level</span><span class="o">=</span><span class="s2">&quot;error&quot;</span><span class="p">,</span>
+            <span class="n">data</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;error&quot;</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">),</span> <span class="s2">&quot;tool&quot;</span><span class="p">:</span> <span class="n">name</span><span class="p">,</span> <span class="s2">&quot;args&quot;</span><span class="p">:</span> <span class="n">arguments</span><span class="p">},</span>
+            <span class="n">logger</span><span class="o">=</span><span class="s2">&quot;tool_handler&quot;</span><span class="p">,</span>
+            <span class="n">related_request_id</span><span class="o">=</span><span class="n">ctx</span><span class="o">.</span><span class="n">request_id</span>
+        <span class="p">)</span>
+        <span class="k">raise</span>
+
+    <span class="k">return</span> <span class="p">[</span><span class="n">types</span><span class="o">.</span><span class="n">TextContent</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="s2">&quot;text&quot;</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">result</span><span class="p">))]</span>
+</code></pre></div>
+<p>Using FastMCP's <a class="autorefs autorefs-internal" title="Context" href="../fastmcp/#mcp.server.fastmcp.Context"><code>Context</code></a> helper for cleaner logging:</p>
+<div class="language-python highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">mcp.server.fastmcp</span><span class="w"> </span><span class="kn">import</span> <span class="n">FastMCP</span><span class="p">,</span> <span class="n">Context</span>
+
+<span class="n">mcp</span> <span class="o">=</span> <span class="n">FastMCP</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;example-server&quot;</span><span class="p">)</span>
+
+<span class="nd">@mcp</span><span class="o">.</span><span class="n">tool</span><span class="p">()</span>
+<span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">fetch_data</span><span class="p">(</span><span class="n">url</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">ctx</span><span class="p">:</span> <span class="n">Context</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+    <span class="c1"># FastMCP&#39;s Context provides convenience methods that internally</span>
+    <span class="c1"># call send_log_message with the appropriate parameters</span>
+    <span class="k">await</span> <span class="n">ctx</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Fetching data from </span><span class="si">{</span><span class="n">url</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="k">await</span> <span class="n">ctx</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;Starting request&quot;</span><span class="p">)</span>
+
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="k">await</span> <span class="n">fetch</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+        <span class="k">await</span> <span class="n">ctx</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Data fetched successfully&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">data</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="k">await</span> <span class="n">ctx</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Failed to fetch: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">raise</span>
+</code></pre></div>
+<p>Streaming notifications with progress updates:</p>
+<div class="language-python highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">anyio</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Any</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">mcp.server.lowlevel</span><span class="w"> </span><span class="kn">import</span> <span class="n">Server</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">mcp.types</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">types</span>
+
+<span class="n">app</span> <span class="o">=</span> <span class="n">Server</span><span class="p">(</span><span class="s2">&quot;example-server&quot;</span><span class="p">)</span>
+
+<span class="nd">@app</span><span class="o">.</span><span class="n">call_tool</span><span class="p">()</span>
+<span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">call_tool</span><span class="p">(</span><span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">arguments</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="n">types</span><span class="o">.</span><span class="n">ContentBlock</span><span class="p">]:</span>
+    <span class="n">ctx</span> <span class="o">=</span> <span class="n">app</span><span class="o">.</span><span class="n">request_context</span>
+    <span class="n">count</span> <span class="o">=</span> <span class="n">arguments</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;count&quot;</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">count</span><span class="p">):</span>
+        <span class="c1"># Send progress updates to the client</span>
+        <span class="k">await</span> <span class="n">ctx</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">send_log_message</span><span class="p">(</span>
+            <span class="n">level</span><span class="o">=</span><span class="s2">&quot;info&quot;</span><span class="p">,</span>
+            <span class="n">data</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;[</span><span class="si">{</span><span class="n">i</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">count</span><span class="si">}</span><span class="s2">] Processing item&quot;</span><span class="p">,</span>
+            <span class="n">logger</span><span class="o">=</span><span class="s2">&quot;progress_stream&quot;</span><span class="p">,</span>
+            <span class="n">related_request_id</span><span class="o">=</span><span class="n">ctx</span><span class="o">.</span><span class="n">request_id</span>
+        <span class="p">)</span>
+        <span class="k">if</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">count</span> <span class="o">-</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="k">await</span> <span class="n">anyio</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="p">[</span><span class="n">types</span><span class="o">.</span><span class="n">TextContent</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="s2">&quot;text&quot;</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;Operation complete&quot;</span><span class="p">)]</span>
+</code></pre></div>
+
+
+<details class="note" open>
+  <summary>Note</summary>
+  <p>Log messages are only delivered to the client if the client's configured
+logging level permits it. For example, if the client has set its level to
+"warning", it will not receive "debug" or "info" messages. Consider this
+when deciding what level to use for your log messages. This method internally
+uses <a class="autorefs autorefs-internal" title="send_notification
+
+
+  
+      async
+  " href="../../shared/session/#mcp.shared.session.BaseSession.send_notification"><code>send_notification</code></a> to
+deliver the log message to the client.</p>
+</details>
 
     </div>
 
@@ -4434,6 +4926,35 @@ MCP clients support this, but always check capabilities before use in production
 <div class="doc doc-object doc-function">
 
 
+<h3 id="mcp.server.session.ServerSession.send_prompt_list_changed" class="doc doc-heading">
+            <span class="doc doc-object-name doc-function-name">send_prompt_list_changed</span>
+
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-async"><code>async</code></small>
+  </span>
+
+</h3>
+<div class="language-python doc-signature highlight"><pre><span></span><code><span class="nf">send_prompt_list_changed</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+        <p>Send a prompt list changed notification.</p>
+
+
+    </div>
+
+</div>
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
 <h3 id="mcp.server.session.ServerSession.send_resource_list_changed" class="doc doc-heading">
             <span class="doc doc-object-name doc-function-name">send_resource_list_changed</span>
 
@@ -4449,6 +4970,35 @@ MCP clients support this, but always check capabilities before use in production
     <div class="doc doc-contents ">
 
         <p>Send a resource list changed notification.</p>
+
+
+    </div>
+
+</div>
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="mcp.server.session.ServerSession.send_resource_updated" class="doc doc-heading">
+            <span class="doc doc-object-name doc-function-name">send_resource_updated</span>
+
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-async"><code>async</code></small>
+  </span>
+
+</h3>
+<div class="language-python doc-signature highlight"><pre><span></span><code><span class="nf">send_resource_updated</span><span class="p">(</span><span class="n">uri</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-external" title="pydantic.AnyUrl" href="https://docs.pydantic.dev/latest/api/networks/#pydantic.networks.AnyUrl">AnyUrl</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+        <p>Send a resource updated notification.</p>
 
 
     </div>
@@ -4487,40 +5037,19 @@ MCP clients support this, but always check capabilities before use in production
 
 
 
-
-
-<div class="doc doc-object doc-function">
-
-
-<h3 id="mcp.server.session.ServerSession.send_prompt_list_changed" class="doc doc-heading">
-            <span class="doc doc-object-name doc-function-name">send_prompt_list_changed</span>
-
-
-  <span class="doc doc-labels">
-      <small class="doc doc-label doc-label-async"><code>async</code></small>
-  </span>
-
-</h3>
-<div class="language-python doc-signature highlight"><pre><span></span><code><span class="nf">send_prompt_list_changed</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span>
-</code></pre></div>
-
-    <div class="doc doc-contents ">
-
-        <p>Send a prompt list changed notification.</p>
-
-
-    </div>
-
-</div>
-
-
-
-
   </div>
 
     </div>
 
 </div>
+
+
+
+
+
+
+
+
 
 
 

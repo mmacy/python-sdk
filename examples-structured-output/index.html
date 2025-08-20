@@ -609,15 +609,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#benefits-of-structured-output" class="md-nav__link">
-    <span class="md-ellipsis">
-      Benefits of structured output
-    </span>
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -3519,15 +3510,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#benefits-of-structured-output" class="md-nav__link">
-    <span class="md-ellipsis">
-      Benefits of structured output
-    </span>
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -3549,6 +3531,15 @@
 
 <h1 id="structured-output-examples">Structured output examples</h1>
 <p>Structured output allows tools to return well-typed, validated data that clients can easily process. This section covers various approaches to structured data.</p>
+<p>Structured output provides several advantages:</p>
+<ul>
+<li><strong>Type Safety</strong>: Automatic validation ensures data integrity</li>
+<li><strong>Documentation</strong>: Schemas serve as API documentation</li>
+<li><strong>Client Integration</strong>: Easier processing by client applications</li>
+<li><strong>Backward Compatibility</strong>: Still provides unstructured text content</li>
+<li><strong>IDE Support</strong>: Better development experience with type hints</li>
+</ul>
+<p>Choose structured output when you need reliable, processable data from your tools.</p>
 <h2 id="fastmcp-structured-output">FastMCP structured output</h2>
 <p>Using FastMCP's automatic structured output capabilities:</p>
 <div class="language-python highlight"><pre><span></span><code><span class="sd">&quot;&quot;&quot;Example showing structured output with tools.&quot;&quot;&quot;</span>
@@ -3652,7 +3643,7 @@
 <p>This comprehensive example demonstrates:</p>
 <ul>
 <li><strong>Pydantic models</strong>: Rich validation and documentation (<code>WeatherData</code>)</li>
-<li><strong>TypedDict</strong>: Simpler structures (<code>LocationInfo</code>) </li>
+<li><strong>TypedDict</strong>: Simpler structures (<code>LocationInfo</code>)</li>
 <li><strong>Dictionary types</strong>: Flexible schemas (<code>dict[str, float]</code>)</li>
 <li><strong>Regular classes</strong>: With type hints for structured output (<code>UserProfile</code>)</li>
 <li><strong>Untyped classes</strong>: Fall back to unstructured output (<code>UntypedConfig</code>)</li>
@@ -4087,16 +4078,6 @@
 <li>Returning structured data directly from tools</li>
 <li>Backward compatibility with unstructured content</li>
 </ul>
-<h2 id="benefits-of-structured-output">Benefits of structured output</h2>
-<p>Structured output provides several advantages:</p>
-<ol>
-<li><strong>Type Safety</strong>: Automatic validation ensures data integrity</li>
-<li><strong>Documentation</strong>: Schemas serve as API documentation  </li>
-<li><strong>Client Integration</strong>: Easier processing by client applications</li>
-<li><strong>Backward Compatibility</strong>: Still provides unstructured text content</li>
-<li><strong>IDE Support</strong>: Better development experience with type hints</li>
-</ol>
-<p>Choose structured output when you need reliable, processable data from your tools.</p>
 
 
 

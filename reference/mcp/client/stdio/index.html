@@ -1183,15 +1183,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#mcp.client.stdio.get_default_environment" class="md-nav__link">
-    <span class="md-ellipsis">
-      get_default_environment
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#mcp.client.stdio.StdioServerParameters" class="md-nav__link">
     <span class="md-ellipsis">
       StdioServerParameters
@@ -1200,15 +1191,6 @@
   
     <nav class="md-nav" aria-label="StdioServerParameters">
       <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#mcp.client.stdio.StdioServerParameters.command" class="md-nav__link">
-    <span class="md-ellipsis">
-      command
-    </span>
-  </a>
-  
-</li>
         
           <li class="md-nav__item">
   <a href="#mcp.client.stdio.StdioServerParameters.args" class="md-nav__link">
@@ -1220,9 +1202,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#mcp.client.stdio.StdioServerParameters.env" class="md-nav__link">
+  <a href="#mcp.client.stdio.StdioServerParameters.command" class="md-nav__link">
     <span class="md-ellipsis">
-      env
+      command
     </span>
   </a>
   
@@ -1255,8 +1237,26 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#mcp.client.stdio.StdioServerParameters.env" class="md-nav__link">
+    <span class="md-ellipsis">
+      env
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mcp.client.stdio.get_default_environment" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_default_environment
+    </span>
+  </a>
   
 </li>
       
@@ -3558,15 +3558,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#mcp.client.stdio.get_default_environment" class="md-nav__link">
-    <span class="md-ellipsis">
-      get_default_environment
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#mcp.client.stdio.StdioServerParameters" class="md-nav__link">
     <span class="md-ellipsis">
       StdioServerParameters
@@ -3575,15 +3566,6 @@
   
     <nav class="md-nav" aria-label="StdioServerParameters">
       <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#mcp.client.stdio.StdioServerParameters.command" class="md-nav__link">
-    <span class="md-ellipsis">
-      command
-    </span>
-  </a>
-  
-</li>
         
           <li class="md-nav__item">
   <a href="#mcp.client.stdio.StdioServerParameters.args" class="md-nav__link">
@@ -3595,9 +3577,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#mcp.client.stdio.StdioServerParameters.env" class="md-nav__link">
+  <a href="#mcp.client.stdio.StdioServerParameters.command" class="md-nav__link">
     <span class="md-ellipsis">
-      env
+      command
     </span>
   </a>
   
@@ -3630,8 +3612,26 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#mcp.client.stdio.StdioServerParameters.env" class="md-nav__link">
+    <span class="md-ellipsis">
+      env
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mcp.client.stdio.get_default_environment" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_default_environment
+    </span>
+  </a>
   
 </li>
       
@@ -3693,52 +3693,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div class="doc doc-object doc-function">
-
-
-<h2 id="mcp.client.stdio.get_default_environment" class="doc doc-heading">
-            <span class="doc doc-object-name doc-function-name">get_default_environment</span>
-
-
-</h2>
-<div class="language-python doc-signature highlight"><pre><span></span><code><span class="nf">get_default_environment</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n"><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#dict">dict</a></span><span class="p">[</span><span class="n"><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></span><span class="p">,</span> <span class="n"><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></span><span class="p">]</span>
-</code></pre></div>
-
-    <div class="doc doc-contents ">
-
-        <p>Returns a default environment object including only environment variables deemed
-safe to inherit.</p>
-
-
-    </div>
-
-</div>
-
-
-
-
-
-
 <div class="doc doc-object doc-class">
 
 
@@ -3766,35 +3720,6 @@ safe to inherit.</p>
 
   <div class="doc doc-children">
 
-
-
-
-
-
-
-<div class="doc doc-object doc-attribute">
-
-
-
-<h3 id="mcp.client.stdio.StdioServerParameters.command" class="doc doc-heading">
-            <span class="doc doc-object-name doc-attribute-name">command</span>
-
-
-  <span class="doc doc-labels">
-      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
-  </span>
-
-</h3>
-<div class="language-python doc-signature highlight"><pre><span></span><code><span class="n">command</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></span>
-</code></pre></div>
-
-    <div class="doc doc-contents ">
-
-        <p>The executable to run to start the server.</p>
-
-    </div>
-
-</div>
 
 
 
@@ -3835,23 +3760,21 @@ safe to inherit.</p>
 
 
 
-<h3 id="mcp.client.stdio.StdioServerParameters.env" class="doc doc-heading">
-            <span class="doc doc-object-name doc-attribute-name">env</span>
+<h3 id="mcp.client.stdio.StdioServerParameters.command" class="doc doc-heading">
+            <span class="doc doc-object-name doc-attribute-name">command</span>
 
 
   <span class="doc doc-labels">
-      <small class="doc doc-label doc-label-class-attribute"><code>class-attribute</code></small>
       <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
   </span>
 
 </h3>
-<div class="language-python doc-signature highlight"><pre><span></span><code><span class="n">env</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#dict">dict</a></span><span class="p">[</span><span class="n"><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></span><span class="p">,</span> <span class="n"><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+<div class="language-python doc-signature highlight"><pre><span></span><code><span class="n">command</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></span>
 </code></pre></div>
 
     <div class="doc doc-contents ">
 
-        <p>The environment to use when spawning the process.</p>
-<p>If not specified, the result of get_default_environment() will be used.</p>
+        <p>The executable to run to start the server.</p>
 
     </div>
 
@@ -3955,11 +3878,76 @@ explanations of possible values</p>
 
 
 
+
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h3 id="mcp.client.stdio.StdioServerParameters.env" class="doc doc-heading">
+            <span class="doc doc-object-name doc-attribute-name">env</span>
+
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-class-attribute"><code>class-attribute</code></small>
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h3>
+<div class="language-python doc-signature highlight"><pre><span></span><code><span class="n">env</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#dict">dict</a></span><span class="p">[</span><span class="n"><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></span><span class="p">,</span> <span class="n"><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+        <p>The environment to use when spawning the process.</p>
+<p>If not specified, the result of get_default_environment() will be used.</p>
+
+    </div>
+
+</div>
+
+
+
+
   </div>
 
     </div>
 
 </div>
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+<h2 id="mcp.client.stdio.get_default_environment" class="doc doc-heading">
+            <span class="doc doc-object-name doc-function-name">get_default_environment</span>
+
+
+</h2>
+<div class="language-python doc-signature highlight"><pre><span></span><code><span class="nf">get_default_environment</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n"><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#dict">dict</a></span><span class="p">[</span><span class="n"><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></span><span class="p">,</span> <span class="n"><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></span><span class="p">]</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+        <p>Returns a default environment object including only environment variables deemed
+safe to inherit.</p>
+
+
+    </div>
+
+</div>
+
+
+
+
 
 
 
@@ -3992,6 +3980,18 @@ process and communicating with it over stdin/stdout.</p>
     </div>
 
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

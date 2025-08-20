@@ -2050,18 +2050,18 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#mcp.server.auth.routes.validate_issuer_url" class="md-nav__link">
+  <a href="#mcp.server.auth.routes.create_protected_resource_routes" class="md-nav__link">
     <span class="md-ellipsis">
-      validate_issuer_url
+      create_protected_resource_routes
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#mcp.server.auth.routes.create_protected_resource_routes" class="md-nav__link">
+  <a href="#mcp.server.auth.routes.validate_issuer_url" class="md-nav__link">
     <span class="md-ellipsis">
-      create_protected_resource_routes
+      validate_issuer_url
     </span>
   </a>
   
@@ -3491,18 +3491,18 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#mcp.server.auth.routes.validate_issuer_url" class="md-nav__link">
+  <a href="#mcp.server.auth.routes.create_protected_resource_routes" class="md-nav__link">
     <span class="md-ellipsis">
-      validate_issuer_url
+      create_protected_resource_routes
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#mcp.server.auth.routes.create_protected_resource_routes" class="md-nav__link">
+  <a href="#mcp.server.auth.routes.validate_issuer_url" class="md-nav__link">
     <span class="md-ellipsis">
-      create_protected_resource_routes
+      validate_issuer_url
     </span>
   </a>
   
@@ -3559,85 +3559,6 @@
 
 
 
-
-
-
-
-
-
-<div class="doc doc-object doc-function">
-
-
-<h2 id="mcp.server.auth.routes.validate_issuer_url" class="doc doc-heading">
-            <span class="doc doc-object-name doc-function-name">validate_issuer_url</span>
-
-
-</h2>
-<div class="language-python doc-signature highlight"><pre><span></span><code><span class="nf">validate_issuer_url</span><span class="p">(</span><span class="n">url</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-external" title="pydantic.AnyHttpUrl" href="https://docs.pydantic.dev/latest/api/networks/#pydantic.networks.AnyHttpUrl">AnyHttpUrl</a></span><span class="p">)</span>
-</code></pre></div>
-
-    <div class="doc doc-contents ">
-
-        <p>Validate that the issuer URL meets OAuth 2.0 requirements.</p>
-
-
-<p><span class="doc-section-title">Parameters:</span></p>
-    <table>
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Type</th>
-          <th>Description</th>
-          <th>Default</th>
-        </tr>
-      </thead>
-      <tbody>
-          <tr class="doc-section-item">
-            <td>
-                <code>url</code>
-            </td>
-            <td>
-                  <code><a class="autorefs autorefs-external" title="pydantic.AnyHttpUrl" href="https://docs.pydantic.dev/latest/api/networks/#pydantic.networks.AnyHttpUrl">AnyHttpUrl</a></code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>The issuer URL to validate</p>
-              </div>
-            </td>
-            <td>
-                <em>required</em>
-            </td>
-          </tr>
-      </tbody>
-    </table>
-
-
-<p><span class="doc-section-title">Raises:</span></p>
-    <table>
-      <thead>
-        <tr>
-          <th>Type</th>
-          <th>Description</th>
-        </tr>
-      </thead>
-      <tbody>
-          <tr class="doc-section-item">
-            <td>
-                  <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/exceptions.html#ValueError">ValueError</a></code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>If the issuer URL is invalid</p>
-              </div>
-            </td>
-          </tr>
-      </tbody>
-    </table>
-
-
-    </div>
-
-</div>
 
 
 
@@ -3745,6 +3666,85 @@
             <td>
               <div class="doc-md-description">
                 <p>List of Starlette routes for protected resource metadata</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    </div>
+
+</div>
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+<h2 id="mcp.server.auth.routes.validate_issuer_url" class="doc doc-heading">
+            <span class="doc doc-object-name doc-function-name">validate_issuer_url</span>
+
+
+</h2>
+<div class="language-python doc-signature highlight"><pre><span></span><code><span class="nf">validate_issuer_url</span><span class="p">(</span><span class="n">url</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-external" title="pydantic.AnyHttpUrl" href="https://docs.pydantic.dev/latest/api/networks/#pydantic.networks.AnyHttpUrl">AnyHttpUrl</a></span><span class="p">)</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+        <p>Validate that the issuer URL meets OAuth 2.0 requirements.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>url</code>
+            </td>
+            <td>
+                  <code><a class="autorefs autorefs-external" title="pydantic.AnyHttpUrl" href="https://docs.pydantic.dev/latest/api/networks/#pydantic.networks.AnyHttpUrl">AnyHttpUrl</a></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The issuer URL to validate</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+<p><span class="doc-section-title">Raises:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                  <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/exceptions.html#ValueError">ValueError</a></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>If the issuer URL is invalid</p>
               </div>
             </td>
           </tr>

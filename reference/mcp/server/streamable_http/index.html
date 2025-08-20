@@ -2997,18 +2997,18 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#mcp.server.streamable_http.EventStore.store_event" class="md-nav__link">
+  <a href="#mcp.server.streamable_http.EventStore.replay_events_after" class="md-nav__link">
     <span class="md-ellipsis">
-      store_event
+      replay_events_after
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#mcp.server.streamable_http.EventStore.replay_events_after" class="md-nav__link">
+  <a href="#mcp.server.streamable_http.EventStore.store_event" class="md-nav__link">
     <span class="md-ellipsis">
-      replay_events_after
+      store_event
     </span>
   </a>
   
@@ -3039,9 +3039,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#mcp.server.streamable_http.StreamableHTTPServerTransport.is_terminated" class="md-nav__link">
+  <a href="#mcp.server.streamable_http.StreamableHTTPServerTransport.connect" class="md-nav__link">
     <span class="md-ellipsis">
-      is_terminated
+      connect
     </span>
   </a>
   
@@ -3057,18 +3057,18 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#mcp.server.streamable_http.StreamableHTTPServerTransport.terminate" class="md-nav__link">
+  <a href="#mcp.server.streamable_http.StreamableHTTPServerTransport.is_terminated" class="md-nav__link">
     <span class="md-ellipsis">
-      terminate
+      is_terminated
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#mcp.server.streamable_http.StreamableHTTPServerTransport.connect" class="md-nav__link">
+  <a href="#mcp.server.streamable_http.StreamableHTTPServerTransport.terminate" class="md-nav__link">
     <span class="md-ellipsis">
-      connect
+      terminate
     </span>
   </a>
   
@@ -3592,18 +3592,18 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#mcp.server.streamable_http.EventStore.store_event" class="md-nav__link">
+  <a href="#mcp.server.streamable_http.EventStore.replay_events_after" class="md-nav__link">
     <span class="md-ellipsis">
-      store_event
+      replay_events_after
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#mcp.server.streamable_http.EventStore.replay_events_after" class="md-nav__link">
+  <a href="#mcp.server.streamable_http.EventStore.store_event" class="md-nav__link">
     <span class="md-ellipsis">
-      replay_events_after
+      store_event
     </span>
   </a>
   
@@ -3634,9 +3634,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#mcp.server.streamable_http.StreamableHTTPServerTransport.is_terminated" class="md-nav__link">
+  <a href="#mcp.server.streamable_http.StreamableHTTPServerTransport.connect" class="md-nav__link">
     <span class="md-ellipsis">
-      is_terminated
+      connect
     </span>
   </a>
   
@@ -3652,18 +3652,18 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#mcp.server.streamable_http.StreamableHTTPServerTransport.terminate" class="md-nav__link">
+  <a href="#mcp.server.streamable_http.StreamableHTTPServerTransport.is_terminated" class="md-nav__link">
     <span class="md-ellipsis">
-      terminate
+      is_terminated
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#mcp.server.streamable_http.StreamableHTTPServerTransport.connect" class="md-nav__link">
+  <a href="#mcp.server.streamable_http.StreamableHTTPServerTransport.terminate" class="md-nav__link">
     <span class="md-ellipsis">
-      connect
+      terminate
     </span>
   </a>
   
@@ -3713,34 +3713,6 @@ responses, with streaming support for long-running operations.</p>
 
 
   <div class="doc doc-children">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -3827,108 +3799,6 @@ responses, with streaming support for long-running operations.</p>
 
   <div class="doc doc-children">
 
-
-
-
-
-
-
-<div class="doc doc-object doc-function">
-
-
-<h3 id="mcp.server.streamable_http.EventStore.store_event" class="doc doc-heading">
-            <span class="doc doc-object-name doc-function-name">store_event</span>
-
-
-  <span class="doc doc-labels">
-      <small class="doc doc-label doc-label-abstractmethod"><code>abstractmethod</code></small>
-      <small class="doc doc-label doc-label-async"><code>async</code></small>
-  </span>
-
-</h3>
-<div class="language-python doc-signature highlight"><pre><span></span><code><span class="nf">store_event</span><span class="p">(</span>
-    <span class="n">stream_id</span><span class="p">:</span> <span class="n"><span title="mcp.server.streamable_http.StreamId">StreamId</span></span><span class="p">,</span> <span class="n">message</span><span class="p">:</span> <span class="n"><span title="mcp.types.JSONRPCMessage">JSONRPCMessage</span></span>
-<span class="p">)</span> <span class="o">-&gt;</span> <span class="n"><span title="mcp.server.streamable_http.EventId">EventId</span></span>
-</code></pre></div>
-
-    <div class="doc doc-contents ">
-
-        <p>Stores an event for later retrieval.</p>
-
-
-<p><span class="doc-section-title">Parameters:</span></p>
-    <table>
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Type</th>
-          <th>Description</th>
-          <th>Default</th>
-        </tr>
-      </thead>
-      <tbody>
-          <tr class="doc-section-item">
-            <td>
-                <code>stream_id</code>
-            </td>
-            <td>
-                  <code><span title="mcp.server.streamable_http.StreamId">StreamId</span></code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>ID of the stream the event belongs to</p>
-              </div>
-            </td>
-            <td>
-                <em>required</em>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td>
-                <code>message</code>
-            </td>
-            <td>
-                  <code><span title="mcp.types.JSONRPCMessage">JSONRPCMessage</span></code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>The JSON-RPC message to store</p>
-              </div>
-            </td>
-            <td>
-                <em>required</em>
-            </td>
-          </tr>
-      </tbody>
-    </table>
-
-
-    <p><span class="doc-section-title">Returns:</span></p>
-    <table>
-      <thead>
-        <tr>
-          <th>Type</th>
-          <th>Description</th>
-        </tr>
-      </thead>
-      <tbody>
-          <tr class="doc-section-item">
-            <td>
-                  <code><span title="mcp.server.streamable_http.EventId">EventId</span></code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>The generated event ID for the stored event</p>
-              </div>
-            </td>
-          </tr>
-      </tbody>
-    </table>
-
-
-    </div>
-
-</div>
 
 
 
@@ -4035,11 +3905,133 @@ responses, with streaming support for long-running operations.</p>
 
 
 
+
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="mcp.server.streamable_http.EventStore.store_event" class="doc doc-heading">
+            <span class="doc doc-object-name doc-function-name">store_event</span>
+
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-abstractmethod"><code>abstractmethod</code></small>
+      <small class="doc doc-label doc-label-async"><code>async</code></small>
+  </span>
+
+</h3>
+<div class="language-python doc-signature highlight"><pre><span></span><code><span class="nf">store_event</span><span class="p">(</span>
+    <span class="n">stream_id</span><span class="p">:</span> <span class="n"><span title="mcp.server.streamable_http.StreamId">StreamId</span></span><span class="p">,</span> <span class="n">message</span><span class="p">:</span> <span class="n"><span title="mcp.types.JSONRPCMessage">JSONRPCMessage</span></span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n"><span title="mcp.server.streamable_http.EventId">EventId</span></span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+        <p>Stores an event for later retrieval.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>stream_id</code>
+            </td>
+            <td>
+                  <code><span title="mcp.server.streamable_http.StreamId">StreamId</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>ID of the stream the event belongs to</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>message</code>
+            </td>
+            <td>
+                  <code><span title="mcp.types.JSONRPCMessage">JSONRPCMessage</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The JSON-RPC message to store</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                  <code><span title="mcp.server.streamable_http.EventId">EventId</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The generated event ID for the stored event</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    </div>
+
+</div>
+
+
+
+
   </div>
 
     </div>
 
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -4219,96 +4211,6 @@ Supports optional JSON responses and session management.</p>
 
 
 
-<div class="doc doc-object doc-attribute">
-
-
-
-<h3 id="mcp.server.streamable_http.StreamableHTTPServerTransport.is_terminated" class="doc doc-heading">
-            <span class="doc doc-object-name doc-attribute-name">is_terminated</span>
-
-
-  <span class="doc doc-labels">
-      <small class="doc doc-label doc-label-property"><code>property</code></small>
-  </span>
-
-</h3>
-<div class="language-python doc-signature highlight"><pre><span></span><code><span class="n">is_terminated</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#bool">bool</a></span>
-</code></pre></div>
-
-    <div class="doc doc-contents ">
-
-        <p>Check if this transport has been explicitly terminated.</p>
-
-    </div>
-
-</div>
-
-
-
-
-
-
-<div class="doc doc-object doc-function">
-
-
-<h3 id="mcp.server.streamable_http.StreamableHTTPServerTransport.handle_request" class="doc doc-heading">
-            <span class="doc doc-object-name doc-function-name">handle_request</span>
-
-
-  <span class="doc doc-labels">
-      <small class="doc doc-label doc-label-async"><code>async</code></small>
-  </span>
-
-</h3>
-<div class="language-python doc-signature highlight"><pre><span></span><code><span class="nf">handle_request</span><span class="p">(</span>
-    <span class="n">scope</span><span class="p">:</span> <span class="n"><span title="starlette.types.Scope">Scope</span></span><span class="p">,</span> <span class="n">receive</span><span class="p">:</span> <span class="n"><span title="starlette.types.Receive">Receive</span></span><span class="p">,</span> <span class="n">send</span><span class="p">:</span> <span class="n"><span title="starlette.types.Send">Send</span></span>
-<span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span>
-</code></pre></div>
-
-    <div class="doc doc-contents ">
-
-        <p>Application entry point that handles all HTTP requests</p>
-
-
-    </div>
-
-</div>
-
-
-
-
-
-
-<div class="doc doc-object doc-function">
-
-
-<h3 id="mcp.server.streamable_http.StreamableHTTPServerTransport.terminate" class="doc doc-heading">
-            <span class="doc doc-object-name doc-function-name">terminate</span>
-
-
-  <span class="doc doc-labels">
-      <small class="doc doc-label doc-label-async"><code>async</code></small>
-  </span>
-
-</h3>
-<div class="language-python doc-signature highlight"><pre><span></span><code><span class="nf">terminate</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span>
-</code></pre></div>
-
-    <div class="doc doc-contents ">
-
-        <p>Terminate the current session, closing all streams.</p>
-<p>Once terminated, all requests with this session ID will receive 404 Not Found.</p>
-
-
-    </div>
-
-</div>
-
-
-
-
-
-
 <div class="doc doc-object doc-function">
 
 
@@ -4387,11 +4289,109 @@ Supports optional JSON responses and session management.</p>
 
 
 
+
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="mcp.server.streamable_http.StreamableHTTPServerTransport.handle_request" class="doc doc-heading">
+            <span class="doc doc-object-name doc-function-name">handle_request</span>
+
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-async"><code>async</code></small>
+  </span>
+
+</h3>
+<div class="language-python doc-signature highlight"><pre><span></span><code><span class="nf">handle_request</span><span class="p">(</span>
+    <span class="n">scope</span><span class="p">:</span> <span class="n"><span title="starlette.types.Scope">Scope</span></span><span class="p">,</span> <span class="n">receive</span><span class="p">:</span> <span class="n"><span title="starlette.types.Receive">Receive</span></span><span class="p">,</span> <span class="n">send</span><span class="p">:</span> <span class="n"><span title="starlette.types.Send">Send</span></span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+        <p>Application entry point that handles all HTTP requests</p>
+
+
+    </div>
+
+</div>
+
+
+
+
+
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h3 id="mcp.server.streamable_http.StreamableHTTPServerTransport.is_terminated" class="doc doc-heading">
+            <span class="doc doc-object-name doc-attribute-name">is_terminated</span>
+
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-property"><code>property</code></small>
+  </span>
+
+</h3>
+<div class="language-python doc-signature highlight"><pre><span></span><code><span class="n">is_terminated</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#bool">bool</a></span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+        <p>Check if this transport has been explicitly terminated.</p>
+
+    </div>
+
+</div>
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="mcp.server.streamable_http.StreamableHTTPServerTransport.terminate" class="doc doc-heading">
+            <span class="doc doc-object-name doc-function-name">terminate</span>
+
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-async"><code>async</code></small>
+  </span>
+
+</h3>
+<div class="language-python doc-signature highlight"><pre><span></span><code><span class="nf">terminate</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+        <p>Terminate the current session, closing all streams.</p>
+<p>Once terminated, all requests with this session ID will receive 404 Not Found.</p>
+
+
+    </div>
+
+</div>
+
+
+
+
   </div>
 
     </div>
 
 </div>
+
+
+
+
+
+
+
+
 
 
 

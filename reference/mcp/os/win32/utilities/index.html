@@ -1466,15 +1466,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#mcp.os.win32.utilities.get_windows_executable_command" class="md-nav__link">
-    <span class="md-ellipsis">
-      get_windows_executable_command
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#mcp.os.win32.utilities.FallbackProcess" class="md-nav__link">
     <span class="md-ellipsis">
       FallbackProcess
@@ -1503,9 +1494,18 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#mcp.os.win32.utilities.FallbackProcess.wait" class="md-nav__link">
+  <a href="#mcp.os.win32.utilities.FallbackProcess.kill" class="md-nav__link">
     <span class="md-ellipsis">
-      wait
+      kill
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mcp.os.win32.utilities.FallbackProcess.pid" class="md-nav__link">
+    <span class="md-ellipsis">
+      pid
     </span>
   </a>
   
@@ -1521,18 +1521,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#mcp.os.win32.utilities.FallbackProcess.kill" class="md-nav__link">
+  <a href="#mcp.os.win32.utilities.FallbackProcess.wait" class="md-nav__link">
     <span class="md-ellipsis">
-      kill
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#mcp.os.win32.utilities.FallbackProcess.pid" class="md-nav__link">
-    <span class="md-ellipsis">
-      pid
+      wait
     </span>
   </a>
   
@@ -1553,9 +1544,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#mcp.os.win32.utilities.terminate_windows_process_tree" class="md-nav__link">
+  <a href="#mcp.os.win32.utilities.get_windows_executable_command" class="md-nav__link">
     <span class="md-ellipsis">
-      terminate_windows_process_tree
+      get_windows_executable_command
     </span>
   </a>
   
@@ -1565,6 +1556,15 @@
   <a href="#mcp.os.win32.utilities.terminate_windows_process" class="md-nav__link">
     <span class="md-ellipsis">
       terminate_windows_process
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mcp.os.win32.utilities.terminate_windows_process_tree" class="md-nav__link">
+    <span class="md-ellipsis">
+      terminate_windows_process_tree
     </span>
   </a>
   
@@ -3578,15 +3578,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#mcp.os.win32.utilities.get_windows_executable_command" class="md-nav__link">
-    <span class="md-ellipsis">
-      get_windows_executable_command
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#mcp.os.win32.utilities.FallbackProcess" class="md-nav__link">
     <span class="md-ellipsis">
       FallbackProcess
@@ -3615,9 +3606,18 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#mcp.os.win32.utilities.FallbackProcess.wait" class="md-nav__link">
+  <a href="#mcp.os.win32.utilities.FallbackProcess.kill" class="md-nav__link">
     <span class="md-ellipsis">
-      wait
+      kill
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mcp.os.win32.utilities.FallbackProcess.pid" class="md-nav__link">
+    <span class="md-ellipsis">
+      pid
     </span>
   </a>
   
@@ -3633,18 +3633,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#mcp.os.win32.utilities.FallbackProcess.kill" class="md-nav__link">
+  <a href="#mcp.os.win32.utilities.FallbackProcess.wait" class="md-nav__link">
     <span class="md-ellipsis">
-      kill
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#mcp.os.win32.utilities.FallbackProcess.pid" class="md-nav__link">
-    <span class="md-ellipsis">
-      pid
+      wait
     </span>
   </a>
   
@@ -3665,9 +3656,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#mcp.os.win32.utilities.terminate_windows_process_tree" class="md-nav__link">
+  <a href="#mcp.os.win32.utilities.get_windows_executable_command" class="md-nav__link">
     <span class="md-ellipsis">
-      terminate_windows_process_tree
+      get_windows_executable_command
     </span>
   </a>
   
@@ -3677,6 +3668,15 @@
   <a href="#mcp.os.win32.utilities.terminate_windows_process" class="md-nav__link">
     <span class="md-ellipsis">
       terminate_windows_process
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mcp.os.win32.utilities.terminate_windows_process_tree" class="md-nav__link">
+    <span class="md-ellipsis">
+      terminate_windows_process_tree
     </span>
   </a>
   
@@ -3719,87 +3719,6 @@
 
   <div class="doc doc-children">
 
-
-
-
-
-
-
-<div class="doc doc-object doc-function">
-
-
-<h2 id="mcp.os.win32.utilities.get_windows_executable_command" class="doc doc-heading">
-            <span class="doc doc-object-name doc-function-name">get_windows_executable_command</span>
-
-
-</h2>
-<div class="language-python doc-signature highlight"><pre><span></span><code><span class="nf">get_windows_executable_command</span><span class="p">(</span><span class="n">command</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n"><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></span>
-</code></pre></div>
-
-    <div class="doc doc-contents ">
-
-        <p>Get the correct executable command normalized for Windows.</p>
-<p>On Windows, commands might exist with specific extensions (.exe, .cmd, etc.)
-that need to be located for proper execution.</p>
-
-
-<p><span class="doc-section-title">Parameters:</span></p>
-    <table>
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Type</th>
-          <th>Description</th>
-          <th>Default</th>
-        </tr>
-      </thead>
-      <tbody>
-          <tr class="doc-section-item">
-            <td>
-                <code>command</code>
-            </td>
-            <td>
-                  <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Base command (e.g., 'uvx', 'npx')</p>
-              </div>
-            </td>
-            <td>
-                <em>required</em>
-            </td>
-          </tr>
-      </tbody>
-    </table>
-
-
-    <p><span class="doc-section-title">Returns:</span></p>
-    <table>
-      <thead>
-        <tr>
-<th>Name</th>          <th>Type</th>
-          <th>Description</th>
-        </tr>
-      </thead>
-      <tbody>
-          <tr class="doc-section-item">
-<td><code>str</code></td>            <td>
-                  <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Windows-appropriate command path</p>
-              </div>
-            </td>
-          </tr>
-      </tbody>
-    </table>
-
-
-    </div>
-
-</div>
 
 
 
@@ -3908,60 +3827,6 @@ so that MCP clients expecting async streams can work properly.</p>
 <div class="doc doc-object doc-function">
 
 
-<h3 id="mcp.os.win32.utilities.FallbackProcess.wait" class="doc doc-heading">
-            <span class="doc doc-object-name doc-function-name">wait</span>
-
-
-  <span class="doc doc-labels">
-      <small class="doc doc-label doc-label-async"><code>async</code></small>
-  </span>
-
-</h3>
-<div class="language-python doc-signature highlight"><pre><span></span><code><span class="nf">wait</span><span class="p">()</span>
-</code></pre></div>
-
-    <div class="doc doc-contents ">
-
-        <p>Async wait for process completion.</p>
-
-
-    </div>
-
-</div>
-
-
-
-
-
-
-<div class="doc doc-object doc-function">
-
-
-<h3 id="mcp.os.win32.utilities.FallbackProcess.terminate" class="doc doc-heading">
-            <span class="doc doc-object-name doc-function-name">terminate</span>
-
-
-</h3>
-<div class="language-python doc-signature highlight"><pre><span></span><code><span class="nf">terminate</span><span class="p">()</span>
-</code></pre></div>
-
-    <div class="doc doc-contents ">
-
-        <p>Terminate the subprocess immediately.</p>
-
-
-    </div>
-
-</div>
-
-
-
-
-
-
-<div class="doc doc-object doc-function">
-
-
 <h3 id="mcp.os.win32.utilities.FallbackProcess.kill" class="doc doc-heading">
             <span class="doc doc-object-name doc-function-name">kill</span>
 
@@ -4003,6 +3868,60 @@ so that MCP clients expecting async streams can work properly.</p>
     <div class="doc doc-contents ">
 
         <p>Return the process ID.</p>
+
+    </div>
+
+</div>
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="mcp.os.win32.utilities.FallbackProcess.terminate" class="doc doc-heading">
+            <span class="doc doc-object-name doc-function-name">terminate</span>
+
+
+</h3>
+<div class="language-python doc-signature highlight"><pre><span></span><code><span class="nf">terminate</span><span class="p">()</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+        <p>Terminate the subprocess immediately.</p>
+
+
+    </div>
+
+</div>
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="mcp.os.win32.utilities.FallbackProcess.wait" class="doc doc-heading">
+            <span class="doc doc-object-name doc-function-name">wait</span>
+
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-async"><code>async</code></small>
+  </span>
+
+</h3>
+<div class="language-python doc-signature highlight"><pre><span></span><code><span class="nf">wait</span><span class="p">()</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+        <p>Async wait for process completion.</p>
+
 
     </div>
 
@@ -4184,26 +4103,19 @@ processes are terminated when the parent is terminated.</p>
 <div class="doc doc-object doc-function">
 
 
-<h2 id="mcp.os.win32.utilities.terminate_windows_process_tree" class="doc doc-heading">
-            <span class="doc doc-object-name doc-function-name">terminate_windows_process_tree</span>
+<h2 id="mcp.os.win32.utilities.get_windows_executable_command" class="doc doc-heading">
+            <span class="doc doc-object-name doc-function-name">get_windows_executable_command</span>
 
-
-  <span class="doc doc-labels">
-      <small class="doc doc-label doc-label-async"><code>async</code></small>
-  </span>
 
 </h2>
-<div class="language-python doc-signature highlight"><pre><span></span><code><span class="nf">terminate_windows_process_tree</span><span class="p">(</span>
-    <span class="n">process</span><span class="p">:</span> <span class="n"><span title="anyio.abc.Process">Process</span></span> <span class="o">|</span> <span class="n"><a class="autorefs autorefs-internal" title="FallbackProcess (mcp.os.win32.utilities.FallbackProcess)" href="#mcp.os.win32.utilities.FallbackProcess">FallbackProcess</a></span><span class="p">,</span>
-    <span class="n">timeout_seconds</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#float">float</a></span> <span class="o">=</span> <span class="mf">2.0</span><span class="p">,</span>
-<span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span>
+<div class="language-python doc-signature highlight"><pre><span></span><code><span class="nf">get_windows_executable_command</span><span class="p">(</span><span class="n">command</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n"><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></span>
 </code></pre></div>
 
     <div class="doc doc-contents ">
 
-        <p>Terminate a process and all its children on Windows.</p>
-<p>If the process has an associated job object, it will be terminated.
-Otherwise, falls back to basic process termination.</p>
+        <p>Get the correct executable command normalized for Windows.</p>
+<p>On Windows, commands might exist with specific extensions (.exe, .cmd, etc.)
+that need to be located for proper execution.</p>
 
 
 <p><span class="doc-section-title">Parameters:</span></p>
@@ -4219,34 +4131,41 @@ Otherwise, falls back to basic process termination.</p>
       <tbody>
           <tr class="doc-section-item">
             <td>
-                <code>process</code>
+                <code>command</code>
             </td>
             <td>
-                  <code><span title="anyio.abc.Process">Process</span> | <a class="autorefs autorefs-internal" title="FallbackProcess (mcp.os.win32.utilities.FallbackProcess)" href="#mcp.os.win32.utilities.FallbackProcess">FallbackProcess</a></code>
+                  <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>The process to terminate</p>
+                <p>Base command (e.g., 'uvx', 'npx')</p>
               </div>
             </td>
             <td>
                 <em>required</em>
             </td>
           </tr>
+      </tbody>
+    </table>
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+<th>Name</th>          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
           <tr class="doc-section-item">
-            <td>
-                <code>timeout_seconds</code>
-            </td>
-            <td>
-                  <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#float">float</a></code>
+<td><code>str</code></td>            <td>
+                  <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>Timeout in seconds before force killing (default: 2.0)</p>
+                <p>Windows-appropriate command path</p>
               </div>
-            </td>
-            <td>
-                  <code>2.0</code>
             </td>
           </tr>
       </tbody>
@@ -4313,6 +4232,87 @@ which sends a SIGKILL equivalent signal.</p>
             </td>
             <td>
                 <em>required</em>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    </div>
+
+</div>
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+<h2 id="mcp.os.win32.utilities.terminate_windows_process_tree" class="doc doc-heading">
+            <span class="doc doc-object-name doc-function-name">terminate_windows_process_tree</span>
+
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-async"><code>async</code></small>
+  </span>
+
+</h2>
+<div class="language-python doc-signature highlight"><pre><span></span><code><span class="nf">terminate_windows_process_tree</span><span class="p">(</span>
+    <span class="n">process</span><span class="p">:</span> <span class="n"><span title="anyio.abc.Process">Process</span></span> <span class="o">|</span> <span class="n"><a class="autorefs autorefs-internal" title="FallbackProcess (mcp.os.win32.utilities.FallbackProcess)" href="#mcp.os.win32.utilities.FallbackProcess">FallbackProcess</a></span><span class="p">,</span>
+    <span class="n">timeout_seconds</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#float">float</a></span> <span class="o">=</span> <span class="mf">2.0</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+        <p>Terminate a process and all its children on Windows.</p>
+<p>If the process has an associated job object, it will be terminated.
+Otherwise, falls back to basic process termination.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>process</code>
+            </td>
+            <td>
+                  <code><span title="anyio.abc.Process">Process</span> | <a class="autorefs autorefs-internal" title="FallbackProcess (mcp.os.win32.utilities.FallbackProcess)" href="#mcp.os.win32.utilities.FallbackProcess">FallbackProcess</a></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The process to terminate</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>timeout_seconds</code>
+            </td>
+            <td>
+                  <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#float">float</a></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Timeout in seconds before force killing (default: 2.0)</p>
+              </div>
+            </td>
+            <td>
+                  <code>2.0</code>
             </td>
           </tr>
       </tbody>

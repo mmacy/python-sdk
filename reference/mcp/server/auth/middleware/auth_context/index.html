@@ -1952,18 +1952,18 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#mcp.server.auth.middleware.auth_context.get_access_token" class="md-nav__link">
+  <a href="#mcp.server.auth.middleware.auth_context.AuthContextMiddleware" class="md-nav__link">
     <span class="md-ellipsis">
-      get_access_token
+      AuthContextMiddleware
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#mcp.server.auth.middleware.auth_context.AuthContextMiddleware" class="md-nav__link">
+  <a href="#mcp.server.auth.middleware.auth_context.get_access_token" class="md-nav__link">
     <span class="md-ellipsis">
-      AuthContextMiddleware
+      get_access_token
     </span>
   </a>
   
@@ -3493,18 +3493,18 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#mcp.server.auth.middleware.auth_context.get_access_token" class="md-nav__link">
+  <a href="#mcp.server.auth.middleware.auth_context.AuthContextMiddleware" class="md-nav__link">
     <span class="md-ellipsis">
-      get_access_token
+      AuthContextMiddleware
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#mcp.server.auth.middleware.auth_context.AuthContextMiddleware" class="md-nav__link">
+  <a href="#mcp.server.auth.middleware.auth_context.get_access_token" class="md-nav__link">
     <span class="md-ellipsis">
-      AuthContextMiddleware
+      get_access_token
     </span>
   </a>
   
@@ -3545,6 +3545,52 @@
 
   <div class="doc doc-children">
 
+
+
+
+
+
+
+<div class="doc doc-object doc-class">
+
+
+
+<h2 id="mcp.server.auth.middleware.auth_context.AuthContextMiddleware" class="doc doc-heading">
+            <span class="doc doc-object-name doc-class-name">AuthContextMiddleware</span>
+
+
+</h2>
+
+
+    <div class="doc doc-contents ">
+
+
+        <p>Middleware that extracts the authenticated user from the request
+and sets it in a contextvar for easy access throughout the request lifecycle.</p>
+<p>This middleware should be added after the AuthenticationMiddleware in the
+middleware stack to ensure that the user is properly authenticated before
+being stored in the context.</p>
+
+
+
+
+
+
+
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+  </div>
+
+    </div>
+
+</div>
 
 
 
@@ -3593,52 +3639,6 @@
       </tbody>
     </table>
 
-
-    </div>
-
-</div>
-
-
-
-
-
-
-<div class="doc doc-object doc-class">
-
-
-
-<h2 id="mcp.server.auth.middleware.auth_context.AuthContextMiddleware" class="doc doc-heading">
-            <span class="doc doc-object-name doc-class-name">AuthContextMiddleware</span>
-
-
-</h2>
-
-
-    <div class="doc doc-contents ">
-
-
-        <p>Middleware that extracts the authenticated user from the request
-and sets it in a contextvar for easy access throughout the request lifecycle.</p>
-<p>This middleware should be added after the AuthenticationMiddleware in the
-middleware stack to ensure that the user is properly authenticated before
-being stored in the context.</p>
-
-
-
-
-
-
-
-
-
-
-  <div class="doc doc-children">
-
-
-
-
-
-  </div>
 
     </div>
 

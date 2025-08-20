@@ -546,18 +546,18 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#memory-and-state-management" class="md-nav__link">
+  <a href="#simple-resource-server" class="md-nav__link">
     <span class="md-ellipsis">
-      Memory and state management
+      Simple resource server
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#simple-resource-server" class="md-nav__link">
+  <a href="#memory-and-state-management" class="md-nav__link">
     <span class="md-ellipsis">
-      Simple resource server
+      Memory and state management
     </span>
   </a>
   
@@ -3493,18 +3493,18 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#memory-and-state-management" class="md-nav__link">
+  <a href="#simple-resource-server" class="md-nav__link">
     <span class="md-ellipsis">
-      Memory and state management
+      Simple resource server
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#simple-resource-server" class="md-nav__link">
+  <a href="#memory-and-state-management" class="md-nav__link">
     <span class="md-ellipsis">
-      Simple resource server
+      Memory and state management
     </span>
   </a>
   
@@ -3531,6 +3531,7 @@
 
 <h1 id="server-resources-examples">Server resources examples</h1>
 <p>Resources provide data to LLMs without side effects. They're similar to GET endpoints in REST APIs and should be used for exposing information rather than performing actions.</p>
+<p>Resources are essential for providing contextual information to LLMs, whether it's configuration data, file contents, or dynamic information that changes over time.</p>
 <h2 id="basic-resources">Basic resources</h2>
 <p>Simple resource patterns for exposing data:</p>
 <div class="language-python highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">mcp.server.fastmcp</span><span class="w"> </span><span class="kn">import</span> <span class="n">FastMCP</span>
@@ -3560,6 +3561,108 @@
 <li>Dynamic resources with URI templates (<code>file://documents/{name}</code>)</li>
 <li>Simple string data return</li>
 <li>JSON configuration data</li>
+</ul>
+<h2 id="simple-resource-server">Simple resource server</h2>
+<p>A complete server focused on resource management:</p>
+<div class="language-python highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">anyio</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">click</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">mcp.types</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">types</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">mcp.server.lowlevel</span><span class="w"> </span><span class="kn">import</span> <span class="n">Server</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pydantic</span><span class="w"> </span><span class="kn">import</span> <span class="n">AnyUrl</span><span class="p">,</span> <span class="n">FileUrl</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">starlette.requests</span><span class="w"> </span><span class="kn">import</span> <span class="n">Request</span>
+
+<span class="n">SAMPLE_RESOURCES</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;greeting&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="s2">&quot;Hello! This is a sample text resource.&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;Welcome Message&quot;</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;help&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="s2">&quot;This server provides a few sample text resources for testing.&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;Help Documentation&quot;</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;about&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="s2">&quot;This is the simple-resource MCP server implementation.&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;About This Server&quot;</span><span class="p">,</span>
+    <span class="p">},</span>
+<span class="p">}</span>
+
+
+<span class="nd">@click</span><span class="o">.</span><span class="n">command</span><span class="p">()</span>
+<span class="nd">@click</span><span class="o">.</span><span class="n">option</span><span class="p">(</span><span class="s2">&quot;--port&quot;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="mi">8000</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">&quot;Port to listen on for SSE&quot;</span><span class="p">)</span>
+<span class="nd">@click</span><span class="o">.</span><span class="n">option</span><span class="p">(</span>
+    <span class="s2">&quot;--transport&quot;</span><span class="p">,</span>
+    <span class="nb">type</span><span class="o">=</span><span class="n">click</span><span class="o">.</span><span class="n">Choice</span><span class="p">([</span><span class="s2">&quot;stdio&quot;</span><span class="p">,</span> <span class="s2">&quot;sse&quot;</span><span class="p">]),</span>
+    <span class="n">default</span><span class="o">=</span><span class="s2">&quot;stdio&quot;</span><span class="p">,</span>
+    <span class="n">help</span><span class="o">=</span><span class="s2">&quot;Transport type&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">port</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">transport</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+    <span class="n">app</span> <span class="o">=</span> <span class="n">Server</span><span class="p">(</span><span class="s2">&quot;mcp-simple-resource&quot;</span><span class="p">)</span>
+
+    <span class="nd">@app</span><span class="o">.</span><span class="n">list_resources</span><span class="p">()</span>
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">list_resources</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="n">types</span><span class="o">.</span><span class="n">Resource</span><span class="p">]:</span>
+        <span class="k">return</span> <span class="p">[</span>
+            <span class="n">types</span><span class="o">.</span><span class="n">Resource</span><span class="p">(</span>
+                <span class="n">uri</span><span class="o">=</span><span class="n">FileUrl</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;file:///</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">.txt&quot;</span><span class="p">),</span>
+                <span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">,</span>
+                <span class="n">title</span><span class="o">=</span><span class="n">SAMPLE_RESOURCES</span><span class="p">[</span><span class="n">name</span><span class="p">][</span><span class="s2">&quot;title&quot;</span><span class="p">],</span>
+                <span class="n">description</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;A sample text resource named </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+                <span class="n">mimeType</span><span class="o">=</span><span class="s2">&quot;text/plain&quot;</span><span class="p">,</span>
+            <span class="p">)</span>
+            <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">SAMPLE_RESOURCES</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+        <span class="p">]</span>
+
+    <span class="nd">@app</span><span class="o">.</span><span class="n">read_resource</span><span class="p">()</span>
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">read_resource</span><span class="p">(</span><span class="n">uri</span><span class="p">:</span> <span class="n">AnyUrl</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span> <span class="o">|</span> <span class="nb">bytes</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">uri</span><span class="o">.</span><span class="n">path</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Invalid resource path: </span><span class="si">{</span><span class="n">uri</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">name</span> <span class="o">=</span> <span class="n">uri</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">lstrip</span><span class="p">(</span><span class="s2">&quot;/&quot;</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">name</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">SAMPLE_RESOURCES</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Unknown resource: </span><span class="si">{</span><span class="n">uri</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">SAMPLE_RESOURCES</span><span class="p">[</span><span class="n">name</span><span class="p">][</span><span class="s2">&quot;content&quot;</span><span class="p">]</span>
+
+    <span class="k">if</span> <span class="n">transport</span> <span class="o">==</span> <span class="s2">&quot;sse&quot;</span><span class="p">:</span>
+        <span class="kn">from</span><span class="w"> </span><span class="nn">mcp.server.sse</span><span class="w"> </span><span class="kn">import</span> <span class="n">SseServerTransport</span>
+        <span class="kn">from</span><span class="w"> </span><span class="nn">starlette.applications</span><span class="w"> </span><span class="kn">import</span> <span class="n">Starlette</span>
+        <span class="kn">from</span><span class="w"> </span><span class="nn">starlette.responses</span><span class="w"> </span><span class="kn">import</span> <span class="n">Response</span>
+        <span class="kn">from</span><span class="w"> </span><span class="nn">starlette.routing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Mount</span><span class="p">,</span> <span class="n">Route</span>
+
+        <span class="n">sse</span> <span class="o">=</span> <span class="n">SseServerTransport</span><span class="p">(</span><span class="s2">&quot;/messages/&quot;</span><span class="p">)</span>
+
+        <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">handle_sse</span><span class="p">(</span><span class="n">request</span><span class="p">:</span> <span class="n">Request</span><span class="p">):</span>
+            <span class="k">async</span> <span class="k">with</span> <span class="n">sse</span><span class="o">.</span><span class="n">connect_sse</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">scope</span><span class="p">,</span> <span class="n">request</span><span class="o">.</span><span class="n">receive</span><span class="p">,</span> <span class="n">request</span><span class="o">.</span><span class="n">_send</span><span class="p">)</span> <span class="k">as</span> <span class="n">streams</span><span class="p">:</span>  <span class="c1"># type: ignore[reportPrivateUsage]</span>
+                <span class="k">await</span> <span class="n">app</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">streams</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">streams</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">app</span><span class="o">.</span><span class="n">create_initialization_options</span><span class="p">())</span>
+            <span class="k">return</span> <span class="n">Response</span><span class="p">()</span>
+
+        <span class="n">starlette_app</span> <span class="o">=</span> <span class="n">Starlette</span><span class="p">(</span>
+            <span class="n">debug</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+            <span class="n">routes</span><span class="o">=</span><span class="p">[</span>
+                <span class="n">Route</span><span class="p">(</span><span class="s2">&quot;/sse&quot;</span><span class="p">,</span> <span class="n">endpoint</span><span class="o">=</span><span class="n">handle_sse</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;GET&quot;</span><span class="p">]),</span>
+                <span class="n">Mount</span><span class="p">(</span><span class="s2">&quot;/messages/&quot;</span><span class="p">,</span> <span class="n">app</span><span class="o">=</span><span class="n">sse</span><span class="o">.</span><span class="n">handle_post_message</span><span class="p">),</span>
+            <span class="p">],</span>
+        <span class="p">)</span>
+
+        <span class="kn">import</span><span class="w"> </span><span class="nn">uvicorn</span>
+
+        <span class="n">uvicorn</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">starlette_app</span><span class="p">,</span> <span class="n">host</span><span class="o">=</span><span class="s2">&quot;127.0.0.1&quot;</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="n">port</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="kn">from</span><span class="w"> </span><span class="nn">mcp.server.stdio</span><span class="w"> </span><span class="kn">import</span> <span class="n">stdio_server</span>
+
+        <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">arun</span><span class="p">():</span>
+            <span class="k">async</span> <span class="k">with</span> <span class="n">stdio_server</span><span class="p">()</span> <span class="k">as</span> <span class="n">streams</span><span class="p">:</span>
+                <span class="k">await</span> <span class="n">app</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">streams</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">streams</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">app</span><span class="o">.</span><span class="n">create_initialization_options</span><span class="p">())</span>
+
+        <span class="n">anyio</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">arun</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="mi">0</span>
+</code></pre></div>
+<p>This is an example of a low-level server that:</p>
+<ul>
+<li>Uses the low-level server API for maximum control</li>
+<li>Implements resource listing and reading</li>
+<li>Handles URI templates and parameter extraction</li>
+<li>Demonstrates production-ready resource patterns</li>
 </ul>
 <h2 id="memory-and-state-management">Memory and state management</h2>
 <p>Resources that manage server memory and state:</p>
@@ -3904,109 +4007,6 @@
 <li>Handle memory cleanup and management</li>
 <li>Provide memory resources to LLMs</li>
 </ul>
-<h2 id="simple-resource-server">Simple resource server</h2>
-<p>A complete server focused on resource management:</p>
-<div class="language-python highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">anyio</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">click</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">mcp.types</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">types</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">mcp.server.lowlevel</span><span class="w"> </span><span class="kn">import</span> <span class="n">Server</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">pydantic</span><span class="w"> </span><span class="kn">import</span> <span class="n">AnyUrl</span><span class="p">,</span> <span class="n">FileUrl</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">starlette.requests</span><span class="w"> </span><span class="kn">import</span> <span class="n">Request</span>
-
-<span class="n">SAMPLE_RESOURCES</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s2">&quot;greeting&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="s2">&quot;Hello! This is a sample text resource.&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;Welcome Message&quot;</span><span class="p">,</span>
-    <span class="p">},</span>
-    <span class="s2">&quot;help&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="s2">&quot;This server provides a few sample text resources for testing.&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;Help Documentation&quot;</span><span class="p">,</span>
-    <span class="p">},</span>
-    <span class="s2">&quot;about&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="s2">&quot;This is the simple-resource MCP server implementation.&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;About This Server&quot;</span><span class="p">,</span>
-    <span class="p">},</span>
-<span class="p">}</span>
-
-
-<span class="nd">@click</span><span class="o">.</span><span class="n">command</span><span class="p">()</span>
-<span class="nd">@click</span><span class="o">.</span><span class="n">option</span><span class="p">(</span><span class="s2">&quot;--port&quot;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="mi">8000</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">&quot;Port to listen on for SSE&quot;</span><span class="p">)</span>
-<span class="nd">@click</span><span class="o">.</span><span class="n">option</span><span class="p">(</span>
-    <span class="s2">&quot;--transport&quot;</span><span class="p">,</span>
-    <span class="nb">type</span><span class="o">=</span><span class="n">click</span><span class="o">.</span><span class="n">Choice</span><span class="p">([</span><span class="s2">&quot;stdio&quot;</span><span class="p">,</span> <span class="s2">&quot;sse&quot;</span><span class="p">]),</span>
-    <span class="n">default</span><span class="o">=</span><span class="s2">&quot;stdio&quot;</span><span class="p">,</span>
-    <span class="n">help</span><span class="o">=</span><span class="s2">&quot;Transport type&quot;</span><span class="p">,</span>
-<span class="p">)</span>
-<span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">port</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">transport</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
-    <span class="n">app</span> <span class="o">=</span> <span class="n">Server</span><span class="p">(</span><span class="s2">&quot;mcp-simple-resource&quot;</span><span class="p">)</span>
-
-    <span class="nd">@app</span><span class="o">.</span><span class="n">list_resources</span><span class="p">()</span>
-    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">list_resources</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="n">types</span><span class="o">.</span><span class="n">Resource</span><span class="p">]:</span>
-        <span class="k">return</span> <span class="p">[</span>
-            <span class="n">types</span><span class="o">.</span><span class="n">Resource</span><span class="p">(</span>
-                <span class="n">uri</span><span class="o">=</span><span class="n">FileUrl</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;file:///</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">.txt&quot;</span><span class="p">),</span>
-                <span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">,</span>
-                <span class="n">title</span><span class="o">=</span><span class="n">SAMPLE_RESOURCES</span><span class="p">[</span><span class="n">name</span><span class="p">][</span><span class="s2">&quot;title&quot;</span><span class="p">],</span>
-                <span class="n">description</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;A sample text resource named </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
-                <span class="n">mimeType</span><span class="o">=</span><span class="s2">&quot;text/plain&quot;</span><span class="p">,</span>
-            <span class="p">)</span>
-            <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">SAMPLE_RESOURCES</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
-        <span class="p">]</span>
-
-    <span class="nd">@app</span><span class="o">.</span><span class="n">read_resource</span><span class="p">()</span>
-    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">read_resource</span><span class="p">(</span><span class="n">uri</span><span class="p">:</span> <span class="n">AnyUrl</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span> <span class="o">|</span> <span class="nb">bytes</span><span class="p">:</span>
-        <span class="k">if</span> <span class="n">uri</span><span class="o">.</span><span class="n">path</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Invalid resource path: </span><span class="si">{</span><span class="n">uri</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-        <span class="n">name</span> <span class="o">=</span> <span class="n">uri</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">lstrip</span><span class="p">(</span><span class="s2">&quot;/&quot;</span><span class="p">)</span>
-
-        <span class="k">if</span> <span class="n">name</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">SAMPLE_RESOURCES</span><span class="p">:</span>
-            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Unknown resource: </span><span class="si">{</span><span class="n">uri</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-
-        <span class="k">return</span> <span class="n">SAMPLE_RESOURCES</span><span class="p">[</span><span class="n">name</span><span class="p">][</span><span class="s2">&quot;content&quot;</span><span class="p">]</span>
-
-    <span class="k">if</span> <span class="n">transport</span> <span class="o">==</span> <span class="s2">&quot;sse&quot;</span><span class="p">:</span>
-        <span class="kn">from</span><span class="w"> </span><span class="nn">mcp.server.sse</span><span class="w"> </span><span class="kn">import</span> <span class="n">SseServerTransport</span>
-        <span class="kn">from</span><span class="w"> </span><span class="nn">starlette.applications</span><span class="w"> </span><span class="kn">import</span> <span class="n">Starlette</span>
-        <span class="kn">from</span><span class="w"> </span><span class="nn">starlette.responses</span><span class="w"> </span><span class="kn">import</span> <span class="n">Response</span>
-        <span class="kn">from</span><span class="w"> </span><span class="nn">starlette.routing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Mount</span><span class="p">,</span> <span class="n">Route</span>
-
-        <span class="n">sse</span> <span class="o">=</span> <span class="n">SseServerTransport</span><span class="p">(</span><span class="s2">&quot;/messages/&quot;</span><span class="p">)</span>
-
-        <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">handle_sse</span><span class="p">(</span><span class="n">request</span><span class="p">:</span> <span class="n">Request</span><span class="p">):</span>
-            <span class="k">async</span> <span class="k">with</span> <span class="n">sse</span><span class="o">.</span><span class="n">connect_sse</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">scope</span><span class="p">,</span> <span class="n">request</span><span class="o">.</span><span class="n">receive</span><span class="p">,</span> <span class="n">request</span><span class="o">.</span><span class="n">_send</span><span class="p">)</span> <span class="k">as</span> <span class="n">streams</span><span class="p">:</span>  <span class="c1"># type: ignore[reportPrivateUsage]</span>
-                <span class="k">await</span> <span class="n">app</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">streams</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">streams</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">app</span><span class="o">.</span><span class="n">create_initialization_options</span><span class="p">())</span>
-            <span class="k">return</span> <span class="n">Response</span><span class="p">()</span>
-
-        <span class="n">starlette_app</span> <span class="o">=</span> <span class="n">Starlette</span><span class="p">(</span>
-            <span class="n">debug</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-            <span class="n">routes</span><span class="o">=</span><span class="p">[</span>
-                <span class="n">Route</span><span class="p">(</span><span class="s2">&quot;/sse&quot;</span><span class="p">,</span> <span class="n">endpoint</span><span class="o">=</span><span class="n">handle_sse</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;GET&quot;</span><span class="p">]),</span>
-                <span class="n">Mount</span><span class="p">(</span><span class="s2">&quot;/messages/&quot;</span><span class="p">,</span> <span class="n">app</span><span class="o">=</span><span class="n">sse</span><span class="o">.</span><span class="n">handle_post_message</span><span class="p">),</span>
-            <span class="p">],</span>
-        <span class="p">)</span>
-
-        <span class="kn">import</span><span class="w"> </span><span class="nn">uvicorn</span>
-
-        <span class="n">uvicorn</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">starlette_app</span><span class="p">,</span> <span class="n">host</span><span class="o">=</span><span class="s2">&quot;127.0.0.1&quot;</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="n">port</span><span class="p">)</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="kn">from</span><span class="w"> </span><span class="nn">mcp.server.stdio</span><span class="w"> </span><span class="kn">import</span> <span class="n">stdio_server</span>
-
-        <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">arun</span><span class="p">():</span>
-            <span class="k">async</span> <span class="k">with</span> <span class="n">stdio_server</span><span class="p">()</span> <span class="k">as</span> <span class="n">streams</span><span class="p">:</span>
-                <span class="k">await</span> <span class="n">app</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">streams</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">streams</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">app</span><span class="o">.</span><span class="n">create_initialization_options</span><span class="p">())</span>
-
-        <span class="n">anyio</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">arun</span><span class="p">)</span>
-
-    <span class="k">return</span> <span class="mi">0</span>
-</code></pre></div>
-<p>This is a full example of a low-level server that:</p>
-<ul>
-<li>Uses the low-level server API for maximum control</li>
-<li>Implements resource listing and reading</li>
-<li>Handles URI templates and parameter extraction</li>
-<li>Demonstrates production-ready resource patterns</li>
-</ul>
-<p>Resources are essential for providing contextual information to LLMs, whether it's configuration data, file contents, or dynamic information that changes over time.</p>
 
 
 

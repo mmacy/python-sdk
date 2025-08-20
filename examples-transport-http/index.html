@@ -681,6 +681,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#transport-comparison" class="md-nav__link">
+    <span class="md-ellipsis">
+      Transport comparison
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#streamable-http-configuration" class="md-nav__link">
     <span class="md-ellipsis">
       Streamable HTTP configuration
@@ -720,15 +729,6 @@
   <a href="#event-store-implementation" class="md-nav__link">
     <span class="md-ellipsis">
       Event store implementation
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#transport-comparison" class="md-nav__link">
-    <span class="md-ellipsis">
-      Transport comparison
     </span>
   </a>
   
@@ -3511,6 +3511,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#transport-comparison" class="md-nav__link">
+    <span class="md-ellipsis">
+      Transport comparison
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#streamable-http-configuration" class="md-nav__link">
     <span class="md-ellipsis">
       Streamable HTTP configuration
@@ -3555,15 +3564,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#transport-comparison" class="md-nav__link">
-    <span class="md-ellipsis">
-      Transport comparison
-    </span>
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -3585,6 +3585,50 @@
 
 <h1 id="http-transport-examples">HTTP transport examples</h1>
 <p>HTTP transports enable web-based MCP server deployment with support for multiple clients and scalable architectures.</p>
+<p>Choose HTTP transports for production deployments that need to serve multiple clients or integrate with web infrastructure.</p>
+<h2 id="transport-comparison">Transport comparison</h2>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Streamable HTTP</th>
+<th>SSE</th>
+<th>stdio</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Resumability</strong></td>
+<td>✅ With event store</td>
+<td>❌</td>
+<td>❌</td>
+</tr>
+<tr>
+<td><strong>Scalability</strong></td>
+<td>✅ Multi-client</td>
+<td>✅ Multi-client</td>
+<td>❌ Single process</td>
+</tr>
+<tr>
+<td><strong>State</strong></td>
+<td>Configurable</td>
+<td>Session-based</td>
+<td>Process-based</td>
+</tr>
+<tr>
+<td><strong>Deployment</strong></td>
+<td>Web servers</td>
+<td>Web servers</td>
+<td>Local execution</td>
+</tr>
+<tr>
+<td><strong>Best for</strong></td>
+<td>Production APIs</td>
+<td>Real-time updates</td>
+<td>Development/CLI</td>
+</tr>
+</tbody>
+</table>
 <h2 id="streamable-http-configuration">Streamable HTTP configuration</h2>
 <p>Basic streamable HTTP server setup with different configurations:</p>
 <div class="language-python highlight"><pre><span></span><code><span class="sd">&quot;&quot;&quot;</span>
@@ -4093,50 +4137,6 @@
 <li>Persistent streaming across connection interruptions</li>
 <li>Production-ready resumability patterns</li>
 </ul>
-<h2 id="transport-comparison">Transport comparison</h2>
-<table>
-<thead>
-<tr>
-<th>Feature</th>
-<th>Streamable HTTP</th>
-<th>SSE</th>
-<th>stdio</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Resumability</strong></td>
-<td>✅ With event store</td>
-<td>❌</td>
-<td>❌</td>
-</tr>
-<tr>
-<td><strong>Scalability</strong></td>
-<td>✅ Multi-client</td>
-<td>✅ Multi-client</td>
-<td>❌ Single process</td>
-</tr>
-<tr>
-<td><strong>State</strong></td>
-<td>Configurable</td>
-<td>Session-based</td>
-<td>Process-based</td>
-</tr>
-<tr>
-<td><strong>Deployment</strong></td>
-<td>Web servers</td>
-<td>Web servers</td>
-<td>Local execution</td>
-</tr>
-<tr>
-<td><strong>Best for</strong></td>
-<td>Production APIs</td>
-<td>Real-time updates</td>
-<td>Development/CLI</td>
-</tr>
-</tbody>
-</table>
-<p>Choose HTTP transports for production deployments that need to serve multiple clients or integrate with web infrastructure.</p>
 
 
 

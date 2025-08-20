@@ -3513,6 +3513,14 @@
 
 <h1 id="server-prompts-examples">Server prompts examples</h1>
 <p>Prompts are reusable templates that help structure LLM interactions. They provide a way to define consistent interaction patterns that users can invoke.</p>
+<p>Prompts are user-controlled primitives and are particularly useful for:</p>
+<ul>
+<li>Code review templates</li>
+<li>Debugging assistance workflows</li>
+<li>Content generation patterns</li>
+<li>Structured analysis requests</li>
+</ul>
+<p>Unlike tools (which are model-controlled) and resources (which are application-controlled), prompts are invoked directly by users to initiate specific types of interactions with the LLM.</p>
 <h2 id="basic-prompts">Basic prompts</h2>
 <p>Simple prompt templates for common scenarios:</p>
 <div class="language-python highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">mcp.server.fastmcp</span><span class="w"> </span><span class="kn">import</span> <span class="n">FastMCP</span>
@@ -3663,14 +3671,6 @@
 <li>Dynamic prompt generation based on parameters</li>
 <li>Production-ready prompt patterns using the low-level API</li>
 </ul>
-<p>Prompts are user-controlled primitives that help create consistent, reusable interaction patterns. They're particularly useful for:</p>
-<ul>
-<li>Code review templates</li>
-<li>Debugging assistance workflows</li>
-<li>Content generation patterns</li>
-<li>Structured analysis requests</li>
-</ul>
-<p>Unlike tools (which are model-controlled) and resources (which are application-controlled), prompts are invoked directly by users to initiate specific types of interactions with the LLM.</p>
 
 
 

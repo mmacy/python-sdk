@@ -1206,9 +1206,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#mcp.client.streamable_http.StreamableHTTPError" class="md-nav__link">
+  <a href="#mcp.client.streamable_http.RequestContext" class="md-nav__link">
     <span class="md-ellipsis">
-      StreamableHTTPError
+      RequestContext
     </span>
   </a>
   
@@ -1224,9 +1224,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#mcp.client.streamable_http.RequestContext" class="md-nav__link">
+  <a href="#mcp.client.streamable_http.StreamableHTTPError" class="md-nav__link">
     <span class="md-ellipsis">
-      RequestContext
+      StreamableHTTPError
     </span>
   </a>
   
@@ -1246,6 +1246,15 @@
   <a href="#mcp.client.streamable_http.StreamableHTTPTransport.__init__" class="md-nav__link">
     <span class="md-ellipsis">
       __init__
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mcp.client.streamable_http.StreamableHTTPTransport.get_session_id" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_session_id
     </span>
   </a>
   
@@ -1273,15 +1282,6 @@
   <a href="#mcp.client.streamable_http.StreamableHTTPTransport.terminate_session" class="md-nav__link">
     <span class="md-ellipsis">
       terminate_session
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#mcp.client.streamable_http.StreamableHTTPTransport.get_session_id" class="md-nav__link">
-    <span class="md-ellipsis">
-      get_session_id
     </span>
   </a>
   
@@ -3567,9 +3567,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#mcp.client.streamable_http.StreamableHTTPError" class="md-nav__link">
+  <a href="#mcp.client.streamable_http.RequestContext" class="md-nav__link">
     <span class="md-ellipsis">
-      StreamableHTTPError
+      RequestContext
     </span>
   </a>
   
@@ -3585,9 +3585,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#mcp.client.streamable_http.RequestContext" class="md-nav__link">
+  <a href="#mcp.client.streamable_http.StreamableHTTPError" class="md-nav__link">
     <span class="md-ellipsis">
-      RequestContext
+      StreamableHTTPError
     </span>
   </a>
   
@@ -3607,6 +3607,15 @@
   <a href="#mcp.client.streamable_http.StreamableHTTPTransport.__init__" class="md-nav__link">
     <span class="md-ellipsis">
       __init__
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mcp.client.streamable_http.StreamableHTTPTransport.get_session_id" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_session_id
     </span>
   </a>
   
@@ -3634,15 +3643,6 @@
   <a href="#mcp.client.streamable_http.StreamableHTTPTransport.terminate_session" class="md-nav__link">
     <span class="md-ellipsis">
       terminate_session
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#mcp.client.streamable_http.StreamableHTTPTransport.get_session_id" class="md-nav__link">
-    <span class="md-ellipsis">
-      get_session_id
     </span>
   </a>
   
@@ -3736,38 +3736,42 @@ and session management.</p>
 
 
 
-
-
-
-
-
-
-
-
 <div class="doc doc-object doc-class">
 
 
 
-<h2 id="mcp.client.streamable_http.StreamableHTTPError" class="doc doc-heading">
-            <span class="doc doc-object-name doc-class-name">StreamableHTTPError</span>
+<h2 id="mcp.client.streamable_http.RequestContext" class="doc doc-heading">
+            <span class="doc doc-object-name doc-class-name">RequestContext</span>
 
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-dataclass"><code>dataclass</code></small>
+  </span>
 
 </h2>
 
 
     <div class="doc doc-contents ">
-            <p class="doc doc-class-bases">
-              Bases: <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/exceptions.html#Exception">Exception</a></code></p>
 
 
-        <p>Base exception for StreamableHTTP transport errors.</p>
-
+        <p>Context for a request operation.</p>
 
 
 
 
 
 
+
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+  </div>
 
     </div>
 
@@ -3812,42 +3816,34 @@ and session management.</p>
 
 
 
+
+
+
+
 <div class="doc doc-object doc-class">
 
 
 
-<h2 id="mcp.client.streamable_http.RequestContext" class="doc doc-heading">
-            <span class="doc doc-object-name doc-class-name">RequestContext</span>
+<h2 id="mcp.client.streamable_http.StreamableHTTPError" class="doc doc-heading">
+            <span class="doc doc-object-name doc-class-name">StreamableHTTPError</span>
 
-
-  <span class="doc doc-labels">
-      <small class="doc doc-label doc-label-dataclass"><code>dataclass</code></small>
-  </span>
 
 </h2>
 
 
     <div class="doc doc-contents ">
+            <p class="doc doc-class-bases">
+              Bases: <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/exceptions.html#Exception">Exception</a></code></p>
 
 
-        <p>Context for a request operation.</p>
-
-
-
-
-
+        <p>Base exception for StreamableHTTP transport errors.</p>
 
 
 
 
 
-  <div class="doc doc-children">
 
 
-
-
-
-  </div>
 
     </div>
 
@@ -4020,6 +4016,31 @@ and session management.</p>
 <div class="doc doc-object doc-function">
 
 
+<h3 id="mcp.client.streamable_http.StreamableHTTPTransport.get_session_id" class="doc doc-heading">
+            <span class="doc doc-object-name doc-function-name">get_session_id</span>
+
+
+</h3>
+<div class="language-python doc-signature highlight"><pre><span></span><code><span class="nf">get_session_id</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n"><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></span> <span class="o">|</span> <span class="kc">None</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+        <p>Get the current session ID.</p>
+
+
+    </div>
+
+</div>
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
 <h3 id="mcp.client.streamable_http.StreamableHTTPTransport.handle_get_stream" class="doc doc-heading">
             <span class="doc doc-object-name doc-function-name">handle_get_stream</span>
 
@@ -4116,36 +4137,15 @@ and session management.</p>
 
 
 
-
-
-<div class="doc doc-object doc-function">
-
-
-<h3 id="mcp.client.streamable_http.StreamableHTTPTransport.get_session_id" class="doc doc-heading">
-            <span class="doc doc-object-name doc-function-name">get_session_id</span>
-
-
-</h3>
-<div class="language-python doc-signature highlight"><pre><span></span><code><span class="nf">get_session_id</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n"><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></span> <span class="o">|</span> <span class="kc">None</span>
-</code></pre></div>
-
-    <div class="doc doc-contents ">
-
-        <p>Get the current session ID.</p>
-
-
-    </div>
-
-</div>
-
-
-
-
   </div>
 
     </div>
 
 </div>
+
+
+
+
 
 
 

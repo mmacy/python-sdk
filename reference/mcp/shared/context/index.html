@@ -3228,6 +3228,39 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="RequestContext">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mcp.shared.context.RequestContext--request-lifecycle" class="md-nav__link">
+    <span class="md-ellipsis">
+      Request lifecycle
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mcp.shared.context.RequestContext--access-patterns" class="md-nav__link">
+    <span class="md-ellipsis">
+      Access patterns
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mcp.shared.context.RequestContext--lifespan-context-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lifespan context integration
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -3486,6 +3519,39 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="RequestContext">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mcp.shared.context.RequestContext--request-lifecycle" class="md-nav__link">
+    <span class="md-ellipsis">
+      Request lifecycle
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mcp.shared.context.RequestContext--access-patterns" class="md-nav__link">
+    <span class="md-ellipsis">
+      Access patterns
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mcp.shared.context.RequestContext--lifespan-context-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lifespan context integration
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -3533,10 +3599,6 @@
 
 
 
-
-
-
-
 <div class="doc doc-object doc-class">
 
 
@@ -3558,8 +3620,57 @@
 
 
         <p>Context object containing information about the current MCP request.</p>
-<p>This context is available during request processing and provides access
-to the request metadata, session, and any lifespan-scoped resources.</p>
+<p>This is the fundamental context object in the MCP Python SDK that provides access
+to request-scoped information and capabilities. It's created automatically for each
+incoming client request and contains everything needed to process that request,
+including the session for client communication, request metadata, and any resources
+initialized during server startup.</p>
+<p>The RequestContext is available throughout the request lifecycle and provides the
+foundation for both low-level and high-level SDK usage patterns. In the low-level
+SDK, you access it via <a class="autorefs autorefs-internal" title="request_context
+
+
+  
+      property
+  " href="../../server/lowlevel/server/#mcp.server.lowlevel.server.Server.request_context"><code>Server.request_context</code></a>.
+In FastMCP, it's wrapped by the more convenient <a class="autorefs autorefs-internal" title="Context" href="../../server/fastmcp/#mcp.server.fastmcp.Context"><code>Context</code></a> 
+class that provides the same functionality with additional helper methods.</p>
+<h4 id="mcp.shared.context.RequestContext--request-lifecycle">Request lifecycle</h4>
+<p>The RequestContext is created when a client request arrives and destroyed when the
+request completes. It's only available during request processing - attempting to
+access it outside of a request handler will raise a <code>LookupError</code>.</p>
+<h4 id="mcp.shared.context.RequestContext--access-patterns">Access patterns</h4>
+<p><strong>Low-level SDK</strong>: Access directly via the server's request_context property:</p>
+<div class="language-python highlight"><pre><span></span><code><span class="nd">@app</span><span class="o">.</span><span class="n">call_tool</span><span class="p">()</span>
+<span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">my_tool</span><span class="p">(</span><span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">arguments</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="n">types</span><span class="o">.</span><span class="n">ContentBlock</span><span class="p">]:</span>
+    <span class="n">ctx</span> <span class="o">=</span> <span class="n">app</span><span class="o">.</span><span class="n">request_context</span>  <span class="c1"># Get the RequestContext</span>
+    <span class="k">await</span> <span class="n">ctx</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">send_log_message</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="s2">&quot;info&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="s2">&quot;Processing...&quot;</span><span class="p">)</span>
+</code></pre></div>
+<p><strong>FastMCP</strong>: Use the injected Context wrapper instead:</p>
+<div class="language-python highlight"><pre><span></span><code><span class="nd">@mcp</span><span class="o">.</span><span class="n">tool</span><span class="p">()</span>
+<span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">my_tool</span><span class="p">(</span><span class="n">data</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">ctx</span><span class="p">:</span> <span class="n">Context</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+    <span class="k">await</span> <span class="n">ctx</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Processing...&quot;</span><span class="p">)</span>  <span class="c1"># Context provides convenience methods</span>
+</code></pre></div>
+<h4 id="mcp.shared.context.RequestContext--lifespan-context-integration">Lifespan context integration</h4>
+<p>Resources initialized during server startup (databases, connections, etc.) are
+accessible through the <code>lifespan_context</code> attribute, enabling request handlers
+to use shared resources safely:</p>
+<div class="language-python highlight"><pre><span></span><code><span class="c1"># Server startup - initialize shared resources</span>
+<span class="nd">@asynccontextmanager</span>
+<span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">server_lifespan</span><span class="p">(</span><span class="n">server</span><span class="p">):</span>
+    <span class="n">db</span> <span class="o">=</span> <span class="k">await</span> <span class="n">Database</span><span class="o">.</span><span class="n">connect</span><span class="p">()</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">yield</span> <span class="p">{</span><span class="s2">&quot;db&quot;</span><span class="p">:</span> <span class="n">db</span><span class="p">}</span>
+    <span class="k">finally</span><span class="p">:</span>
+        <span class="k">await</span> <span class="n">db</span><span class="o">.</span><span class="n">disconnect</span><span class="p">()</span>
+
+<span class="c1"># Request handling - access shared resources</span>
+<span class="nd">@server</span><span class="o">.</span><span class="n">call_tool</span><span class="p">()</span>  
+<span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">query_data</span><span class="p">(</span><span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">arguments</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]):</span>
+    <span class="n">ctx</span> <span class="o">=</span> <span class="n">server</span><span class="o">.</span><span class="n">request_context</span>
+    <span class="n">db</span> <span class="o">=</span> <span class="n">ctx</span><span class="o">.</span><span class="n">lifespan_context</span><span class="p">[</span><span class="s2">&quot;db&quot;</span><span class="p">]</span>  <span class="c1"># Access startup resource</span>
+    <span class="n">results</span> <span class="o">=</span> <span class="k">await</span> <span class="n">db</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="n">arguments</span><span class="p">[</span><span class="s2">&quot;query&quot;</span><span class="p">])</span>
+</code></pre></div>
 
 
 <p><span class="doc-section-title">Attributes:</span></p>
@@ -3579,7 +3690,8 @@ to the request metadata, session, and any lifespan-scoped resources.</p>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>Unique identifier for the current request</p>
+                <p>Unique identifier for the current request as a <code>RequestId</code>.
+Use this for logging, tracing, or linking related operations.</p>
               </div>
             </td>
           </tr>
@@ -3590,7 +3702,8 @@ to the request metadata, session, and any lifespan-scoped resources.</p>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>Optional metadata from the request including progress token</p>
+                <p>Optional request metadata including progress tokens and other client-provided
+information. May be <code>None</code> if no metadata was provided.</p>
               </div>
             </td>
           </tr>
@@ -3601,7 +3714,8 @@ to the request metadata, session, and any lifespan-scoped resources.</p>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>The MCP session handling this request</p>
+                <p>The <a class="autorefs autorefs-internal" title="ServerSession" href="../../server/session/#mcp.server.session.ServerSession"><code>ServerSession</code></a> for communicating
+with the client. Use this to send responses, log messages, or check capabilities.</p>
               </div>
             </td>
           </tr>
@@ -3612,7 +3726,8 @@ to the request metadata, session, and any lifespan-scoped resources.</p>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>Application-specific context from lifespan initialization</p>
+                <p>Application-specific resources initialized during server startup.
+Contains any objects yielded by the server's lifespan function.</p>
               </div>
             </td>
           </tr>
@@ -3623,13 +3738,21 @@ to the request metadata, session, and any lifespan-scoped resources.</p>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>The original request object, if available</p>
+                <p>The original request object from the client, if available. May be <code>None</code>
+for some request types.</p>
               </div>
             </td>
           </tr>
       </tbody>
     </table>
 
+
+<details class="note" open>
+  <summary>Note</summary>
+  <p>This object is request-scoped and thread-safe within that scope. Each request
+gets its own RequestContext instance. Don't store references to it beyond the
+request lifecycle, as it becomes invalid when the request completes.</p>
+</details>
 
 
 
@@ -3650,6 +3773,10 @@ to the request metadata, session, and any lifespan-scoped resources.</p>
     </div>
 
 </div>
+
+
+
+
 
 
 

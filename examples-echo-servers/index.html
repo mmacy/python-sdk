@@ -455,9 +455,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#usage-patterns" class="md-nav__link">
+  <a href="#usage" class="md-nav__link">
     <span class="md-ellipsis">
-      Usage patterns
+      Usage
     </span>
   </a>
   
@@ -3509,9 +3509,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#usage-patterns" class="md-nav__link">
+  <a href="#usage" class="md-nav__link">
     <span class="md-ellipsis">
-      Usage patterns
+      Usage
     </span>
   </a>
   
@@ -3546,7 +3546,15 @@
 
 
 <h1 id="echo-server-examples">Echo server examples</h1>
-<p>Echo servers are simple examples that demonstrate basic MCP functionality by echoing input back to clients. These are useful for testing and understanding MCP fundamentals.</p>
+<p>Echo servers provide a foundation for understanding MCP patterns before building more complex functionality.</p>
+<p>Echo servers are useful for:</p>
+<ul>
+<li><strong>Testing client connections</strong>: Verify that your client can connect and call tools</li>
+<li><strong>Understanding MCP basics</strong>: Learn the fundamental request/response patterns</li>
+<li><strong>Development and debugging</strong>: Simple, predictable behavior for testing</li>
+<li><strong>Protocol verification</strong>: Ensure transport layers work correctly</li>
+</ul>
+<p>The following servers are minimal examples that demonstrate basic MCP functionality by echoing input back to clients.</p>
 <h2 id="simple-echo-server">Simple echo server</h2>
 <p>The most basic echo implementation:</p>
 <div class="language-python highlight"><pre><span></span><code><span class="sd">&quot;&quot;&quot;</span>
@@ -3609,14 +3617,7 @@
 <li>Different parameter types and patterns</li>
 <li>Tool naming and description best practices</li>
 </ul>
-<p>Echo servers are useful for:</p>
-<ul>
-<li><strong>Testing client connections</strong>: Verify that your client can connect and call tools</li>
-<li><strong>Understanding MCP basics</strong>: Learn the fundamental request/response patterns</li>
-<li><strong>Development and debugging</strong>: Simple, predictable behavior for testing</li>
-<li><strong>Protocol verification</strong>: Ensure transport layers work correctly</li>
-</ul>
-<h2 id="usage-patterns">Usage patterns</h2>
+<h2 id="usage">Usage</h2>
 <p>These echo servers can be used to test different aspects of MCP:</p>
 <div class="language-bash highlight"><pre><span></span><code><span class="c1"># Test with MCP Inspector</span>
 uv<span class="w"> </span>run<span class="w"> </span>mcp<span class="w"> </span>dev<span class="w"> </span>echo.py
@@ -3636,12 +3637,11 @@ python<span class="w"> </span>echo.py
 <span class="w">  </span><span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
-<p>Expected response:
+<p>Expected response:</p>
 <div class="language-json highlight"><pre><span></span><code><span class="p">{</span>
 <span class="w">  </span><span class="nt">&quot;result&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Echo: Hello, MCP!&quot;</span>
 <span class="p">}</span>
-</code></pre></div></p>
-<p>Echo servers provide a foundation for understanding MCP patterns before building more complex functionality.</p>
+</code></pre></div>
 
 
 

@@ -3011,18 +3011,18 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#mcp.server.streamable_http_manager.StreamableHTTPSessionManager.run" class="md-nav__link">
+  <a href="#mcp.server.streamable_http_manager.StreamableHTTPSessionManager.handle_request" class="md-nav__link">
     <span class="md-ellipsis">
-      run
+      handle_request
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#mcp.server.streamable_http_manager.StreamableHTTPSessionManager.handle_request" class="md-nav__link">
+  <a href="#mcp.server.streamable_http_manager.StreamableHTTPSessionManager.run" class="md-nav__link">
     <span class="md-ellipsis">
-      handle_request
+      run
     </span>
   </a>
   
@@ -3514,18 +3514,18 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#mcp.server.streamable_http_manager.StreamableHTTPSessionManager.run" class="md-nav__link">
+  <a href="#mcp.server.streamable_http_manager.StreamableHTTPSessionManager.handle_request" class="md-nav__link">
     <span class="md-ellipsis">
-      run
+      handle_request
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#mcp.server.streamable_http_manager.StreamableHTTPSessionManager.handle_request" class="md-nav__link">
+  <a href="#mcp.server.streamable_http_manager.StreamableHTTPSessionManager.run" class="md-nav__link">
     <span class="md-ellipsis">
-      handle_request
+      run
     </span>
   </a>
   
@@ -3572,10 +3572,6 @@
 
 
   <div class="doc doc-children">
-
-
-
-
 
 
 
@@ -3725,44 +3721,6 @@ completed. If you need to restart the manager, create a new instance.</p>
 <div class="doc doc-object doc-function">
 
 
-<h3 id="mcp.server.streamable_http_manager.StreamableHTTPSessionManager.run" class="doc doc-heading">
-            <span class="doc doc-object-name doc-function-name">run</span>
-
-
-  <span class="doc doc-labels">
-      <small class="doc doc-label doc-label-async"><code>async</code></small>
-  </span>
-
-</h3>
-<div class="language-python doc-signature highlight"><pre><span></span><code><span class="nf">run</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n"><a class="autorefs autorefs-external" title="collections.abc.AsyncIterator" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.AsyncIterator">AsyncIterator</a></span><span class="p">[</span><span class="kc">None</span><span class="p">]</span>
-</code></pre></div>
-
-    <div class="doc doc-contents ">
-
-        <p>Run the session manager with proper lifecycle management.</p>
-<p>This creates and manages the task group for all session operations.</p>
-<p>Important: This method can only be called once per instance. The same
-StreamableHTTPSessionManager instance cannot be reused after this
-context manager exits. Create a new instance if you need to restart.</p>
-<p>Use this in the lifespan context manager of your Starlette app:</p>
-<p>@contextlib.asynccontextmanager
-async def lifespan(app: Starlette) -&gt; AsyncIterator[None]:
-    async with session_manager.run():
-        yield</p>
-
-
-    </div>
-
-</div>
-
-
-
-
-
-
-<div class="doc doc-object doc-function">
-
-
 <h3 id="mcp.server.streamable_http_manager.StreamableHTTPSessionManager.handle_request" class="doc doc-heading">
             <span class="doc doc-object-name doc-function-name">handle_request</span>
 
@@ -3853,11 +3811,53 @@ async def lifespan(app: Starlette) -&gt; AsyncIterator[None]:
 
 
 
+
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="mcp.server.streamable_http_manager.StreamableHTTPSessionManager.run" class="doc doc-heading">
+            <span class="doc doc-object-name doc-function-name">run</span>
+
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-async"><code>async</code></small>
+  </span>
+
+</h3>
+<div class="language-python doc-signature highlight"><pre><span></span><code><span class="nf">run</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n"><a class="autorefs autorefs-external" title="collections.abc.AsyncIterator" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.AsyncIterator">AsyncIterator</a></span><span class="p">[</span><span class="kc">None</span><span class="p">]</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+        <p>Run the session manager with proper lifecycle management.</p>
+<p>This creates and manages the task group for all session operations.</p>
+<p>Important: This method can only be called once per instance. The same
+StreamableHTTPSessionManager instance cannot be reused after this
+context manager exits. Create a new instance if you need to restart.</p>
+<p>Use this in the lifespan context manager of your Starlette app:</p>
+<p>@contextlib.asynccontextmanager
+async def lifespan(app: Starlette) -&gt; AsyncIterator[None]:
+    async with session_manager.run():
+        yield</p>
+
+
+    </div>
+
+</div>
+
+
+
+
   </div>
 
     </div>
 
 </div>
+
+
+
+
 
 
 

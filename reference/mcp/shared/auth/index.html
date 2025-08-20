@@ -3176,9 +3176,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#mcp.shared.auth.OAuthToken" class="md-nav__link">
+  <a href="#mcp.shared.auth.OAuthClientInformationFull" class="md-nav__link">
     <span class="md-ellipsis">
-      OAuthToken
+      OAuthClientInformationFull
     </span>
   </a>
   
@@ -3194,18 +3194,18 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#mcp.shared.auth.OAuthClientInformationFull" class="md-nav__link">
+  <a href="#mcp.shared.auth.OAuthMetadata" class="md-nav__link">
     <span class="md-ellipsis">
-      OAuthClientInformationFull
+      OAuthMetadata
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#mcp.shared.auth.OAuthMetadata" class="md-nav__link">
+  <a href="#mcp.shared.auth.OAuthToken" class="md-nav__link">
     <span class="md-ellipsis">
-      OAuthMetadata
+      OAuthToken
     </span>
   </a>
   
@@ -3516,9 +3516,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#mcp.shared.auth.OAuthToken" class="md-nav__link">
+  <a href="#mcp.shared.auth.OAuthClientInformationFull" class="md-nav__link">
     <span class="md-ellipsis">
-      OAuthToken
+      OAuthClientInformationFull
     </span>
   </a>
   
@@ -3534,18 +3534,18 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#mcp.shared.auth.OAuthClientInformationFull" class="md-nav__link">
+  <a href="#mcp.shared.auth.OAuthMetadata" class="md-nav__link">
     <span class="md-ellipsis">
-      OAuthClientInformationFull
+      OAuthMetadata
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#mcp.shared.auth.OAuthMetadata" class="md-nav__link">
+  <a href="#mcp.shared.auth.OAuthToken" class="md-nav__link">
     <span class="md-ellipsis">
-      OAuthMetadata
+      OAuthToken
     </span>
   </a>
   
@@ -3605,8 +3605,8 @@
 
 
 
-<h2 id="mcp.shared.auth.OAuthToken" class="doc doc-heading">
-            <span class="doc doc-object-name doc-class-name">OAuthToken</span>
+<h2 id="mcp.shared.auth.OAuthClientInformationFull" class="doc doc-heading">
+            <span class="doc doc-object-name doc-class-name">OAuthClientInformationFull</span>
 
 
 </h2>
@@ -3614,10 +3614,11 @@
 
     <div class="doc doc-contents ">
             <p class="doc doc-class-bases">
-              Bases: <code><a class="autorefs autorefs-external" title="pydantic.BaseModel" href="https://docs.pydantic.dev/latest/api/base_model/#pydantic.BaseModel">BaseModel</a></code></p>
+              Bases: <code><a class="autorefs autorefs-internal" title="OAuthClientMetadata (mcp.shared.auth.OAuthClientMetadata)" href="#mcp.shared.auth.OAuthClientMetadata">OAuthClientMetadata</a></code></p>
 
 
-        <p>See https://datatracker.ietf.org/doc/html/rfc6749#section-5.1</p>
+        <p>RFC 7591 OAuth 2.0 Dynamic Client Registration full response
+(client information plus metadata).</p>
 
 
 
@@ -3695,8 +3696,8 @@ for the full specification.</p>
 
 
 
-<h2 id="mcp.shared.auth.OAuthClientInformationFull" class="doc doc-heading">
-            <span class="doc doc-object-name doc-class-name">OAuthClientInformationFull</span>
+<h2 id="mcp.shared.auth.OAuthMetadata" class="doc doc-heading">
+            <span class="doc doc-object-name doc-class-name">OAuthMetadata</span>
 
 
 </h2>
@@ -3704,11 +3705,11 @@ for the full specification.</p>
 
     <div class="doc doc-contents ">
             <p class="doc doc-class-bases">
-              Bases: <code><a class="autorefs autorefs-internal" title="OAuthClientMetadata (mcp.shared.auth.OAuthClientMetadata)" href="#mcp.shared.auth.OAuthClientMetadata">OAuthClientMetadata</a></code></p>
+              Bases: <code><a class="autorefs autorefs-external" title="pydantic.BaseModel" href="https://docs.pydantic.dev/latest/api/base_model/#pydantic.BaseModel">BaseModel</a></code></p>
 
 
-        <p>RFC 7591 OAuth 2.0 Dynamic Client Registration full response
-(client information plus metadata).</p>
+        <p>RFC 8414 OAuth 2.0 Authorization Server Metadata.
+See https://datatracker.ietf.org/doc/html/rfc8414#section-2</p>
 
 
 
@@ -3740,8 +3741,8 @@ for the full specification.</p>
 
 
 
-<h2 id="mcp.shared.auth.OAuthMetadata" class="doc doc-heading">
-            <span class="doc doc-object-name doc-class-name">OAuthMetadata</span>
+<h2 id="mcp.shared.auth.OAuthToken" class="doc doc-heading">
+            <span class="doc doc-object-name doc-class-name">OAuthToken</span>
 
 
 </h2>
@@ -3752,8 +3753,7 @@ for the full specification.</p>
               Bases: <code><a class="autorefs autorefs-external" title="pydantic.BaseModel" href="https://docs.pydantic.dev/latest/api/base_model/#pydantic.BaseModel">BaseModel</a></code></p>
 
 
-        <p>RFC 8414 OAuth 2.0 Authorization Server Metadata.
-See https://datatracker.ietf.org/doc/html/rfc8414#section-2</p>
+        <p>See https://datatracker.ietf.org/doc/html/rfc6749#section-5.1</p>
 
 
 

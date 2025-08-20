@@ -710,6 +710,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#when-to-use-low-level-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      When to use low-level API
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#basic-low-level-server" class="md-nav__link">
     <span class="md-ellipsis">
       Basic low-level server
@@ -740,24 +749,6 @@
   <a href="#simple-tool-server" class="md-nav__link">
     <span class="md-ellipsis">
       Simple tool server
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#key-differences-from-fastmcp" class="md-nav__link">
-    <span class="md-ellipsis">
-      Key differences from FastMCP
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#when-to-use-low-level-api" class="md-nav__link">
-    <span class="md-ellipsis">
-      When to use low-level API
     </span>
   </a>
   
@@ -3509,6 +3500,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#when-to-use-low-level-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      When to use low-level API
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#basic-low-level-server" class="md-nav__link">
     <span class="md-ellipsis">
       Basic low-level server
@@ -3544,24 +3544,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#key-differences-from-fastmcp" class="md-nav__link">
-    <span class="md-ellipsis">
-      Key differences from FastMCP
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#when-to-use-low-level-api" class="md-nav__link">
-    <span class="md-ellipsis">
-      When to use low-level API
-    </span>
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -3582,7 +3564,60 @@
 
 
 <h1 id="low-level-server-examples">Low-level server examples</h1>
-<p>The low-level server API provides maximum control over MCP protocol implementation. Use these patterns when you need fine-grained control or when FastMCP doesn't meet your requirements.</p>
+<p>The <a href="../reference/mcp/server/lowlevel/server/">low-level server API</a> provides maximum control over MCP protocol implementation. Use these patterns when you need fine-grained control or when <a class="autorefs autorefs-internal" title="FastMCP" href="../reference/mcp/server/fastmcp/#mcp.server.fastmcp.FastMCP"><code>FastMCP</code></a> doesn't meet your requirements.</p>
+<p>The low-level API provides the foundation that FastMCP is built upon, giving you access to all MCP protocol features with complete control over implementation details.</p>
+<h2 id="when-to-use-low-level-api">When to use low-level API</h2>
+<p>Choose the low-level API when you need:</p>
+<ul>
+<li>Custom protocol message handling</li>
+<li>Complex initialization sequences</li>
+<li>Fine-grained control over capabilities</li>
+<li>Integration with existing server infrastructure</li>
+<li>Performance optimization at the protocol level</li>
+<li>Custom authentication or authorization logic</li>
+</ul>
+<p>Key differences between the low-level server API and FastMCP are:</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Low-level API</th>
+<th>FastMCP</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Control</strong></td>
+<td>Maximum control</td>
+<td>Convention over configuration</td>
+</tr>
+<tr>
+<td><strong>Boilerplate</strong></td>
+<td>More verbose</td>
+<td>Minimal setup</td>
+</tr>
+<tr>
+<td><strong>Decorators</strong></td>
+<td>Server method decorators</td>
+<td>Simple function decorators</td>
+</tr>
+<tr>
+<td><strong>Schema</strong></td>
+<td>Manual definition</td>
+<td>Automatic from type hints</td>
+</tr>
+<tr>
+<td><strong>Lifecycle</strong></td>
+<td>Manual management</td>
+<td>Automatic handling</td>
+</tr>
+<tr>
+<td><strong>Best for</strong></td>
+<td>Complex custom logic</td>
+<td>Rapid development</td>
+</tr>
+</tbody>
+</table>
 <h2 id="basic-low-level-server">Basic low-level server</h2>
 <p>Fundamental low-level server patterns:</p>
 <div class="language-python highlight"><pre><span></span><code><span class="sd">&quot;&quot;&quot;</span>
@@ -3654,7 +3689,7 @@
 </code></pre></div>
 <p>This example demonstrates:</p>
 <ul>
-<li>Creating a <code>Server</code> instance directly</li>
+<li>Creating a <a class="autorefs autorefs-internal" title="Server" href="../reference/mcp/server/lowlevel/#mcp.server.lowlevel.Server"><code>Server</code></a> instance directly</li>
 <li>Manual handler registration with decorators</li>
 <li>Prompt management with <code>@server.list_prompts()</code> and <code>@server.get_prompt()</code></li>
 <li>Manual capability declaration</li>
@@ -4071,59 +4106,6 @@
 <li>Proper MCP protocol compliance</li>
 <li>Tool execution with structured responses</li>
 </ul>
-<h2 id="key-differences-from-fastmcp">Key differences from FastMCP</h2>
-<table>
-<thead>
-<tr>
-<th>Aspect</th>
-<th>Low-level API</th>
-<th>FastMCP</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Control</strong></td>
-<td>Maximum control</td>
-<td>Convention over configuration</td>
-</tr>
-<tr>
-<td><strong>Boilerplate</strong></td>
-<td>More verbose</td>
-<td>Minimal setup</td>
-</tr>
-<tr>
-<td><strong>Decorators</strong></td>
-<td>Server method decorators</td>
-<td>Simple function decorators</td>
-</tr>
-<tr>
-<td><strong>Schema</strong></td>
-<td>Manual definition</td>
-<td>Automatic from type hints</td>
-</tr>
-<tr>
-<td><strong>Lifecycle</strong></td>
-<td>Manual management</td>
-<td>Automatic handling</td>
-</tr>
-<tr>
-<td><strong>Best for</strong></td>
-<td>Complex custom logic</td>
-<td>Rapid development</td>
-</tr>
-</tbody>
-</table>
-<h2 id="when-to-use-low-level-api">When to use low-level API</h2>
-<p>Choose the low-level API when you need:</p>
-<ul>
-<li>Custom protocol message handling</li>
-<li>Complex initialization sequences</li>
-<li>Fine-grained control over capabilities</li>
-<li>Integration with existing server infrastructure</li>
-<li>Performance optimization at the protocol level</li>
-<li>Custom authentication or authorization logic</li>
-</ul>
-<p>The low-level API provides the foundation that FastMCP is built upon, giving you access to all MCP protocol features with complete control over implementation details.</p>
 
 
 
