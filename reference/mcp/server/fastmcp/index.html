@@ -3664,21 +3664,6 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="get_context">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#mcp.server.fastmcp.FastMCP.get_context--when-to-use-this-method" class="md-nav__link">
-    <span class="md-ellipsis">
-      When to use this method
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
         
           <li class="md-nav__item">
@@ -3941,7 +3926,7 @@ is optional - tools that don't need it can omit it entirely.</p>
     <span class="c1"># No context needed</span>
     <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;Processed: </span><span class="si">{</span><span class="n">data</span><span class="si">}</span><span class="s2">&quot;</span>
 
-<span class="nd">@mcp</span><span class="o">.</span><span class="n">tool</span><span class="p">()</span> 
+<span class="nd">@mcp</span><span class="o">.</span><span class="n">tool</span><span class="p">()</span>
 <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">advanced_tool</span><span class="p">(</span><span class="n">data</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">ctx</span><span class="p">:</span> <span class="n">Context</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
     <span class="c1"># Context automatically injected</span>
     <span class="k">await</span> <span class="n">ctx</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Starting processing&quot;</span><span class="p">)</span>
@@ -3965,7 +3950,7 @@ that provides the same underlying functionality with additional convenience meth
 <p><strong>Logging</strong>: Send structured log messages to the client with automatic request linking:</p>
 <div class="language-python highlight"><pre><span></span><code><span class="k">await</span> <span class="n">ctx</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;Detailed debug information&quot;</span><span class="p">)</span>
 <span class="k">await</span> <span class="n">ctx</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;General status updates&quot;</span><span class="p">)</span>
-<span class="k">await</span> <span class="n">ctx</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s2">&quot;Important warnings&quot;</span><span class="p">)</span>  
+<span class="k">await</span> <span class="n">ctx</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s2">&quot;Important warnings&quot;</span><span class="p">)</span>
 <span class="k">await</span> <span class="n">ctx</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s2">&quot;Error conditions&quot;</span><span class="p">)</span>
 </code></pre></div>
 <p><strong>Progress reporting</strong>: Keep users informed during long operations:</p>
@@ -4003,7 +3988,7 @@ that provides the same underlying functionality with additional convenience meth
 
 <span class="nd">@mcp</span><span class="o">.</span><span class="n">tool</span><span class="p">()</span>
 <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">process_data</span><span class="p">(</span>
-    <span class="n">data</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> 
+    <span class="n">data</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
     <span class="n">ctx</span><span class="p">:</span> <span class="n">Context</span><span class="p">,</span>
     <span class="n">auto_format</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
@@ -4026,7 +4011,7 @@ that provides the same underlying functionality with additional convenience meth
                 <span class="n">format_type</span> <span class="o">=</span> <span class="s2">&quot;standard&quot;</span>
                 <span class="n">include_meta</span> <span class="o">=</span> <span class="kc">False</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="n">format_type</span> <span class="o">=</span> <span class="s2">&quot;standard&quot;</span> 
+            <span class="n">format_type</span> <span class="o">=</span> <span class="s2">&quot;standard&quot;</span>
             <span class="n">include_meta</span> <span class="o">=</span> <span class="kc">False</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="n">format_type</span> <span class="o">=</span> <span class="s2">&quot;auto&quot;</span>
@@ -4146,10 +4131,10 @@ invocation gets a fresh Context instance tied to that specific request.</p>
         <p>Elicit structured information from the client or user during tool execution.</p>
 <p>This method enables interactive data collection from clients during tool processing.
 The client may display the message to the user and collect a response according to
-the provided Pydantic schema, or if the client is an agent, it may automatically 
+the provided Pydantic schema, or if the client is an agent, it may automatically
 generate an appropriate response. This is useful for gathering additional parameters,
 user preferences, or confirmation before proceeding with operations.</p>
-<p>You typically access this method through the <a class="autorefs autorefs-internal" title="Context" href="#mcp.server.fastmcp.Context"><code>Context</code></a> 
+<p>You typically access this method through the <a class="autorefs autorefs-internal" title="Context" href="#mcp.server.fastmcp.Context"><code>Context</code></a>
 object injected into your FastMCP tool functions. Always check that the client
 supports elicitation using <a class="autorefs autorefs-internal" title="check_client_capability" href="../session/#mcp.server.session.ServerSession.check_client_capability"><code>check_client_capability</code></a>
 before calling this method.</p>
@@ -4192,7 +4177,7 @@ what information is being requested and why it's needed.</p>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>A Pydantic model class defining the expected response structure. 
+                <p>A Pydantic model class defining the expected response structure.
 According to the MCP specification, only primitive types (str, int, float, bool)
 and simple containers (list, dict) are allowed - no complex nested objects.</p>
               </div>
@@ -5014,7 +4999,7 @@ which internally use this session with appropriate request linking.</p>
             </td>
             <td>
               <div class="doc-md-description">
-                <p><a class="autorefs autorefs-internal" title="ServerSession" href="../session/#mcp.server.session.ServerSession"><code>ServerSession</code></a>: The session for </p>
+                <p><a class="autorefs autorefs-internal" title="ServerSession" href="../session/#mcp.server.session.ServerSession"><code>ServerSession</code></a>: The session for</p>
               </div>
             </td>
           </tr>
@@ -6151,8 +6136,10 @@ the context isn't automatically provided via function parameters.</p>
 <p>In most cases, you should prefer automatic context injection by declaring
 a Context parameter in your tool/resource functions. Use this method only
 when you need context access from code that isn't directly called by FastMCP.</p>
-<h5 id="mcp.server.fastmcp.FastMCP.get_context--when-to-use-this-method">When to use this method</h5>
-<p><strong>Helper functions</strong>: When context is needed in utility functions:</p>
+<p>You might call this method directly in:</p>
+<ul>
+<li>
+<p><strong>Helper functions</strong></p>
 <div class="language-python highlight"><pre><span></span><code><span class="n">mcp</span> <span class="o">=</span> <span class="n">FastMCP</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;example&quot;</span><span class="p">)</span>
 
 <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">log_operation</span><span class="p">(</span><span class="n">operation</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
@@ -6165,7 +6152,9 @@ when you need context access from code that isn't directly called by FastMCP.</p
     <span class="k">await</span> <span class="n">log_operation</span><span class="p">(</span><span class="s2">&quot;data_processing&quot;</span><span class="p">)</span>  <span class="c1"># Helper needs context</span>
     <span class="k">return</span> <span class="n">process_data</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
 </code></pre></div>
-<p><strong>Callbacks and event handlers</strong>: When context is needed in async callbacks:</p>
+</li>
+<li>
+<p><strong>Callbacks</strong> and <strong>event handlers</strong> when context is needed in async callbacks</p>
 <div class="language-python highlight"><pre><span></span><code><span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">progress_callback</span><span class="p">(</span><span class="n">current</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">total</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
     <span class="n">ctx</span> <span class="o">=</span> <span class="n">mcp</span><span class="o">.</span><span class="n">get_context</span><span class="p">()</span>  <span class="c1"># Access context in callback</span>
     <span class="k">await</span> <span class="n">ctx</span><span class="o">.</span><span class="n">report_progress</span><span class="p">(</span><span class="n">current</span><span class="p">,</span> <span class="n">total</span><span class="p">)</span>
@@ -6174,7 +6163,9 @@ when you need context access from code that isn't directly called by FastMCP.</p
 <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">long_operation</span><span class="p">(</span><span class="n">data</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
     <span class="k">return</span> <span class="k">await</span> <span class="n">process_with_callback</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">progress_callback</span><span class="p">)</span>
 </code></pre></div>
-<p><strong>Class methods</strong>: When context is needed in class-based code:</p>
+</li>
+<li>
+<p><strong>Class methods</strong> when context is needed in class-based code</p>
 <div class="language-python highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">DataProcessor</span><span class="p">:</span>
     <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mcp_server</span><span class="p">:</span> <span class="n">FastMCP</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">mcp</span> <span class="o">=</span> <span class="n">mcp_server</span>
@@ -6190,6 +6181,8 @@ when you need context access from code that isn't directly called by FastMCP.</p
 <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">process_data</span><span class="p">(</span><span class="n">data</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
     <span class="k">return</span> <span class="k">await</span> <span class="n">processor</span><span class="o">.</span><span class="n">process_chunk</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
 </code></pre></div>
+</li>
+</ul>
 
 
     <p><span class="doc-section-title">Returns:</span></p>

@@ -3494,21 +3494,6 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="get_context">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#mcp.server.FastMCP.get_context--when-to-use-this-method" class="md-nav__link">
-    <span class="md-ellipsis">
-      When to use this method
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
         
           <li class="md-nav__item">
@@ -3712,21 +3697,6 @@
       request_context
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="request_context">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#mcp.server.Server.request_context--common-usage-patterns" class="md-nav__link">
-    <span class="md-ellipsis">
-      Common usage patterns
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
         
@@ -4821,8 +4791,10 @@ the context isn't automatically provided via function parameters.</p>
 <p>In most cases, you should prefer automatic context injection by declaring
 a Context parameter in your tool/resource functions. Use this method only
 when you need context access from code that isn't directly called by FastMCP.</p>
-<h5 id="mcp.server.FastMCP.get_context--when-to-use-this-method">When to use this method</h5>
-<p><strong>Helper functions</strong>: When context is needed in utility functions:</p>
+<p>You might call this method directly in:</p>
+<ul>
+<li>
+<p><strong>Helper functions</strong></p>
 <div class="language-python highlight"><pre><span></span><code><span class="n">mcp</span> <span class="o">=</span> <span class="n">FastMCP</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;example&quot;</span><span class="p">)</span>
 
 <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">log_operation</span><span class="p">(</span><span class="n">operation</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
@@ -4835,7 +4807,9 @@ when you need context access from code that isn't directly called by FastMCP.</p
     <span class="k">await</span> <span class="n">log_operation</span><span class="p">(</span><span class="s2">&quot;data_processing&quot;</span><span class="p">)</span>  <span class="c1"># Helper needs context</span>
     <span class="k">return</span> <span class="n">process_data</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
 </code></pre></div>
-<p><strong>Callbacks and event handlers</strong>: When context is needed in async callbacks:</p>
+</li>
+<li>
+<p><strong>Callbacks</strong> and <strong>event handlers</strong> when context is needed in async callbacks</p>
 <div class="language-python highlight"><pre><span></span><code><span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">progress_callback</span><span class="p">(</span><span class="n">current</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">total</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
     <span class="n">ctx</span> <span class="o">=</span> <span class="n">mcp</span><span class="o">.</span><span class="n">get_context</span><span class="p">()</span>  <span class="c1"># Access context in callback</span>
     <span class="k">await</span> <span class="n">ctx</span><span class="o">.</span><span class="n">report_progress</span><span class="p">(</span><span class="n">current</span><span class="p">,</span> <span class="n">total</span><span class="p">)</span>
@@ -4844,7 +4818,9 @@ when you need context access from code that isn't directly called by FastMCP.</p
 <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">long_operation</span><span class="p">(</span><span class="n">data</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
     <span class="k">return</span> <span class="k">await</span> <span class="n">process_with_callback</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">progress_callback</span><span class="p">)</span>
 </code></pre></div>
-<p><strong>Class methods</strong>: When context is needed in class-based code:</p>
+</li>
+<li>
+<p><strong>Class methods</strong> when context is needed in class-based code</p>
 <div class="language-python highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">DataProcessor</span><span class="p">:</span>
     <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mcp_server</span><span class="p">:</span> <span class="n">FastMCP</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">mcp</span> <span class="o">=</span> <span class="n">mcp_server</span>
@@ -4860,6 +4836,8 @@ when you need context access from code that isn't directly called by FastMCP.</p
 <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">process_data</span><span class="p">(</span><span class="n">data</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
     <span class="k">return</span> <span class="k">await</span> <span class="n">processor</span><span class="o">.</span><span class="n">process_chunk</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
 </code></pre></div>
+</li>
+</ul>
 
 
     <p><span class="doc-section-title">Returns:</span></p>
@@ -6203,19 +6181,19 @@ MCP capabilities when using the low-level SDK.</p>
 resource handlers, prompt handlers, etc.) to get the context for the current
 client request. The context is automatically managed by the server and is only
 available during request processing.</p>
-<h5 id="mcp.server.Server.request_context--common-usage-patterns">Common usage patterns</h5>
+<p>Examples:</p>
 <p><strong>Logging and communication</strong>:</p>
 <div class="language-python highlight"><pre><span></span><code><span class="nd">@app</span><span class="o">.</span><span class="n">call_tool</span><span class="p">()</span>
 <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">my_tool</span><span class="p">(</span><span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">arguments</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="n">types</span><span class="o">.</span><span class="n">ContentBlock</span><span class="p">]:</span>
     <span class="n">ctx</span> <span class="o">=</span> <span class="n">app</span><span class="o">.</span><span class="n">request_context</span>
     <span class="k">await</span> <span class="n">ctx</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">send_log_message</span><span class="p">(</span>
-        <span class="n">level</span><span class="o">=</span><span class="s2">&quot;info&quot;</span><span class="p">,</span> 
+        <span class="n">level</span><span class="o">=</span><span class="s2">&quot;info&quot;</span><span class="p">,</span>
         <span class="n">data</span><span class="o">=</span><span class="s2">&quot;Starting tool processing&quot;</span><span class="p">,</span>
         <span class="n">related_request_id</span><span class="o">=</span><span class="n">ctx</span><span class="o">.</span><span class="n">request_id</span>
     <span class="p">)</span>
 </code></pre></div>
 <p><strong>Capability checking</strong>:</p>
-<div class="language-python highlight"><pre><span></span><code><span class="nd">@app</span><span class="o">.</span><span class="n">call_tool</span><span class="p">()</span> 
+<div class="language-python highlight"><pre><span></span><code><span class="nd">@app</span><span class="o">.</span><span class="n">call_tool</span><span class="p">()</span>
 <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">advanced_tool</span><span class="p">(</span><span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">arguments</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="n">types</span><span class="o">.</span><span class="n">ContentBlock</span><span class="p">]:</span>
     <span class="n">ctx</span> <span class="o">=</span> <span class="n">app</span><span class="o">.</span><span class="n">request_context</span>
     <span class="k">if</span> <span class="n">ctx</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">check_client_capability</span><span class="p">(</span>

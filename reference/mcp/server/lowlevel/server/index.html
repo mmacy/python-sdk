@@ -2924,21 +2924,6 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="request_context">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#mcp.server.lowlevel.server.Server.request_context--common-usage-patterns" class="md-nav__link">
-    <span class="md-ellipsis">
-      Common usage patterns
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
         
       </ul>
@@ -3639,21 +3624,6 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="request_context">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#mcp.server.lowlevel.server.Server.request_context--common-usage-patterns" class="md-nav__link">
-    <span class="md-ellipsis">
-      Common usage patterns
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
         
       </ul>
@@ -4025,19 +3995,19 @@ MCP capabilities when using the low-level SDK.</p>
 resource handlers, prompt handlers, etc.) to get the context for the current
 client request. The context is automatically managed by the server and is only
 available during request processing.</p>
-<h5 id="mcp.server.lowlevel.server.Server.request_context--common-usage-patterns">Common usage patterns</h5>
+<p>Examples:</p>
 <p><strong>Logging and communication</strong>:</p>
 <div class="language-python highlight"><pre><span></span><code><span class="nd">@app</span><span class="o">.</span><span class="n">call_tool</span><span class="p">()</span>
 <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">my_tool</span><span class="p">(</span><span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">arguments</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="n">types</span><span class="o">.</span><span class="n">ContentBlock</span><span class="p">]:</span>
     <span class="n">ctx</span> <span class="o">=</span> <span class="n">app</span><span class="o">.</span><span class="n">request_context</span>
     <span class="k">await</span> <span class="n">ctx</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">send_log_message</span><span class="p">(</span>
-        <span class="n">level</span><span class="o">=</span><span class="s2">&quot;info&quot;</span><span class="p">,</span> 
+        <span class="n">level</span><span class="o">=</span><span class="s2">&quot;info&quot;</span><span class="p">,</span>
         <span class="n">data</span><span class="o">=</span><span class="s2">&quot;Starting tool processing&quot;</span><span class="p">,</span>
         <span class="n">related_request_id</span><span class="o">=</span><span class="n">ctx</span><span class="o">.</span><span class="n">request_id</span>
     <span class="p">)</span>
 </code></pre></div>
 <p><strong>Capability checking</strong>:</p>
-<div class="language-python highlight"><pre><span></span><code><span class="nd">@app</span><span class="o">.</span><span class="n">call_tool</span><span class="p">()</span> 
+<div class="language-python highlight"><pre><span></span><code><span class="nd">@app</span><span class="o">.</span><span class="n">call_tool</span><span class="p">()</span>
 <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">advanced_tool</span><span class="p">(</span><span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">arguments</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="n">types</span><span class="o">.</span><span class="n">ContentBlock</span><span class="p">]:</span>
     <span class="n">ctx</span> <span class="o">=</span> <span class="n">app</span><span class="o">.</span><span class="n">request_context</span>
     <span class="k">if</span> <span class="n">ctx</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">check_client_capability</span><span class="p">(</span>
