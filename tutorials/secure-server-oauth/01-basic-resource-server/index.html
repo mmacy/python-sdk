@@ -86,6 +86,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#build-a-basic-resource-server" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -434,6 +439,21 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Basic resource server
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -446,6 +466,97 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#set-up-your-project" class="md-nav__link">
+    <span class="md-ellipsis">
+      Set up your project
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-your-first-mcp-tool" class="md-nav__link">
+    <span class="md-ellipsis">
+      Create your first MCP tool
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#test-with-mcp-inspector" class="md-nav__link">
+    <span class="md-ellipsis">
+      Test with MCP Inspector
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#add-a-second-tool" class="md-nav__link">
+    <span class="md-ellipsis">
+      Add a second tool
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configure-for-http-transport" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configure for HTTP transport
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#understand-the-resource-server-role" class="md-nav__link">
+    <span class="md-ellipsis">
+      Understand the resource server role
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#next-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      Next steps
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -3687,6 +3798,88 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#set-up-your-project" class="md-nav__link">
+    <span class="md-ellipsis">
+      Set up your project
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-your-first-mcp-tool" class="md-nav__link">
+    <span class="md-ellipsis">
+      Create your first MCP tool
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#test-with-mcp-inspector" class="md-nav__link">
+    <span class="md-ellipsis">
+      Test with MCP Inspector
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#add-a-second-tool" class="md-nav__link">
+    <span class="md-ellipsis">
+      Add a second tool
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configure-for-http-transport" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configure for HTTP transport
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#understand-the-resource-server-role" class="md-nav__link">
+    <span class="md-ellipsis">
+      Understand the resource server role
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#next-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      Next steps
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -3705,9 +3898,119 @@
   
 
 
-  <h1>Basic resource server</h1>
-
-
+<h1 id="build-a-basic-resource-server">Build a basic resource server</h1>
+<p>Every secure MCP implementation starts with a resource server - the component that provides tools and resources to clients. Building this foundation first lets you understand MCP server basics before adding authentication layers. You'll create a standalone FastMCP server with public tools that will later become the protected resource server in your OAuth architecture.</p>
+<p>This is the first tutorial in a series:</p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> 01 - Basic resource server</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <a href="../02-authorization-server-foundation/">02 - Authorization server foundation</a></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <a href="../03-oauth-flow-implementation/">03 - OAuth flow implementation</a></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <a href="../04-secure-resource-server/">04 - Secure resource server</a></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <a href="../05-test-client/">05 - Test client</a></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <a href="../06-persistence-scopes-and-config/">06 - Persistence, scopes, and config</a></li>
+</ul>
+<h2 id="prerequisites">Prerequisites</h2>
+<p>Before starting this tutorial, you need:</p>
+<ul>
+<li>Python 3.12+</li>
+<li><a href="https://docs.astral.sh/uv/">uv</a> package manager</li>
+<li>Familiarity with MCP concepts (tools, resources, prompts)</li>
+</ul>
+<h2 id="set-up-your-project">Set up your project</h2>
+<p>Start by creating a new project directory and initializing it with uv:</p>
+<div class="language-bash highlight"><pre><span></span><code>mkdir<span class="w"> </span>mcp-oauth-tutorial
+<span class="nb">cd</span><span class="w"> </span>mcp-oauth-tutorial
+uv<span class="w"> </span>init
+</code></pre></div>
+<p>Install the MCP Python SDK:</p>
+<div class="language-bash highlight"><pre><span></span><code>uv<span class="w"> </span>add<span class="w"> </span><span class="s2">&quot;mcp[cli]&quot;</span>
+</code></pre></div>
+<p>Create the directory structure for your resource server:</p>
+<div class="language-bash highlight"><pre><span></span><code>mkdir<span class="w"> </span>-p<span class="w"> </span>src/resource_server
+</code></pre></div>
+<h2 id="create-your-first-mcp-tool">Create your first MCP tool</h2>
+<p>Build a simple MCP server with one public tool that generates greetings. This tool will remain public throughout the tutorial series, demonstrating how to mix public and protected resources.</p>
+<p>Create <code>src/resource_server/server.py</code>:</p>
+<div class="language-python highlight"><pre><span></span><code><span class="c1"># Path: src/resource_server/server.py</span>
+<span class="c1"># TODO</span>
+</code></pre></div>
+<p>This server implements:</p>
+<ul>
+<li>A <code>greet</code> tool that accepts a name and optional punctuation</li>
+<li>Basic FastMCP configuration with server name and instructions</li>
+<li>Logging setup for debugging</li>
+</ul>
+<h2 id="test-with-mcp-inspector">Test with MCP Inspector</h2>
+<p>The MCP Inspector provides an interactive way to test your server without building a client. Run your server with the Inspector:</p>
+<div class="language-bash highlight"><pre><span></span><code>uv<span class="w"> </span>run<span class="w"> </span>mcp<span class="w"> </span>dev<span class="w"> </span>src/resource_server/server.py
+</code></pre></div>
+<p>The Inspector opens in your browser where you can:</p>
+<ol>
+<li>View available tools in the Tools tab</li>
+<li>Call the <code>greet</code> tool with different parameters</li>
+<li>See the formatted responses</li>
+<li>Check server logs in the terminal</li>
+</ol>
+<p>Try these test cases:</p>
+<ul>
+<li>Name: "World", Punctuation: "!" &gt; "Hello, World!"</li>
+<li>Name: "MCP Developer", Punctuation: "." &gt; "Hello, MCP Developer."</li>
+<li>Name: "Friend" (no punctuation) &gt; "Hello, Friend!"</li>
+</ul>
+<h2 id="add-a-second-tool">Add a second tool</h2>
+<p>Expand your server with a tool that will later require authentication. Add a <code>server_time</code> tool that returns the current server time:</p>
+<div class="language-python highlight"><pre><span></span><code><span class="c1"># Path: src/resource_server/server.py (updated with server_time tool)</span>
+<span class="c1"># TODO</span>
+</code></pre></div>
+<p>This new tool:</p>
+<ul>
+<li>Returns structured time information</li>
+<li>Will be protected in tutorial 04</li>
+<li>Demonstrates returning complex JSON responses</li>
+</ul>
+<h2 id="configure-for-http-transport">Configure for HTTP transport</h2>
+<p>MCP servers can use different transport protocols. Prepare your server for HTTP transport, which you'll need for OAuth integration:</p>
+<div class="language-python highlight"><pre><span></span><code><span class="c1"># Path: src/resource_server/server.py (updated with HTTP transport support)</span>
+<span class="c1"># TODO</span>
+</code></pre></div>
+<p>Test with stdio transport (Inspector):</p>
+<div class="language-bash highlight"><pre><span></span><code>uv<span class="w"> </span>run<span class="w"> </span>mcp<span class="w"> </span>dev<span class="w"> </span>src/resource_server/server.py
+</code></pre></div>
+<p>Run with HTTP transport for client access:</p>
+<div class="language-bash highlight"><pre><span></span><code>uv<span class="w"> </span>run<span class="w"> </span>src/resource_server/server.py
+</code></pre></div>
+<p>The server now:</p>
+<ul>
+<li>Listens on port 8000 by default</li>
+<li>Exposes MCP endpoint at <code>/mcp</code></li>
+<li>Supports both stdio (Inspector) and HTTP transports</li>
+<li>Can be tested with <code>curl http://localhost:8000/mcp</code></li>
+</ul>
+<h2 id="understand-the-resource-server-role">Understand the resource server role</h2>
+<p>Your resource server is the foundation of the OAuth architecture. It:</p>
+<ul>
+<li><strong>Provides MCP tools</strong>: The actual functionality clients want to access</li>
+<li><strong>Defines access requirements</strong>: Which tools need authentication (later)</li>
+<li><strong>Validates tokens</strong>: Checks with the authorization server (tutorial 04)</li>
+<li><strong>Returns responses</strong>: Sends tool results to authenticated clients</li>
+</ul>
+<p>In the OAuth flow, the resource server:</p>
+<ol>
+<li>Receives requests from clients</li>
+<li>Checks if authentication is required</li>
+<li>Validates bearer tokens when present</li>
+<li>Executes tools and returns results</li>
+</ol>
+<h2 id="next-steps">Next steps</h2>
+<p>You've successfully:</p>
+<ul>
+<li>Created a basic MCP resource server with FastMCP</li>
+<li>Implemented public tools that accept parameters</li>
+<li>Tested your server with MCP Inspector</li>
+<li>Configured HTTP transport for client access</li>
+<li>Understood the resource server's role in OAuth</li>
+</ul>
+<p>Next, build the authorization server in <a href="../02-authorization-server-foundation/">02 - Authorization server foundation</a>.</p>
 
 
 

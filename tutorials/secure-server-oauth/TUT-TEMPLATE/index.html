@@ -10,13 +10,9 @@
       
       
       
-        <link rel="canonical" href="https://mmacy.github.io/python-sdk/tutorials/secure-server-oauth/05-test-client/">
+        <link rel="canonical" href="https://mmacy.github.io/python-sdk/tutorials/secure-server-oauth/TUT-TEMPLATE/">
       
       
-        <link rel="prev" href="../04-secure-resource-server/">
-      
-      
-        <link rel="next" href="../06-persistence-scopes-and-config/">
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
@@ -24,7 +20,7 @@
     
     
       
-        <title>Test client - MCP Python SDK</title>
+        <title>TUT TEMPLATE - MCP Python SDK</title>
       
     
     
@@ -87,7 +83,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#build-a-test-client" class="md-skip">
+        <a href="#verb_title_of_tutorial_series" class="md-skip">
           Skip to content
         </a>
       
@@ -123,7 +119,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Test client
+              TUT TEMPLATE
             
           </span>
         </div>
@@ -300,10 +296,8 @@
       
   
   
-    
   
   
-  
     
     
       
@@ -318,11 +312,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
         
           
           <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
@@ -338,7 +332,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             Tutorials
@@ -349,10 +343,8 @@
                 
   
   
-    
   
   
-  
     
     
       
@@ -376,11 +368,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
         
           
           <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
@@ -396,7 +388,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2_1">
             <span class="md-nav__icon md-icon"></span>
             Secure server with OAuth
@@ -522,32 +514,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    Test client
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../05-test-client/" class="md-nav__link">
         
   
   
@@ -558,158 +528,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#prerequisites" class="md-nav__link">
-    <span class="md-ellipsis">
-      Prerequisites
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#understand-the-three-party-flow" class="md-nav__link">
-    <span class="md-ellipsis">
-      Understand the three-party flow
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#set-up-token-storage" class="md-nav__link">
-    <span class="md-ellipsis">
-      Set up token storage
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#implement-oauth-redirect-handling" class="md-nav__link">
-    <span class="md-ellipsis">
-      Implement OAuth redirect handling
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#create-the-oauth-client-provider" class="md-nav__link">
-    <span class="md-ellipsis">
-      Create the OAuth client provider
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#connect-to-the-resource-server" class="md-nav__link">
-    <span class="md-ellipsis">
-      Connect to the resource server
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#test-the-complete-flow" class="md-nav__link">
-    <span class="md-ellipsis">
-      Test the complete flow
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Test the complete flow">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#start-all-servers" class="md-nav__link">
-    <span class="md-ellipsis">
-      Start all servers
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#run-the-client" class="md-nav__link">
-    <span class="md-ellipsis">
-      Run the client
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#monitor-the-flow" class="md-nav__link">
-    <span class="md-ellipsis">
-      Monitor the flow
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#handle-authentication-errors" class="md-nav__link">
-    <span class="md-ellipsis">
-      Handle authentication errors
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#understand-the-sdk-automation" class="md-nav__link">
-    <span class="md-ellipsis">
-      Understand the SDK automation
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#customize-client-behavior" class="md-nav__link">
-    <span class="md-ellipsis">
-      Customize client behavior
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#next-steps" class="md-nav__link">
-    <span class="md-ellipsis">
-      Next steps
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -3877,114 +3695,18 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#understand-the-three-party-flow" class="md-nav__link">
+  <a href="#action_oriented_heading_starting_with_verb" class="md-nav__link">
     <span class="md-ellipsis">
-      Understand the three-party flow
+      $ACTION_ORIENTED_HEADING_STARTING_WITH_VERB
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#set-up-token-storage" class="md-nav__link">
+  <a href="#action_oriented_heading_starting_with_verb_1" class="md-nav__link">
     <span class="md-ellipsis">
-      Set up token storage
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#implement-oauth-redirect-handling" class="md-nav__link">
-    <span class="md-ellipsis">
-      Implement OAuth redirect handling
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#create-the-oauth-client-provider" class="md-nav__link">
-    <span class="md-ellipsis">
-      Create the OAuth client provider
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#connect-to-the-resource-server" class="md-nav__link">
-    <span class="md-ellipsis">
-      Connect to the resource server
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#test-the-complete-flow" class="md-nav__link">
-    <span class="md-ellipsis">
-      Test the complete flow
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Test the complete flow">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#start-all-servers" class="md-nav__link">
-    <span class="md-ellipsis">
-      Start all servers
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#run-the-client" class="md-nav__link">
-    <span class="md-ellipsis">
-      Run the client
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#monitor-the-flow" class="md-nav__link">
-    <span class="md-ellipsis">
-      Monitor the flow
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#handle-authentication-errors" class="md-nav__link">
-    <span class="md-ellipsis">
-      Handle authentication errors
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#understand-the-sdk-automation" class="md-nav__link">
-    <span class="md-ellipsis">
-      Understand the SDK automation
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#customize-client-behavior" class="md-nav__link">
-    <span class="md-ellipsis">
-      Customize client behavior
+      $ACTION_ORIENTED_HEADING_STARTING_WITH_VERB
     </span>
   </a>
   
@@ -4018,217 +3740,35 @@
   
 
 
-<h1 id="build-a-test-client">Build a test client</h1>
-<p>Testing OAuth integration requires a client that orchestrates the complete three-party flow between itself, the resource server, and the authorization server. Building this client demonstrates how MCP's OAuth support handles authentication automatically while you focus on calling tools. You'll create a client that performs dynamic registration, handles the authorization flow, and accesses both public and protected tools.</p>
-<p>This is the fifth tutorial in a series:</p>
-<ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <a href="../01-basic-resource-server/">01 - Basic resource server</a></li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <a href="../02-authorization-server-foundation/">02 - Authorization server foundation</a></li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <a href="../03-oauth-flow-implementation/">03 - OAuth flow implementation</a></li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <a href="../04-secure-resource-server/">04 - Secure resource server</a></li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> 05 - Test client</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <a href="../06-persistence-scopes-and-config/">06 - Persistence, scopes, and config</a></li>
-</ul>
+<!-- You MUST replace all $PLACEHOLDERS. -->
+<h1 id="verb_title_of_tutorial_series">$VERB_TITLE_OF_TUTORIAL_SERIES</h1>
+<!-- Short paragraph with a few sentences about this tutorial. -->
+<!-- You MUST NOT begin the first sentence with "This" or "In this" - get right to WHY and the WHAT. -->
+
+<p>This is the $PLACE tutorial in a series:</p>
+<!-- Checkbox list of tutorials (linked) in the series. -->
+<!-- Check ONLY this tutorial.
+<!-- Link ONLY other tutorials.
+
+Example list if TUT_02 is this file:
+
+- [ ] [$TUT_01_TITLE](path/to/tut1.md)
+- [x] $TUT_02_TITLE
+- [ ] [$TUT_03_TITLE](path/to/tut3.md)
+-->
+
 <h2 id="prerequisites">Prerequisites</h2>
-<p>Before starting this tutorial, you need:</p>
-<ul>
-<li>Completed <a href="../04-secure-resource-server/">tutorial 04</a> with secured RS</li>
-<li>Working authorization server from tutorial 03</li>
-<li>Python 3.12+ and <a href="https://docs.astral.sh/uv/">uv</a> installed</li>
-<li>Understanding of OAuth client concepts</li>
-</ul>
-<h2 id="understand-the-three-party-flow">Understand the three-party flow</h2>
-<p>The client orchestrates interactions between all three parties:</p>
-<ol>
-<li><strong>Client → RS</strong>: Attempts to access protected resource</li>
-<li><strong>RS → Client</strong>: Returns 401 with OAuth metadata</li>
-<li><strong>Client → AS</strong>: Discovers metadata and registers dynamically</li>
-<li><strong>Client → AS</strong>: Initiates authorization with PKCE</li>
-<li><strong>User → AS</strong>: Authenticates via browser</li>
-<li><strong>AS → Client</strong>: Returns authorization code</li>
-<li><strong>Client → AS</strong>: Exchanges code for access token</li>
-<li><strong>Client → RS</strong>: Retries with bearer token</li>
-<li><strong>RS → AS</strong>: Validates token via introspection</li>
-<li><strong>RS → Client</strong>: Returns protected resource</li>
-</ol>
-<p>The MCP SDK handles most of this automatically through <a class="autorefs autorefs-internal" title="OAuthClientProvider" href="../../../reference/mcp/client/auth/#mcp.client.auth.OAuthClientProvider"><code>OAuthClientProvider</code></a>.</p>
-<h2 id="set-up-token-storage">Set up token storage</h2>
-<p>Create simple in-memory storage for tokens and client credentials.</p>
-<p>Create <code>src/client.py</code>:</p>
-<div class="language-python highlight"><pre><span></span><code><span class="c1"># Path: src/client.py (token storage)</span>
-<span class="c1"># TODO</span>
-</code></pre></div>
-<p>Token storage manages:</p>
-<ul>
-<li>Access tokens received from AS</li>
-<li>Client credentials from dynamic registration</li>
-<li>Token refresh (future enhancement)</li>
-<li>Persistence (could be file/database in production)</li>
-</ul>
-<h2 id="implement-oauth-redirect-handling">Implement OAuth redirect handling</h2>
-<p>Handle the OAuth callback that receives the authorization code.</p>
-<p>Add to <code>src/client.py</code>:</p>
-<div class="language-python highlight"><pre><span></span><code><span class="c1"># Path: src/client.py (redirect handlers)</span>
-<span class="c1"># TODO</span>
-</code></pre></div>
-<p>Redirect handling includes:</p>
-<ul>
-<li>Browser opener: Launches user's browser for login</li>
-<li>Callback receiver: Local HTTP server for redirect</li>
-<li>State validation: Ensures callback matches request</li>
-<li>Code extraction: Pulls authorization code from URL</li>
-</ul>
-<h2 id="create-the-oauth-client-provider">Create the OAuth client provider</h2>
-<p>Configure the OAuth provider that manages the authentication flow.</p>
-<p>Add to <code>src/client.py</code>:</p>
-<div class="language-python highlight"><pre><span></span><code><span class="c1"># Path: src/client.py (OAuth provider setup)</span>
-<span class="c1"># TODO</span>
-</code></pre></div>
-<p><a class="autorefs autorefs-internal" title="OAuthClientProvider" href="../../../reference/mcp/client/auth/#mcp.client.auth.OAuthClientProvider"><code>OAuthClientProvider</code></a> configuration:</p>
-<ul>
-<li>Server URL: Resource server's MCP endpoint</li>
-<li>Client metadata: Redirect URI and auth method</li>
-<li>Storage: Token and client credential persistence</li>
-<li>Handlers: Browser and callback functions</li>
-<li>Timeout: Maximum time for auth flow</li>
-</ul>
-<h2 id="connect-to-the-resource-server">Connect to the resource server</h2>
-<p>Use streamable HTTP transport with OAuth authentication.</p>
-<p>Add to <code>src/client.py</code>:</p>
-<div class="language-python highlight"><pre><span></span><code><span class="c1"># Path: src/client.py (main client logic)</span>
-<span class="c1"># TODO</span>
-</code></pre></div>
-<p>Client connection:</p>
-<ul>
-<li><a class="autorefs autorefs-internal" title="streamablehttp_client
+<h2 id="action_oriented_heading_starting_with_verb">$ACTION_ORIENTED_HEADING_STARTING_WITH_VERB</h2>
+<!-- Tutorial task 1 of n -->
 
+<h2 id="action_oriented_heading_starting_with_verb_1">$ACTION_ORIENTED_HEADING_STARTING_WITH_VERB</h2>
+<!-- Tutorial task n of n -->
 
-  
-      async
-  " href="../../../reference/mcp/client/streamable_http/#mcp.client.streamable_http.streamablehttp_client"><code>streamablehttp_client</code></a>: HTTP transport for MCP</li>
-<li>OAuth auth: Automatically handles authentication</li>
-<li><a class="autorefs autorefs-internal" title="ClientSession" href="../../../reference/mcp/client/session/#mcp.client.session.ClientSession"><code>ClientSession</code></a>: MCP protocol session</li>
-<li>Tool discovery: Lists available tools</li>
-<li>Tool invocation: Calls public and protected tools</li>
-</ul>
-<h2 id="test-the-complete-flow">Test the complete flow</h2>
-<p>Run all three components and watch the OAuth flow in action.</p>
-<h3 id="start-all-servers">Start all servers</h3>
-<p>Terminal 1 - Authorization Server:</p>
-<div class="language-bash highlight"><pre><span></span><code>uv<span class="w"> </span>run<span class="w"> </span>src/authorization_server/server.py
-</code></pre></div>
-<p>Terminal 2 - Resource Server:</p>
-<div class="language-bash highlight"><pre><span></span><code>uv<span class="w"> </span>run<span class="w"> </span>src/resource_server/server.py
-</code></pre></div>
-<h3 id="run-the-client">Run the client</h3>
-<p>Terminal 3 - Client:</p>
-<div class="language-bash highlight"><pre><span></span><code>uv<span class="w"> </span>run<span class="w"> </span>src/client.py
-</code></pre></div>
-<p>Expected flow:</p>
-<ol>
-<li>Client connects to RS</li>
-<li>Browser opens for authentication</li>
-<li>Enter demo credentials (demo_user/demo_password)</li>
-<li>Browser shows "Authentication complete"</li>
-<li>Client receives token</li>
-<li>Client calls public tool (greet)</li>
-<li>Client calls protected tool (server_time)</li>
-<li>Both tools return results</li>
-</ol>
-<h3 id="monitor-the-flow">Monitor the flow</h3>
-<p>Watch server logs to see:</p>
-<p><strong>Authorization Server</strong>:</p>
-<ul>
-<li>Dynamic client registration</li>
-<li>Authorization request with PKCE</li>
-<li>Login form serving</li>
-<li>Code issuance</li>
-<li>Token exchange</li>
-<li>Introspection requests</li>
-</ul>
-<p><strong>Resource Server</strong>:</p>
-<ul>
-<li>Public tool calls (no auth)</li>
-<li>Protected tool rejection (401)</li>
-<li>Token validation via AS</li>
-<li>Successful protected calls</li>
-</ul>
-<h2 id="handle-authentication-errors">Handle authentication errors</h2>
-<p>The client should gracefully handle various error conditions:</p>
-<div class="language-python highlight"><pre><span></span><code><span class="c1"># Path: src/client.py (error handling example)</span>
-<span class="c1"># TODO</span>
-</code></pre></div>
-<p>Common errors:</p>
-<ul>
-<li><strong>Network issues</strong>: AS or RS unavailable</li>
-<li><strong>Invalid credentials</strong>: Wrong username/password</li>
-<li><strong>Token expiration</strong>: Access token timeout</li>
-<li><strong>Registration failure</strong>: Client metadata rejection</li>
-<li><strong>PKCE mismatch</strong>: Verifier doesn't match challenge</li>
-</ul>
-<h2 id="understand-the-sdk-automation">Understand the SDK automation</h2>
-<p>The MCP SDK's <a class="autorefs autorefs-internal" title="OAuthClientProvider" href="../../../reference/mcp/client/auth/#mcp.client.auth.OAuthClientProvider"><code>OAuthClientProvider</code></a> automates:</p>
-<p><strong>Discovery</strong>:</p>
-<ul>
-<li>Fetches RS metadata from <code>/.well-known/oauth-protected-resource</code></li>
-<li>Discovers AS metadata from <code>/.well-known/oauth-authorization-server</code></li>
-<li>Extracts endpoints and capabilities</li>
-</ul>
-<p><strong>Registration</strong>:</p>
-<ul>
-<li>Dynamically registers client if needed</li>
-<li>Stores client credentials securely</li>
-<li>Reuses existing registration when available</li>
-</ul>
-<p><strong>Authentication</strong>:</p>
-<ul>
-<li>Generates PKCE verifier and challenge</li>
-<li>Constructs authorization URL with parameters</li>
-<li>Handles redirect and code extraction</li>
-<li>Exchanges code for tokens</li>
-</ul>
-<p><strong>Token management</strong>:</p>
-<ul>
-<li>Adds bearer token to requests</li>
-<li>Handles 401 responses automatically</li>
-<li>Could support refresh (future enhancement)</li>
-</ul>
-<h2 id="customize-client-behavior">Customize client behavior</h2>
-<p>You can customize various aspects of the OAuth flow:</p>
-<p><strong>Client metadata</strong>:</p>
-<div class="language-python highlight"><pre><span></span><code><span class="c1"># Path: src/client.py (custom metadata example)</span>
-<span class="c1"># TODO</span>
-</code></pre></div>
-<p>Options include:</p>
-<ul>
-<li><code>client_name</code>: Display name for consent</li>
-<li><code>client_uri</code>: Client information URL</li>
-<li><code>logo_uri</code>: Client logo for AS UI</li>
-<li><code>scope</code>: Requested permissions</li>
-<li><code>token_endpoint_auth_method</code>: Authentication method</li>
-</ul>
-<p><strong>Redirect handling</strong>:</p>
-<ul>
-<li>Custom redirect URI (must match registration)</li>
-<li>Alternative to browser (e.g., display URL)</li>
-<li>Custom callback server implementation</li>
-</ul>
-<p><strong>Storage backends</strong>:</p>
-<ul>
-<li>File-based for persistence</li>
-<li>Database for multi-user</li>
-<li>Encrypted for security</li>
-</ul>
 <h2 id="next-steps">Next steps</h2>
-<p>You've successfully:</p>
-<ul>
-<li>Built a complete OAuth client for MCP</li>
-<li>Implemented the three-party authentication flow</li>
-<li>Handled dynamic registration and PKCE</li>
-<li>Accessed both public and protected tools</li>
-<li>Understood the SDK's OAuth automation</li>
-</ul>
-<p>Next, enhance with persistence and scopes in <a href="../06-persistence-scopes-and-config/">06 - Persistence, scopes, and config</a>.</p>
+<!-- High-level bulleted list with concise descriptions of accomplishements in this tutorial -->
+
+<!-- If there is another tutorial in the series, link to it here using this format -->
+<p>Next, $ACTION in <a href="FILENAME_OF_TUTORIAL_IN_SERIES.md">$TITLE_OF_NEXT_TUTORIAL_IN_SERIES</a>.</p>
 
 
 

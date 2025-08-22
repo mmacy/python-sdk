@@ -86,6 +86,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#implement-the-oauth-flow" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -480,6 +485,21 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    OAuth flow implementation
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -492,6 +512,166 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#understand-the-authorization-code-flow-with-pkce" class="md-nav__link">
+    <span class="md-ellipsis">
+      Understand the Authorization Code flow with PKCE
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implement-the-authentication-provider" class="md-nav__link">
+    <span class="md-ellipsis">
+      Implement the authentication provider
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#add-authorization-endpoint-logic" class="md-nav__link">
+    <span class="md-ellipsis">
+      Add authorization endpoint logic
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-the-login-ui" class="md-nav__link">
+    <span class="md-ellipsis">
+      Create the login UI
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implement-token-exchange" class="md-nav__link">
+    <span class="md-ellipsis">
+      Implement token exchange
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#add-token-introspection" class="md-nav__link">
+    <span class="md-ellipsis">
+      Add token introspection
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#test-the-complete-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Test the complete flow
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Test the complete flow">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#start-the-authorization-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      Start the authorization server
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#simulate-client-registration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Simulate client registration
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#start-the-authorization-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Start the authorization flow
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#complete-authentication" class="md-nav__link">
+    <span class="md-ellipsis">
+      Complete authentication
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#verify-token-introspection" class="md-nav__link">
+    <span class="md-ellipsis">
+      Verify token introspection
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#understand-security-considerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Understand security considerations
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#next-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      Next steps
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -3687,6 +3867,157 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#understand-the-authorization-code-flow-with-pkce" class="md-nav__link">
+    <span class="md-ellipsis">
+      Understand the Authorization Code flow with PKCE
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implement-the-authentication-provider" class="md-nav__link">
+    <span class="md-ellipsis">
+      Implement the authentication provider
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#add-authorization-endpoint-logic" class="md-nav__link">
+    <span class="md-ellipsis">
+      Add authorization endpoint logic
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-the-login-ui" class="md-nav__link">
+    <span class="md-ellipsis">
+      Create the login UI
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implement-token-exchange" class="md-nav__link">
+    <span class="md-ellipsis">
+      Implement token exchange
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#add-token-introspection" class="md-nav__link">
+    <span class="md-ellipsis">
+      Add token introspection
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#test-the-complete-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Test the complete flow
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Test the complete flow">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#start-the-authorization-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      Start the authorization server
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#simulate-client-registration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Simulate client registration
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#start-the-authorization-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Start the authorization flow
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#complete-authentication" class="md-nav__link">
+    <span class="md-ellipsis">
+      Complete authentication
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#verify-token-introspection" class="md-nav__link">
+    <span class="md-ellipsis">
+      Verify token introspection
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#understand-security-considerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Understand security considerations
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#next-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      Next steps
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -3705,9 +4036,202 @@
   
 
 
-  <h1>OAuth flow implementation</h1>
+<h1 id="implement-the-oauth-flow">Implement the OAuth flow</h1>
+<p>Authentication requires more than just endpointsyou need the complete OAuth 2.1 Authorization Code flow with PKCE to securely authenticate users and issue tokens. Building on your authorization server foundation, you'll implement token generation, user authentication, and the full authorization flow that connects clients with protected resources.</p>
+<p>This is the third tutorial in a series:</p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <a href="../01-basic-resource-server/">01 - Basic resource server</a></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <a href="../02-authorization-server-foundation/">02 - Authorization server foundation</a></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> 03 - OAuth flow implementation</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <a href="../04-secure-resource-server/">04 - Secure resource server</a></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <a href="../05-test-client/">05 - Test client</a></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <a href="../06-persistence-scopes-and-config/">06 - Persistence, scopes, and config</a></li>
+</ul>
+<h2 id="prerequisites">Prerequisites</h2>
+<p>Before starting this tutorial, you need:</p>
+<ul>
+<li>Completed <a href="../02-authorization-server-foundation/">tutorial 02</a> with AS foundation</li>
+<li>Python 3.12+ and <a href="https://docs.astral.sh/uv/">uv</a> installed</li>
+<li>Understanding of OAuth 2.1 Authorization Code flow</li>
+<li>Basic knowledge of PKCE (Proof Key for Code Exchange)</li>
+</ul>
+<h2 id="understand-the-authorization-code-flow-with-pkce">Understand the Authorization Code flow with PKCE</h2>
+<p>The Authorization Code flow with PKCE is the recommended OAuth 2.1 flow for all clients:</p>
+<ol>
+<li><strong>Client prepares PKCE</strong>: Generates code verifier and challenge</li>
+<li><strong>Authorization request</strong>: Client sends user to AS with challenge</li>
+<li><strong>User authenticates</strong>: AS verifies credentials via login form</li>
+<li><strong>Authorization code</strong>: AS returns code to client redirect URI</li>
+<li><strong>Token exchange</strong>: Client exchanges code + verifier for tokens</li>
+<li><strong>Token validation</strong>: AS verifies PKCE and issues access token</li>
+</ol>
+<p>PKCE prevents authorization code interception attacks by:</p>
+<ul>
+<li>Requiring a dynamically generated secret (verifier)</li>
+<li>Sending only the hash (challenge) in the authorization request</li>
+<li>Validating the verifier during token exchange</li>
+</ul>
+<h2 id="implement-the-authentication-provider">Implement the authentication provider</h2>
+<p>Expand your stub provider with full OAuth logic including PKCE validation, token generation, and user authentication.</p>
+<p>Update <code>src/authorization_server/auth_provider.py</code>:</p>
+<div class="language-python highlight"><pre><span></span><code><span class="c1"># Path: src/authorization_server/auth_provider.py (complete implementation)</span>
+<span class="c1"># TODO</span>
+</code></pre></div>
+<p>The provider implements:</p>
+<ul>
+<li><a class="autorefs autorefs-internal" title="OAuthAuthorizationServerProvider" href="../../../reference/mcp/server/auth/provider/#mcp.server.auth.provider.OAuthAuthorizationServerProvider"><code>OAuthAuthorizationServerProvider</code></a> protocol</li>
+<li>In-memory storage for clients, codes, and tokens</li>
+<li>PKCE challenge storage and validation</li>
+<li>Demo user authentication (username/password)</li>
+<li>Token generation with configurable lifetime</li>
+</ul>
+<h2 id="add-authorization-endpoint-logic">Add authorization endpoint logic</h2>
+<p>The authorization endpoint starts the OAuth flow by validating the client request and redirecting to login.</p>
+<p>Key implementation in <code>auth_provider.py</code>:</p>
+<div class="language-python highlight"><pre><span></span><code><span class="c1"># Path: src/authorization_server/auth_provider.py (authorize method)</span>
+<span class="c1"># TODO</span>
+</code></pre></div>
+<p>This method:</p>
+<ul>
+<li>Validates client_id and redirect_uri</li>
+<li>Stores PKCE code_challenge for later validation</li>
+<li>Generates state parameter for CSRF protection</li>
+<li>Redirects to login page with state</li>
+</ul>
+<h2 id="create-the-login-ui">Create the login UI</h2>
+<p>Add a simple HTML login form for user authentication.</p>
+<p>Update <code>src/authorization_server/server.py</code> with login routes:</p>
+<div class="language-python highlight"><pre><span></span><code><span class="c1"># Path: src/authorization_server/server.py (login routes)</span>
+<span class="c1"># TODO</span>
+</code></pre></div>
+<p>The login flow:</p>
+<ul>
+<li>Displays username/password form</li>
+<li>Validates credentials against demo users</li>
+<li>Issues authorization code on success</li>
+<li>Redirects back to client with code</li>
+<li>Maintains state throughout the flow</li>
+</ul>
+<h2 id="implement-token-exchange">Implement token exchange</h2>
+<p>Complete the token endpoint to exchange authorization codes for access tokens with PKCE validation.</p>
+<p>Key implementation in <code>auth_provider.py</code>:</p>
+<div class="language-python highlight"><pre><span></span><code><span class="c1"># Path: src/authorization_server/auth_provider.py (exchange_authorization_code method)</span>
+<span class="c1"># TODO</span>
+</code></pre></div>
+<p>Token exchange validates:</p>
+<ul>
+<li>Authorization code exists and hasn't expired</li>
+<li>Client credentials match</li>
+<li>PKCE verifier matches stored challenge</li>
+<li>Redirect URI matches original request</li>
+</ul>
+<p>On success, it returns:</p>
+<ul>
+<li>Access token with expiration</li>
+<li>Token type ("Bearer")</li>
+<li>Expires_in value in seconds</li>
+<li>Optional scope information</li>
+</ul>
+<h2 id="add-token-introspection">Add token introspection</h2>
+<p>Implement token introspection so the resource server can validate tokens.</p>
+<div class="language-python highlight"><pre><span></span><code><span class="c1"># Path: src/authorization_server/auth_provider.py (introspect_token method)</span>
+<span class="c1"># TODO</span>
+</code></pre></div>
+<p>Introspection returns:</p>
+<ul>
+<li><code>active</code>: Whether token is valid</li>
+<li><code>client_id</code>: Which client owns the token</li>
+<li><code>exp</code>: Expiration timestamp</li>
+<li><code>scope</code>: Granted scopes (if any)</li>
+</ul>
+<h2 id="test-the-complete-flow">Test the complete flow</h2>
+<p>Test your OAuth implementation manually using a browser and curl.</p>
+<h3 id="start-the-authorization-server">Start the authorization server</h3>
+<div class="language-bash highlight"><pre><span></span><code>uv<span class="w"> </span>run<span class="w"> </span>src/authorization_server/server.py
+</code></pre></div>
+<h3 id="simulate-client-registration">Simulate client registration</h3>
+<div class="language-bash highlight"><pre><span></span><code>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>http://localhost:9000/register<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Content-Type: application/json&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-d<span class="w"> </span><span class="s1">&#39;{</span>
+<span class="s1">    &quot;client_name&quot;: &quot;Test Client&quot;,</span>
+<span class="s1">    &quot;redirect_uris&quot;: [&quot;http://localhost:8080/callback&quot;]</span>
+<span class="s1">  }&#39;</span>
+</code></pre></div>
+<p>Save the returned <code>client_id</code> and <code>client_secret</code>.</p>
+<h3 id="start-the-authorization-flow">Start the authorization flow</h3>
+<p>Generate PKCE values:</p>
+<div class="language-bash highlight"><pre><span></span><code><span class="c1"># Generate code verifier (43-128 characters)</span>
+<span class="nv">CODE_VERIFIER</span><span class="o">=</span><span class="k">$(</span>openssl<span class="w"> </span>rand<span class="w"> </span>-base64<span class="w"> </span><span class="m">32</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>tr<span class="w"> </span>-d<span class="w"> </span><span class="s2">&quot;=+/&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>cut<span class="w"> </span>-c<span class="w"> </span>-43<span class="k">)</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Verifier: </span><span class="nv">$CODE_VERIFIER</span><span class="s2">&quot;</span>
 
-
+<span class="c1"># Generate code challenge (SHA256 hash, base64url encoded)</span>
+<span class="nv">CODE_CHALLENGE</span><span class="o">=</span><span class="k">$(</span><span class="nb">echo</span><span class="w"> </span>-n<span class="w"> </span><span class="nv">$CODE_VERIFIER</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>openssl<span class="w"> </span>dgst<span class="w"> </span>-sha256<span class="w"> </span>-binary<span class="w"> </span><span class="p">|</span><span class="w"> </span>base64<span class="w"> </span><span class="p">|</span><span class="w"> </span>tr<span class="w"> </span>-d<span class="w"> </span><span class="s2">&quot;=+/&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>tr<span class="w"> </span><span class="s1">&#39;/+&#39;</span><span class="w"> </span><span class="s1">&#39;_-&#39;</span><span class="k">)</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Challenge: </span><span class="nv">$CODE_CHALLENGE</span><span class="s2">&quot;</span>
+</code></pre></div>
+<p>Open in browser with your client_id:</p>
+<div class="language-text highlight"><pre><span></span><code>http://localhost:9000/authorize?client_id=YOUR_CLIENT_ID&amp;redirect_uri=http://localhost:8080/callback&amp;response_type=code&amp;code_challenge=YOUR_CHALLENGE&amp;code_challenge_method=S256
+</code></pre></div>
+<h3 id="complete-authentication">Complete authentication</h3>
+<ol>
+<li>Enter demo credentials (demo_user/demo_password)</li>
+<li>Copy the authorization code from redirect URL</li>
+<li>Exchange code for token:</li>
+</ol>
+<div class="language-bash highlight"><pre><span></span><code>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>http://localhost:9000/token<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-u<span class="w"> </span><span class="s2">&quot;YOUR_CLIENT_ID:YOUR_CLIENT_SECRET&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-d<span class="w"> </span><span class="s2">&quot;grant_type=authorization_code&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-d<span class="w"> </span><span class="s2">&quot;code=YOUR_AUTH_CODE&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-d<span class="w"> </span><span class="s2">&quot;redirect_uri=http://localhost:8080/callback&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-d<span class="w"> </span><span class="s2">&quot;code_verifier=YOUR_VERIFIER&quot;</span>
+</code></pre></div>
+<p>You should receive an access token response:</p>
+<div class="language-json highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;access_token&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;at_...&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;token_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Bearer&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;expires_in&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">3600</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="verify-token-introspection">Verify token introspection</h3>
+<div class="language-bash highlight"><pre><span></span><code>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>http://localhost:9000/introspect<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-d<span class="w"> </span><span class="s2">&quot;token=YOUR_ACCESS_TOKEN&quot;</span>
+</code></pre></div>
+<h2 id="understand-security-considerations">Understand security considerations</h2>
+<p>Your implementation includes important security features:</p>
+<p><strong>PKCE protection</strong>:</p>
+<ul>
+<li>Prevents authorization code interception</li>
+<li>Required for all OAuth 2.1 clients</li>
+<li>Validates code_verifier against stored challenge</li>
+</ul>
+<p><strong>State parameter</strong>:</p>
+<ul>
+<li>Prevents CSRF attacks</li>
+<li>Links authorization request to login</li>
+<li>Must be unpredictable and unique</li>
+</ul>
+<p><strong>Token expiration</strong>:</p>
+<ul>
+<li>Access tokens expire after configured lifetime</li>
+<li>Expired tokens fail introspection</li>
+<li>Clients must handle token refresh (future enhancement)</li>
+</ul>
+<p><strong>Demo limitations</strong>:</p>
+<ul>
+<li>In-memory storage (not persistent)</li>
+<li>Fixed demo credentials (not production-ready)</li>
+<li>No rate limiting or brute force protection</li>
+<li>Missing refresh tokens and revocation</li>
+</ul>
+<h2 id="next-steps">Next steps</h2>
+<p>You've successfully:</p>
+<ul>
+<li>Implemented the complete OAuth 2.1 Authorization Code flow with PKCE</li>
+<li>Added user authentication with login UI</li>
+<li>Created token generation and introspection</li>
+<li>Tested the full authentication flow</li>
+<li>Understood security considerations</li>
+</ul>
+<p>Next, protect your resource server in <a href="../04-secure-resource-server/">04 - Secure resource server</a>.</p>
 
 
 

@@ -86,6 +86,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#secure-your-resource-server" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -503,6 +508,21 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Secure resource server
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -515,6 +535,157 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#understand-token-verification-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Understand token verification flow
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-the-token-verifier" class="md-nav__link">
+    <span class="md-ellipsis">
+      Create the token verifier
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extract-settings-to-separate-module" class="md-nav__link">
+    <span class="md-ellipsis">
+      Extract settings to separate module
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#refactor-tools-into-separate-module" class="md-nav__link">
+    <span class="md-ellipsis">
+      Refactor tools into separate module
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#update-the-server-with-authentication" class="md-nav__link">
+    <span class="md-ellipsis">
+      Update the server with authentication
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configure-http-transport" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configure HTTP transport
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#test-authentication-protection" class="md-nav__link">
+    <span class="md-ellipsis">
+      Test authentication protection
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Test authentication protection">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#start-both-servers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Start both servers
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-public-tool-no-auth-required" class="md-nav__link">
+    <span class="md-ellipsis">
+      Test public tool (no auth required)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-protected-tool-auth-required" class="md-nav__link">
+    <span class="md-ellipsis">
+      Test protected tool (auth required)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#verify-oauth-metadata" class="md-nav__link">
+    <span class="md-ellipsis">
+      Verify OAuth metadata
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#understand-the-refactored-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Understand the refactored structure
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#next-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      Next steps
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -3687,6 +3858,148 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#understand-token-verification-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Understand token verification flow
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-the-token-verifier" class="md-nav__link">
+    <span class="md-ellipsis">
+      Create the token verifier
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extract-settings-to-separate-module" class="md-nav__link">
+    <span class="md-ellipsis">
+      Extract settings to separate module
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#refactor-tools-into-separate-module" class="md-nav__link">
+    <span class="md-ellipsis">
+      Refactor tools into separate module
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#update-the-server-with-authentication" class="md-nav__link">
+    <span class="md-ellipsis">
+      Update the server with authentication
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configure-http-transport" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configure HTTP transport
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#test-authentication-protection" class="md-nav__link">
+    <span class="md-ellipsis">
+      Test authentication protection
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Test authentication protection">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#start-both-servers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Start both servers
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-public-tool-no-auth-required" class="md-nav__link">
+    <span class="md-ellipsis">
+      Test public tool (no auth required)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-protected-tool-auth-required" class="md-nav__link">
+    <span class="md-ellipsis">
+      Test protected tool (auth required)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#verify-oauth-metadata" class="md-nav__link">
+    <span class="md-ellipsis">
+      Verify OAuth metadata
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#understand-the-refactored-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Understand the refactored structure
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#next-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      Next steps
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -3705,9 +4018,208 @@
   
 
 
-  <h1>Secure resource server</h1>
-
-
+<h1 id="secure-your-resource-server">Secure your resource server</h1>
+<p>Protected resources require token validation to ensure only authorized clients can access them. Connecting your resource server to the authorization server enables this validation while maintaining clean service boundaries. You'll add token verification, refactor for better organization, and implement tool-level protection that distinguishes between public and protected resources.</p>
+<p>This is the fourth tutorial in a series:</p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <a href="../01-basic-resource-server/">01 - Basic resource server</a></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <a href="../02-authorization-server-foundation/">02 - Authorization server foundation</a></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <a href="../03-oauth-flow-implementation/">03 - OAuth flow implementation</a></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> 04 - Secure resource server</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <a href="../05-test-client/">05 - Test client</a></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <a href="../06-persistence-scopes-and-config/">06 - Persistence, scopes, and config</a></li>
+</ul>
+<h2 id="prerequisites">Prerequisites</h2>
+<p>Before starting this tutorial, you need:</p>
+<ul>
+<li>Completed <a href="../03-oauth-flow-implementation/">tutorial 03</a> with working OAuth flow</li>
+<li>Both resource server and authorization server from previous tutorials</li>
+<li>Python 3.12+ and <a href="https://docs.astral.sh/uv/">uv</a> installed</li>
+<li>Understanding of bearer token authentication</li>
+</ul>
+<h2 id="understand-token-verification-flow">Understand token verification flow</h2>
+<p>When a client calls a protected MCP tool:</p>
+<ol>
+<li><strong>Client sends request</strong>: Includes bearer token in Authorization header</li>
+<li><strong>RS extracts token</strong>: Middleware pulls token from request</li>
+<li><strong>RS validates token</strong>: Calls AS introspection endpoint</li>
+<li><strong>AS checks token</strong>: Verifies token exists, hasn't expired</li>
+<li><strong>RS allows/denies</strong>: Based on introspection result</li>
+<li><strong>Tool executes</strong>: If authorized, returns result to client</li>
+</ol>
+<p>The resource server never:</p>
+<ul>
+<li>Stores tokens or user credentials</li>
+<li>Knows how tokens are generated</li>
+<li>Directly authenticates users</li>
+</ul>
+<p>This separation ensures:</p>
+<ul>
+<li>Single source of truth for authentication (AS)</li>
+<li>RS focuses only on providing resources</li>
+<li>Clean service boundaries</li>
+</ul>
+<h2 id="create-the-token-verifier">Create the token verifier</h2>
+<p>Implement a token verifier that calls the AS introspection endpoint to validate tokens.</p>
+<p>Update <code>src/resource_server/server.py</code> with verifier:</p>
+<div class="language-python highlight"><pre><span></span><code><span class="c1"># Path: src/resource_server/server.py (TokenVerifier class)</span>
+<span class="c1"># TODO</span>
+</code></pre></div>
+<p>The <a class="autorefs autorefs-internal" title="TokenVerifier" href="../../../reference/mcp/server/auth/provider/#mcp.server.auth.provider.TokenVerifier"><code>TokenVerifier</code></a> subclass:</p>
+<ul>
+<li>Implements the <code>verify_token</code> method</li>
+<li>Makes HTTP calls to AS introspection endpoint</li>
+<li>Converts introspection response to <code>AccessToken</code></li>
+<li>Returns None for invalid tokens</li>
+<li>Represents the service boundary between RS and AS</li>
+</ul>
+<h2 id="extract-settings-to-separate-module">Extract settings to separate module</h2>
+<p>Create a settings module for configuration shared across RS components.</p>
+<p>Create <code>src/resource_server/settings.py</code>:</p>
+<div class="language-python highlight"><pre><span></span><code><span class="c1"># Path: src/resource_server/settings.py</span>
+<span class="c1"># TODO</span>
+</code></pre></div>
+<p>Settings include:</p>
+<ul>
+<li>Server name and configuration</li>
+<li>Authentication enablement flag</li>
+<li>Authorization server URL</li>
+<li>List of protected tool names</li>
+<li>Logging configuration</li>
+</ul>
+<h2 id="refactor-tools-into-separate-module">Refactor tools into separate module</h2>
+<p>Move tools to a dedicated module for better organization and to demonstrate tool-level protection.</p>
+<p>Create <code>src/resource_server/tools.py</code>:</p>
+<div class="language-python highlight"><pre><span></span><code><span class="c1"># Path: src/resource_server/tools.py</span>
+<span class="c1"># TODO</span>
+</code></pre></div>
+<p>Tool organization:</p>
+<ul>
+<li>Public tools: No authentication required (e.g., greet)</li>
+<li>Protected tools: Require valid bearer token (e.g., server_time)</li>
+<li>Tool registration: Function to wire tools into FastMCP</li>
+<li>Context access: Tools can access request context for auth info</li>
+</ul>
+<h2 id="update-the-server-with-authentication">Update the server with authentication</h2>
+<p>Wire everything together with authentication middleware and protected endpoints.</p>
+<p>Update <code>src/resource_server/server.py</code>:</p>
+<div class="language-python highlight"><pre><span></span><code><span class="c1"># Path: src/resource_server/server.py (complete with auth)</span>
+<span class="c1"># TODO</span>
+</code></pre></div>
+<p>Server configuration:</p>
+<ul>
+<li><code>AuthSettings</code> enables OAuth metadata endpoints</li>
+<li>Token verifier validates bearer tokens via AS</li>
+<li><a class="autorefs autorefs-internal" title="FastMCP" href="../../../reference/mcp/server/fastmcp/#mcp.server.fastmcp.FastMCP"><code>FastMCP</code></a> handles authentication middleware</li>
+<li>Tools registered from separate module</li>
+<li>HTTP transport for OAuth client support</li>
+</ul>
+<h2 id="configure-http-transport">Configure HTTP transport</h2>
+<p>Enable streamable HTTP transport for OAuth-capable clients.</p>
+<p>Update server startup in <code>src/resource_server/server.py</code>:</p>
+<div class="language-python highlight"><pre><span></span><code><span class="c1"># Path: src/resource_server/server.py (__main__ section)</span>
+<span class="c1"># TODO</span>
+</code></pre></div>
+<p>Transport configuration:</p>
+<ul>
+<li>Streamable HTTP on port 8000</li>
+<li>MCP endpoint at <code>/mcp</code></li>
+<li>OAuth metadata at <code>/.well-known/oauth-protected-resource</code></li>
+<li>Bearer token support in Authorization header</li>
+</ul>
+<h2 id="test-authentication-protection">Test authentication protection</h2>
+<p>Verify that public tools work without tokens while protected tools require authentication.</p>
+<h3 id="start-both-servers">Start both servers</h3>
+<p>Terminal 1 - Authorization Server:</p>
+<div class="language-bash highlight"><pre><span></span><code>uv<span class="w"> </span>run<span class="w"> </span>src/authorization_server/server.py
+</code></pre></div>
+<p>Terminal 2 - Resource Server:</p>
+<div class="language-bash highlight"><pre><span></span><code>uv<span class="w"> </span>run<span class="w"> </span>src/resource_server/server.py
+</code></pre></div>
+<h3 id="test-public-tool-no-auth-required">Test public tool (no auth required)</h3>
+<div class="language-bash highlight"><pre><span></span><code>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>http://localhost:8000/mcp<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Content-Type: application/json&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-d<span class="w"> </span><span class="s1">&#39;{</span>
+<span class="s1">    &quot;jsonrpc&quot;: &quot;2.0&quot;,</span>
+<span class="s1">    &quot;method&quot;: &quot;tools/call&quot;,</span>
+<span class="s1">    &quot;params&quot;: {</span>
+<span class="s1">      &quot;name&quot;: &quot;greet&quot;,</span>
+<span class="s1">      &quot;arguments&quot;: {&quot;name&quot;: &quot;World&quot;}</span>
+<span class="s1">    },</span>
+<span class="s1">    &quot;id&quot;: 1</span>
+<span class="s1">  }&#39;</span>
+</code></pre></div>
+<p>Expected: Successful response with greeting.</p>
+<h3 id="test-protected-tool-auth-required">Test protected tool (auth required)</h3>
+<p>Without token:</p>
+<div class="language-bash highlight"><pre><span></span><code>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>http://localhost:8000/mcp<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Content-Type: application/json&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-d<span class="w"> </span><span class="s1">&#39;{</span>
+<span class="s1">    &quot;jsonrpc&quot;: &quot;2.0&quot;,</span>
+<span class="s1">    &quot;method&quot;: &quot;tools/call&quot;,</span>
+<span class="s1">    &quot;params&quot;: {</span>
+<span class="s1">      &quot;name&quot;: &quot;server_time&quot;,</span>
+<span class="s1">      &quot;arguments&quot;: {}</span>
+<span class="s1">    },</span>
+<span class="s1">    &quot;id&quot;: 1</span>
+<span class="s1">  }&#39;</span>
+</code></pre></div>
+<p>Expected: 401 Unauthorized error.</p>
+<p>With token (get token from tutorial 03 flow):</p>
+<div class="language-bash highlight"><pre><span></span><code>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>http://localhost:8000/mcp<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Content-Type: application/json&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Bearer YOUR_ACCESS_TOKEN&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-d<span class="w"> </span><span class="s1">&#39;{</span>
+<span class="s1">    &quot;jsonrpc&quot;: &quot;2.0&quot;,</span>
+<span class="s1">    &quot;method&quot;: &quot;tools/call&quot;,</span>
+<span class="s1">    &quot;params&quot;: {</span>
+<span class="s1">      &quot;name&quot;: &quot;server_time&quot;,</span>
+<span class="s1">      &quot;arguments&quot;: {}</span>
+<span class="s1">    },</span>
+<span class="s1">    &quot;id&quot;: 1</span>
+<span class="s1">  }&#39;</span>
+</code></pre></div>
+<p>Expected: Successful response with server time.</p>
+<h2 id="verify-oauth-metadata">Verify OAuth metadata</h2>
+<p>Check that your RS exposes protected resource metadata:</p>
+<div class="language-bash highlight"><pre><span></span><code>curl<span class="w"> </span>http://localhost:8000/.well-known/oauth-protected-resource<span class="w"> </span><span class="p">|</span><span class="w"> </span>python<span class="w"> </span>-m<span class="w"> </span>json.tool
+</code></pre></div>
+<p>Response should include:</p>
+<ul>
+<li><code>resource</code>: The RS identifier</li>
+<li><code>authorization_servers</code>: List containing your AS URL</li>
+<li>Link to AS metadata for client discovery</li>
+</ul>
+<h2 id="understand-the-refactored-structure">Understand the refactored structure</h2>
+<p>Your resource server now has clean separation:</p>
+<div class="language-text highlight"><pre><span></span><code>src/resource_server/
+   server.py       # Server setup, auth middleware, token verifier
+   settings.py     # Configuration shared across modules
+   tools.py        # MCP tool definitions and registration
+</code></pre></div>
+<p>Benefits:</p>
+<ul>
+<li><strong>Modularity</strong>: Each file has a single responsibility</li>
+<li><strong>Testability</strong>: Can test tools independently</li>
+<li><strong>Scalability</strong>: Easy to add more tools or verifiers</li>
+<li><strong>Maintainability</strong>: Clear where to make changes</li>
+</ul>
+<p>Service boundaries:</p>
+<ul>
+<li>RS ↔ AS: Only via HTTP introspection endpoint</li>
+<li>No shared code or imports between services</li>
+<li>Each service can be deployed independently</li>
+</ul>
+<h2 id="next-steps">Next steps</h2>
+<p>You've successfully:</p>
+<ul>
+<li>Added token verification via AS introspection</li>
+<li>Refactored RS into clean modular structure</li>
+<li>Implemented tool-level authentication protection</li>
+<li>Configured HTTP transport for OAuth clients</li>
+<li>Maintained clean service boundaries</li>
+</ul>
+<p>Next, build a test client in <a href="../05-test-client/">05 - Test client</a>.</p>
 
 
 

@@ -87,7 +87,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#persistence-scopes-and-configuration" class="md-skip">
+        <a href="#add-persistence-scopes-and-configuration" class="md-skip">
           Skip to content
         </a>
       
@@ -557,6 +557,19 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Persistence, scopes, and config
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -568,6 +581,163 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-this-tutorial-would-cover" class="md-nav__link">
+    <span class="md-ellipsis">
+      What this tutorial would cover
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="What this tutorial would cover">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#persistent-storage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Persistent storage
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#oauth-scopes" class="md-nav__link">
+    <span class="md-ellipsis">
+      OAuth scopes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuration-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuration management
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#refresh-tokens" class="md-nav__link">
+    <span class="md-ellipsis">
+      Refresh tokens
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enhanced-security" class="md-nav__link">
+    <span class="md-ellipsis">
+      Enhanced security
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#monitoring-and-observability" class="md-nav__link">
+    <span class="md-ellipsis">
+      Monitoring and observability
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implementation-approach" class="md-nav__link">
+    <span class="md-ellipsis">
+      Implementation approach
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Implementation approach">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#database-schema" class="md-nav__link">
+    <span class="md-ellipsis">
+      Database schema
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scope-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Scope configuration
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#environment-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Environment configuration
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#benefits-of-these-enhancements" class="md-nav__link">
+    <span class="md-ellipsis">
+      Benefits of these enhancements
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#next-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      Next steps
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -3697,6 +3867,152 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-this-tutorial-would-cover" class="md-nav__link">
+    <span class="md-ellipsis">
+      What this tutorial would cover
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="What this tutorial would cover">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#persistent-storage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Persistent storage
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#oauth-scopes" class="md-nav__link">
+    <span class="md-ellipsis">
+      OAuth scopes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuration-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuration management
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#refresh-tokens" class="md-nav__link">
+    <span class="md-ellipsis">
+      Refresh tokens
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enhanced-security" class="md-nav__link">
+    <span class="md-ellipsis">
+      Enhanced security
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#monitoring-and-observability" class="md-nav__link">
+    <span class="md-ellipsis">
+      Monitoring and observability
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implementation-approach" class="md-nav__link">
+    <span class="md-ellipsis">
+      Implementation approach
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Implementation approach">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#database-schema" class="md-nav__link">
+    <span class="md-ellipsis">
+      Database schema
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scope-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Scope configuration
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#environment-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Environment configuration
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#benefits-of-these-enhancements" class="md-nav__link">
+    <span class="md-ellipsis">
+      Benefits of these enhancements
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#next-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      Next steps
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -3714,7 +4030,151 @@
   
 
 
-<h1 id="persistence-scopes-and-configuration">Persistence, scopes, and configuration</h1>
+<h1 id="add-persistence-scopes-and-configuration">Add persistence, scopes, and configuration</h1>
+<p>Production OAuth deployments require features beyond the basic flow—persistent storage ensures tokens survive restarts, scopes enable fine-grained permissions, and proper configuration management supports different environments. These enhancements transform your tutorial implementation into a foundation for real-world MCP servers with OAuth protection.</p>
+<p>This is the sixth tutorial in a series:</p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <a href="../01-basic-resource-server/">01 - Basic resource server</a></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <a href="../02-authorization-server-foundation/">02 - Authorization server foundation</a></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <a href="../03-oauth-flow-implementation/">03 - OAuth flow implementation</a></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <a href="../04-secure-resource-server/">04 - Secure resource server</a></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <a href="../05-test-client/">05 - Test client</a></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> 06 - Persistence, scopes, and config</li>
+</ul>
+<h2 id="prerequisites">Prerequisites</h2>
+<p>Before starting this tutorial, you need:</p>
+<ul>
+<li>Completed <a href="../05-test-client/">tutorial 05</a> with working OAuth system</li>
+<li>All three components (AS, RS, client) running successfully</li>
+<li>Python 3.12+ and <a href="https://docs.astral.sh/uv/">uv</a> installed</li>
+<li>Basic understanding of databases and configuration management</li>
+</ul>
+<h2 id="what-this-tutorial-would-cover">What this tutorial would cover</h2>
+<p>This tutorial would extend your OAuth implementation with production-ready features:</p>
+<h3 id="persistent-storage">Persistent storage</h3>
+<p>Replace in-memory storage with database persistence:</p>
+<ul>
+<li><strong>SQLite for development</strong>: Simple file-based storage</li>
+<li><strong>PostgreSQL for production</strong>: Scalable relational database</li>
+<li><strong>Token storage</strong>: Access tokens, refresh tokens, authorization codes</li>
+<li><strong>Client storage</strong>: Registered clients and their credentials</li>
+<li><strong>User storage</strong>: User accounts and authentication data</li>
+<li><strong>Session management</strong>: Active sessions and their states</li>
+</ul>
+<h3 id="oauth-scopes">OAuth scopes</h3>
+<p>Implement fine-grained permissions:</p>
+<ul>
+<li><strong>Scope definition</strong>: Define available scopes (e.g., <code>read:tools</code>, <code>write:resources</code>)</li>
+<li><strong>Tool-level scopes</strong>: Require specific scopes for different tools</li>
+<li><strong>Scope negotiation</strong>: Clients request scopes, users approve subsets</li>
+<li><strong>Token scopes</strong>: Include granted scopes in tokens</li>
+<li><strong>Scope validation</strong>: RS checks token scopes match tool requirements</li>
+<li><strong>Scope inheritance</strong>: Hierarchical scopes for complex permissions</li>
+</ul>
+<h3 id="configuration-management">Configuration management</h3>
+<p>Support multiple environments:</p>
+<ul>
+<li><strong>Environment variables</strong>: Override settings per deployment</li>
+<li><strong>Configuration files</strong>: YAML/TOML for complex settings</li>
+<li><strong>Secret management</strong>: Secure storage for sensitive values</li>
+<li><strong>Feature flags</strong>: Enable/disable features dynamically</li>
+<li><strong>Multi-environment</strong>: Development, staging, production configs</li>
+<li><strong>Hot reloading</strong>: Update configuration without restarts</li>
+</ul>
+<h3 id="refresh-tokens">Refresh tokens</h3>
+<p>Enable long-lived sessions:</p>
+<ul>
+<li><strong>Refresh token issuance</strong>: Return refresh tokens with access tokens</li>
+<li><strong>Token rotation</strong>: Issue new refresh tokens on use</li>
+<li><strong>Refresh flow</strong>: Exchange refresh token for new access token</li>
+<li><strong>Revocation</strong>: Invalidate refresh tokens and their descendants</li>
+<li><strong>Security considerations</strong>: Refresh token binding and replay protection</li>
+</ul>
+<h3 id="enhanced-security">Enhanced security</h3>
+<p>Additional security measures:</p>
+<ul>
+<li><strong>Rate limiting</strong>: Prevent brute force attacks</li>
+<li><strong>Token binding</strong>: Bind tokens to client certificates</li>
+<li><strong>Introspection authentication</strong>: Require credentials for introspection</li>
+<li><strong>Consent tracking</strong>: Remember user consent decisions</li>
+<li><strong>Audit logging</strong>: Track all authentication events</li>
+<li><strong>Anomaly detection</strong>: Identify suspicious patterns</li>
+</ul>
+<h3 id="monitoring-and-observability">Monitoring and observability</h3>
+<p>Track system health:</p>
+<ul>
+<li><strong>Metrics collection</strong>: Token issuance, validation, errors</li>
+<li><strong>Distributed tracing</strong>: Track requests across services</li>
+<li><strong>Health checks</strong>: Liveness and readiness endpoints</li>
+<li><strong>Performance monitoring</strong>: Response times, throughput</li>
+<li><strong>Alert configuration</strong>: Notify on critical events</li>
+</ul>
+<h2 id="implementation-approach">Implementation approach</h2>
+<p>The implementation would follow these principles:</p>
+<h3 id="database-schema">Database schema</h3>
+<div class="language-sql highlight"><pre><span></span><code><span class="c1">-- Example tables for persistence</span>
+<span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">clients</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="n">id</span><span class="w"> </span><span class="n">UUID</span><span class="w"> </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="p">,</span>
+<span class="w">    </span><span class="n">client_id</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span><span class="w"> </span><span class="k">UNIQUE</span><span class="p">,</span>
+<span class="w">    </span><span class="n">client_secret</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">255</span><span class="p">),</span>
+<span class="w">    </span><span class="n">metadata</span><span class="w"> </span><span class="n">JSONB</span><span class="p">,</span>
+<span class="w">    </span><span class="n">created_at</span><span class="w"> </span><span class="k">TIMESTAMP</span>
+<span class="p">);</span>
+
+<span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">tokens</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="n">id</span><span class="w"> </span><span class="n">UUID</span><span class="w"> </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="p">,</span>
+<span class="w">    </span><span class="n">token</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span><span class="w"> </span><span class="k">UNIQUE</span><span class="p">,</span>
+<span class="w">    </span><span class="n">client_id</span><span class="w"> </span><span class="n">UUID</span><span class="w"> </span><span class="k">REFERENCES</span><span class="w"> </span><span class="n">clients</span><span class="p">(</span><span class="n">id</span><span class="p">),</span>
+<span class="w">    </span><span class="n">user_id</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">255</span><span class="p">),</span>
+<span class="w">    </span><span class="n">scopes</span><span class="w"> </span><span class="nb">TEXT</span><span class="p">[],</span>
+<span class="w">    </span><span class="n">expires_at</span><span class="w"> </span><span class="k">TIMESTAMP</span>
+<span class="p">);</span>
+</code></pre></div>
+<h3 id="scope-configuration">Scope configuration</h3>
+<div class="language-python highlight"><pre><span></span><code><span class="c1"># Example scope definitions</span>
+<span class="n">SCOPES</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;read:tools&quot;</span><span class="p">:</span> <span class="s2">&quot;Read access to MCP tools&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;write:resources&quot;</span><span class="p">:</span> <span class="s2">&quot;Write access to resources&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;admin&quot;</span><span class="p">:</span> <span class="s2">&quot;Full administrative access&quot;</span>
+<span class="p">}</span>
+
+<span class="n">TOOL_SCOPES</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;server_time&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;read:tools&quot;</span><span class="p">],</span>
+    <span class="s2">&quot;update_config&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;admin&quot;</span><span class="p">],</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="environment-configuration">Environment configuration</h3>
+<div class="language-yaml highlight"><pre><span></span><code><span class="c1"># config.yaml example</span>
+<span class="nt">development</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">database_url</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;sqlite:///dev.db&quot;</span>
+<span class="w">  </span><span class="nt">token_lifetime</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3600</span>
+<span class="w">  </span><span class="nt">enable_introspection</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+
+<span class="nt">production</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">database_url</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;${DATABASE_URL}&quot;</span>
+<span class="w">  </span><span class="nt">token_lifetime</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">900</span>
+<span class="w">  </span><span class="nt">enable_introspection</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+</code></pre></div>
+<h2 id="benefits-of-these-enhancements">Benefits of these enhancements</h2>
+<p>Adding these features provides:</p>
+<ul>
+<li><strong>Reliability</strong>: Survive restarts and crashes</li>
+<li><strong>Scalability</strong>: Support multiple instances</li>
+<li><strong>Security</strong>: Fine-grained access control</li>
+<li><strong>Flexibility</strong>: Adapt to different environments</li>
+<li><strong>Observability</strong>: Understand system behavior</li>
+<li><strong>Compliance</strong>: Meet regulatory requirements</li>
+</ul>
+<h2 id="next-steps">Next steps</h2>
+<p>With these enhancements, your OAuth implementation would be ready for:</p>
+<ul>
+<li>Production deployment with real users</li>
+<li>Integration with existing identity providers</li>
+<li>Compliance with enterprise security requirements</li>
+<li>Scaling to handle thousands of clients</li>
+<li>Extension with custom authentication methods</li>
+</ul>
+<p>The complete tutorial series has taken you from a basic MCP server to a secure, OAuth-protected system ready for real-world deployment.</p>
 
 
 
