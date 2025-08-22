@@ -12,6 +12,15 @@ site_url: https://mmacy.github.io/python-sdk
 
 nav:
   - Home: index.md
+  - Tutorials:
+    - Secure server with OAuth:
+      - Introduction: tutorials/secure-server-oauth/00-introduction.md
+      - Basic resource server: tutorials/secure-server-oauth/01-basic-resource-server.md
+      - Authorization server foundation: tutorials/secure-server-oauth/02-authorization-server-foundation.md
+      - OAuth flow implementation: tutorials/secure-server-oauth/03-oauth-flow-implementation.md
+      - Secure resource server: tutorials/secure-server-oauth/04-secure-resource-server.md
+      - Test client: tutorials/secure-server-oauth/05-test-client.md
+      - Persistence, scopes, and config: tutorials/secure-server-oauth/06-persistence-scopes-and-config.md
   - Code examples:
     - Getting started: examples-quickstart.md
     - Echo servers: examples-echo-servers.md

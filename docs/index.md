@@ -2,6 +2,12 @@
 
 A Python implementation of the Model Context Protocol (MCP) that enables applications to provide context for LLMs in a standardized way.
 
+## Tutorials
+
+Step-by-step guides for building MCP applications.
+
+- [Secure server with OAuth](tutorials/secure-server-oauth/00-introduction.md): Build a secure MCP server with OAuth 2.1 authentication, from basic resource server to full authentication flow implementation
+
 ## Examples
 
 The [Examples](examples-quickstart.md) section provides working code examples covering many aspects of MCP development. Each code example in these documents corresponds to an example .py file in the examples/ directory in the repository.
