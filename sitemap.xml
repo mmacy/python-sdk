@@ -2,358 +2,386 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://mmacy.github.io/python-sdk/</loc>
-         <lastmod>2025-08-21</lastmod>
+         <lastmod>2025-08-22</lastmod>
     </url>
     <url>
          <loc>https://mmacy.github.io/python-sdk/examples-authentication/</loc>
-         <lastmod>2025-08-21</lastmod>
+         <lastmod>2025-08-22</lastmod>
     </url>
     <url>
          <loc>https://mmacy.github.io/python-sdk/examples-clients/</loc>
-         <lastmod>2025-08-21</lastmod>
+         <lastmod>2025-08-22</lastmod>
     </url>
     <url>
          <loc>https://mmacy.github.io/python-sdk/examples-echo-servers/</loc>
-         <lastmod>2025-08-21</lastmod>
+         <lastmod>2025-08-22</lastmod>
     </url>
     <url>
          <loc>https://mmacy.github.io/python-sdk/examples-lowlevel-servers/</loc>
-         <lastmod>2025-08-21</lastmod>
+         <lastmod>2025-08-22</lastmod>
     </url>
     <url>
          <loc>https://mmacy.github.io/python-sdk/examples-quickstart/</loc>
-         <lastmod>2025-08-21</lastmod>
+         <lastmod>2025-08-22</lastmod>
     </url>
     <url>
          <loc>https://mmacy.github.io/python-sdk/examples-server-advanced/</loc>
-         <lastmod>2025-08-21</lastmod>
+         <lastmod>2025-08-22</lastmod>
     </url>
     <url>
          <loc>https://mmacy.github.io/python-sdk/examples-server-prompts/</loc>
-         <lastmod>2025-08-21</lastmod>
+         <lastmod>2025-08-22</lastmod>
     </url>
     <url>
          <loc>https://mmacy.github.io/python-sdk/examples-server-resources/</loc>
-         <lastmod>2025-08-21</lastmod>
+         <lastmod>2025-08-22</lastmod>
     </url>
     <url>
          <loc>https://mmacy.github.io/python-sdk/examples-server-tools/</loc>
-         <lastmod>2025-08-21</lastmod>
+         <lastmod>2025-08-22</lastmod>
     </url>
     <url>
          <loc>https://mmacy.github.io/python-sdk/examples-structured-output/</loc>
-         <lastmod>2025-08-21</lastmod>
+         <lastmod>2025-08-22</lastmod>
     </url>
     <url>
          <loc>https://mmacy.github.io/python-sdk/examples-transport-http/</loc>
-         <lastmod>2025-08-21</lastmod>
+         <lastmod>2025-08-22</lastmod>
+    </url>
+    <url>
+         <loc>https://mmacy.github.io/python-sdk/tutorials/secure-server-oauth/00-introduction/</loc>
+         <lastmod>2025-08-22</lastmod>
+    </url>
+    <url>
+         <loc>https://mmacy.github.io/python-sdk/tutorials/secure-server-oauth/01-basic-resource-server/</loc>
+         <lastmod>2025-08-22</lastmod>
+    </url>
+    <url>
+         <loc>https://mmacy.github.io/python-sdk/tutorials/secure-server-oauth/02-authorization-server-foundation/</loc>
+         <lastmod>2025-08-22</lastmod>
+    </url>
+    <url>
+         <loc>https://mmacy.github.io/python-sdk/tutorials/secure-server-oauth/03-oauth-flow-implementation/</loc>
+         <lastmod>2025-08-22</lastmod>
+    </url>
+    <url>
+         <loc>https://mmacy.github.io/python-sdk/tutorials/secure-server-oauth/04-secure-resource-server/</loc>
+         <lastmod>2025-08-22</lastmod>
+    </url>
+    <url>
+         <loc>https://mmacy.github.io/python-sdk/tutorials/secure-server-oauth/05-test-client/</loc>
+         <lastmod>2025-08-22</lastmod>
+    </url>
+    <url>
+         <loc>https://mmacy.github.io/python-sdk/tutorials/secure-server-oauth/06-persistence-scopes-and-config/</loc>
+         <lastmod>2025-08-22</lastmod>
     </url>
     <url>
          <loc>https://mmacy.github.io/python-sdk/reference/mcp/</loc>
-         <lastmod>2025-08-21</lastmod>
+         <lastmod>2025-08-22</lastmod>
     </url>
     <url>
          <loc>https://mmacy.github.io/python-sdk/reference/mcp/cli/</loc>
-         <lastmod>2025-08-21</lastmod>
+         <lastmod>2025-08-22</lastmod>
     </url>
     <url>
          <loc>https://mmacy.github.io/python-sdk/reference/mcp/cli/claude/</loc>
-         <lastmod>2025-08-21</lastmod>
+         <lastmod>2025-08-22</lastmod>
     </url>
     <url>
          <loc>https://mmacy.github.io/python-sdk/reference/mcp/cli/cli/</loc>
-         <lastmod>2025-08-21</lastmod>
+         <lastmod>2025-08-22</lastmod>
     </url>
     <url>
          <loc>https://mmacy.github.io/python-sdk/reference/mcp/client/</loc>
-         <lastmod>2025-08-21</lastmod>
+         <lastmod>2025-08-22</lastmod>
     </url>
     <url>
          <loc>https://mmacy.github.io/python-sdk/reference/mcp/client/auth/</loc>
-         <lastmod>2025-08-21</lastmod>
+         <lastmod>2025-08-22</lastmod>
     </url>
     <url>
          <loc>https://mmacy.github.io/python-sdk/reference/mcp/client/session/</loc>
-         <lastmod>2025-08-21</lastmod>
+         <lastmod>2025-08-22</lastmod>
     </url>
     <url>
          <loc>https://mmacy.github.io/python-sdk/reference/mcp/client/session_group/</loc>
-         <lastmod>2025-08-21</lastmod>
+         <lastmod>2025-08-22</lastmod>
     </url>
     <url>
          <loc>https://mmacy.github.io/python-sdk/reference/mcp/client/sse/</loc>
-         <lastmod>2025-08-21</lastmod>
+         <lastmod>2025-08-22</lastmod>
     </url>
     <url>
          <loc>https://mmacy.github.io/python-sdk/reference/mcp/client/stdio/</loc>
-         <lastmod>2025-08-21</lastmod>
+         <lastmod>2025-08-22</lastmod>
     </url>
     <url>
          <loc>https://mmacy.github.io/python-sdk/reference/mcp/client/streamable_http/</loc>
-         <lastmod>2025-08-21</lastmod>
+         <lastmod>2025-08-22</lastmod>
     </url>
     <url>
          <loc>https://mmacy.github.io/python-sdk/reference/mcp/client/websocket/</loc>
-         <lastmod>2025-08-21</lastmod>
+         <lastmod>2025-08-22</lastmod>
     </url>
     <url>
          <loc>https://mmacy.github.io/python-sdk/reference/mcp/os/</loc>
-         <lastmod>2025-08-21</lastmod>
+         <lastmod>2025-08-22</lastmod>
     </url>
     <url>
          <loc>https://mmacy.github.io/python-sdk/reference/mcp/os/posix/</loc>
-         <lastmod>2025-08-21</lastmod>
+         <lastmod>2025-08-22</lastmod>
     </url>
     <url>
          <loc>https://mmacy.github.io/python-sdk/reference/mcp/os/posix/utilities/</loc>
-         <lastmod>2025-08-21</lastmod>
+         <lastmod>2025-08-22</lastmod>
     </url>
     <url>
          <loc>https://mmacy.github.io/python-sdk/reference/mcp/os/win32/</loc>
-         <lastmod>2025-08-21</lastmod>
+         <lastmod>2025-08-22</lastmod>
     </url>
     <url>
          <loc>https://mmacy.github.io/python-sdk/reference/mcp/os/win32/utilities/</loc>
-         <lastmod>2025-08-21</lastmod>
+         <lastmod>2025-08-22</lastmod>
     </url>
     <url>
          <loc>https://mmacy.github.io/python-sdk/reference/mcp/server/</loc>
-         <lastmod>2025-08-21</lastmod>
+         <lastmod>2025-08-22</lastmod>
     </url>
     <url>
          <loc>https://mmacy.github.io/python-sdk/reference/mcp/server/auth/</loc>
-         <lastmod>2025-08-21</lastmod>
+         <lastmod>2025-08-22</lastmod>
     </url>
     <url>
          <loc>https://mmacy.github.io/python-sdk/reference/mcp/server/auth/errors/</loc>
-         <lastmod>2025-08-21</lastmod>
+         <lastmod>2025-08-22</lastmod>
     </url>
     <url>
          <loc>https://mmacy.github.io/python-sdk/reference/mcp/server/auth/handlers/</loc>
-         <lastmod>2025-08-21</lastmod>
+         <lastmod>2025-08-22</lastmod>
     </url>
     <url>
          <loc>https://mmacy.github.io/python-sdk/reference/mcp/server/auth/handlers/authorize/</loc>
-         <lastmod>2025-08-21</lastmod>
+         <lastmod>2025-08-22</lastmod>
     </url>
     <url>
          <loc>https://mmacy.github.io/python-sdk/reference/mcp/server/auth/handlers/metadata/</loc>
-         <lastmod>2025-08-21</lastmod>
+         <lastmod>2025-08-22</lastmod>
     </url>
     <url>
          <loc>https://mmacy.github.io/python-sdk/reference/mcp/server/auth/handlers/register/</loc>
-         <lastmod>2025-08-21</lastmod>
+         <lastmod>2025-08-22</lastmod>
     </url>
     <url>
          <loc>https://mmacy.github.io/python-sdk/reference/mcp/server/auth/handlers/revoke/</loc>
-         <lastmod>2025-08-21</lastmod>
+         <lastmod>2025-08-22</lastmod>
     </url>
     <url>
          <loc>https://mmacy.github.io/python-sdk/reference/mcp/server/auth/handlers/token/</loc>
-         <lastmod>2025-08-21</lastmod>
+         <lastmod>2025-08-22</lastmod>
     </url>
     <url>
          <loc>https://mmacy.github.io/python-sdk/reference/mcp/server/auth/json_response/</loc>
-         <lastmod>2025-08-21</lastmod>
+         <lastmod>2025-08-22</lastmod>
     </url>
     <url>
          <loc>https://mmacy.github.io/python-sdk/reference/mcp/server/auth/middleware/</loc>
-         <lastmod>2025-08-21</lastmod>
+         <lastmod>2025-08-22</lastmod>
     </url>
     <url>
          <loc>https://mmacy.github.io/python-sdk/reference/mcp/server/auth/middleware/auth_context/</loc>
-         <lastmod>2025-08-21</lastmod>
+         <lastmod>2025-08-22</lastmod>
     </url>
     <url>
          <loc>https://mmacy.github.io/python-sdk/reference/mcp/server/auth/middleware/bearer_auth/</loc>
-         <lastmod>2025-08-21</lastmod>
+         <lastmod>2025-08-22</lastmod>
     </url>
     <url>
          <loc>https://mmacy.github.io/python-sdk/reference/mcp/server/auth/middleware/client_auth/</loc>
-         <lastmod>2025-08-21</lastmod>
+         <lastmod>2025-08-22</lastmod>
     </url>
     <url>
          <loc>https://mmacy.github.io/python-sdk/reference/mcp/server/auth/provider/</loc>
-         <lastmod>2025-08-21</lastmod>
+         <lastmod>2025-08-22</lastmod>
     </url>
     <url>
          <loc>https://mmacy.github.io/python-sdk/reference/mcp/server/auth/routes/</loc>
-         <lastmod>2025-08-21</lastmod>
+         <lastmod>2025-08-22</lastmod>
     </url>
     <url>
          <loc>https://mmacy.github.io/python-sdk/reference/mcp/server/auth/settings/</loc>
-         <lastmod>2025-08-21</lastmod>
+         <lastmod>2025-08-22</lastmod>
     </url>
     <url>
          <loc>https://mmacy.github.io/python-sdk/reference/mcp/server/elicitation/</loc>
-         <lastmod>2025-08-21</lastmod>
+         <lastmod>2025-08-22</lastmod>
     </url>
     <url>
          <loc>https://mmacy.github.io/python-sdk/reference/mcp/server/fastmcp/</loc>
-         <lastmod>2025-08-21</lastmod>
+         <lastmod>2025-08-22</lastmod>
     </url>
     <url>
          <loc>https://mmacy.github.io/python-sdk/reference/mcp/server/fastmcp/exceptions/</loc>
-         <lastmod>2025-08-21</lastmod>
+         <lastmod>2025-08-22</lastmod>
     </url>
     <url>
          <loc>https://mmacy.github.io/python-sdk/reference/mcp/server/fastmcp/prompts/</loc>
-         <lastmod>2025-08-21</lastmod>
+         <lastmod>2025-08-22</lastmod>
     </url>
     <url>
          <loc>https://mmacy.github.io/python-sdk/reference/mcp/server/fastmcp/prompts/base/</loc>
-         <lastmod>2025-08-21</lastmod>
+         <lastmod>2025-08-22</lastmod>
     </url>
     <url>
          <loc>https://mmacy.github.io/python-sdk/reference/mcp/server/fastmcp/prompts/manager/</loc>
-         <lastmod>2025-08-21</lastmod>
+         <lastmod>2025-08-22</lastmod>
     </url>
     <url>
          <loc>https://mmacy.github.io/python-sdk/reference/mcp/server/fastmcp/resources/</loc>
-         <lastmod>2025-08-21</lastmod>
+         <lastmod>2025-08-22</lastmod>
     </url>
     <url>
          <loc>https://mmacy.github.io/python-sdk/reference/mcp/server/fastmcp/resources/base/</loc>
-         <lastmod>2025-08-21</lastmod>
+         <lastmod>2025-08-22</lastmod>
     </url>
     <url>
          <loc>https://mmacy.github.io/python-sdk/reference/mcp/server/fastmcp/resources/resource_manager/</loc>
-         <lastmod>2025-08-21</lastmod>
+         <lastmod>2025-08-22</lastmod>
     </url>
     <url>
          <loc>https://mmacy.github.io/python-sdk/reference/mcp/server/fastmcp/resources/templates/</loc>
-         <lastmod>2025-08-21</lastmod>
+         <lastmod>2025-08-22</lastmod>
     </url>
     <url>
          <loc>https://mmacy.github.io/python-sdk/reference/mcp/server/fastmcp/resources/types/</loc>
-         <lastmod>2025-08-21</lastmod>
+         <lastmod>2025-08-22</lastmod>
     </url>
     <url>
          <loc>https://mmacy.github.io/python-sdk/reference/mcp/server/fastmcp/server/</loc>
-         <lastmod>2025-08-21</lastmod>
+         <lastmod>2025-08-22</lastmod>
     </url>
     <url>
          <loc>https://mmacy.github.io/python-sdk/reference/mcp/server/fastmcp/tools/</loc>
-         <lastmod>2025-08-21</lastmod>
+         <lastmod>2025-08-22</lastmod>
     </url>
     <url>
          <loc>https://mmacy.github.io/python-sdk/reference/mcp/server/fastmcp/tools/base/</loc>
-         <lastmod>2025-08-21</lastmod>
+         <lastmod>2025-08-22</lastmod>
     </url>
     <url>
          <loc>https://mmacy.github.io/python-sdk/reference/mcp/server/fastmcp/tools/tool_manager/</loc>
-         <lastmod>2025-08-21</lastmod>
+         <lastmod>2025-08-22</lastmod>
     </url>
     <url>
          <loc>https://mmacy.github.io/python-sdk/reference/mcp/server/fastmcp/utilities/</loc>
-         <lastmod>2025-08-21</lastmod>
+         <lastmod>2025-08-22</lastmod>
     </url>
     <url>
          <loc>https://mmacy.github.io/python-sdk/reference/mcp/server/fastmcp/utilities/func_metadata/</loc>
-         <lastmod>2025-08-21</lastmod>
+         <lastmod>2025-08-22</lastmod>
     </url>
     <url>
          <loc>https://mmacy.github.io/python-sdk/reference/mcp/server/fastmcp/utilities/logging/</loc>
-         <lastmod>2025-08-21</lastmod>
+         <lastmod>2025-08-22</lastmod>
     </url>
     <url>
          <loc>https://mmacy.github.io/python-sdk/reference/mcp/server/fastmcp/utilities/types/</loc>
-         <lastmod>2025-08-21</lastmod>
+         <lastmod>2025-08-22</lastmod>
     </url>
     <url>
          <loc>https://mmacy.github.io/python-sdk/reference/mcp/server/lowlevel/</loc>
-         <lastmod>2025-08-21</lastmod>
+         <lastmod>2025-08-22</lastmod>
     </url>
     <url>
          <loc>https://mmacy.github.io/python-sdk/reference/mcp/server/lowlevel/helper_types/</loc>
-         <lastmod>2025-08-21</lastmod>
+         <lastmod>2025-08-22</lastmod>
     </url>
     <url>
          <loc>https://mmacy.github.io/python-sdk/reference/mcp/server/lowlevel/server/</loc>
-         <lastmod>2025-08-21</lastmod>
+         <lastmod>2025-08-22</lastmod>
     </url>
     <url>
          <loc>https://mmacy.github.io/python-sdk/reference/mcp/server/models/</loc>
-         <lastmod>2025-08-21</lastmod>
+         <lastmod>2025-08-22</lastmod>
     </url>
     <url>
          <loc>https://mmacy.github.io/python-sdk/reference/mcp/server/session/</loc>
-         <lastmod>2025-08-21</lastmod>
+         <lastmod>2025-08-22</lastmod>
     </url>
     <url>
          <loc>https://mmacy.github.io/python-sdk/reference/mcp/server/sse/</loc>
-         <lastmod>2025-08-21</lastmod>
+         <lastmod>2025-08-22</lastmod>
     </url>
     <url>
          <loc>https://mmacy.github.io/python-sdk/reference/mcp/server/stdio/</loc>
-         <lastmod>2025-08-21</lastmod>
+         <lastmod>2025-08-22</lastmod>
     </url>
     <url>
          <loc>https://mmacy.github.io/python-sdk/reference/mcp/server/streamable_http/</loc>
-         <lastmod>2025-08-21</lastmod>
+         <lastmod>2025-08-22</lastmod>
     </url>
     <url>
          <loc>https://mmacy.github.io/python-sdk/reference/mcp/server/streamable_http_manager/</loc>
-         <lastmod>2025-08-21</lastmod>
+         <lastmod>2025-08-22</lastmod>
     </url>
     <url>
          <loc>https://mmacy.github.io/python-sdk/reference/mcp/server/streaming_asgi_transport/</loc>
-         <lastmod>2025-08-21</lastmod>
+         <lastmod>2025-08-22</lastmod>
     </url>
     <url>
          <loc>https://mmacy.github.io/python-sdk/reference/mcp/server/transport_security/</loc>
-         <lastmod>2025-08-21</lastmod>
+         <lastmod>2025-08-22</lastmod>
     </url>
     <url>
          <loc>https://mmacy.github.io/python-sdk/reference/mcp/server/websocket/</loc>
-         <lastmod>2025-08-21</lastmod>
+         <lastmod>2025-08-22</lastmod>
     </url>
     <url>
          <loc>https://mmacy.github.io/python-sdk/reference/mcp/shared/</loc>
-         <lastmod>2025-08-21</lastmod>
+         <lastmod>2025-08-22</lastmod>
     </url>
     <url>
          <loc>https://mmacy.github.io/python-sdk/reference/mcp/shared/auth/</loc>
-         <lastmod>2025-08-21</lastmod>
+         <lastmod>2025-08-22</lastmod>
     </url>
     <url>
          <loc>https://mmacy.github.io/python-sdk/reference/mcp/shared/auth_utils/</loc>
-         <lastmod>2025-08-21</lastmod>
+         <lastmod>2025-08-22</lastmod>
     </url>
     <url>
          <loc>https://mmacy.github.io/python-sdk/reference/mcp/shared/context/</loc>
-         <lastmod>2025-08-21</lastmod>
+         <lastmod>2025-08-22</lastmod>
     </url>
     <url>
          <loc>https://mmacy.github.io/python-sdk/reference/mcp/shared/exceptions/</loc>
-         <lastmod>2025-08-21</lastmod>
+         <lastmod>2025-08-22</lastmod>
     </url>
     <url>
          <loc>https://mmacy.github.io/python-sdk/reference/mcp/shared/memory/</loc>
-         <lastmod>2025-08-21</lastmod>
+         <lastmod>2025-08-22</lastmod>
     </url>
     <url>
          <loc>https://mmacy.github.io/python-sdk/reference/mcp/shared/message/</loc>
-         <lastmod>2025-08-21</lastmod>
+         <lastmod>2025-08-22</lastmod>
     </url>
     <url>
          <loc>https://mmacy.github.io/python-sdk/reference/mcp/shared/metadata_utils/</loc>
-         <lastmod>2025-08-21</lastmod>
+         <lastmod>2025-08-22</lastmod>
     </url>
     <url>
          <loc>https://mmacy.github.io/python-sdk/reference/mcp/shared/progress/</loc>
-         <lastmod>2025-08-21</lastmod>
+         <lastmod>2025-08-22</lastmod>
     </url>
     <url>
          <loc>https://mmacy.github.io/python-sdk/reference/mcp/shared/session/</loc>
-         <lastmod>2025-08-21</lastmod>
+         <lastmod>2025-08-22</lastmod>
     </url>
     <url>
          <loc>https://mmacy.github.io/python-sdk/reference/mcp/shared/version/</loc>
-         <lastmod>2025-08-21</lastmod>
+         <lastmod>2025-08-22</lastmod>
     </url>
     <url>
          <loc>https://mmacy.github.io/python-sdk/reference/mcp/types/</loc>
-         <lastmod>2025-08-21</lastmod>
+         <lastmod>2025-08-22</lastmod>
     </url>
 </urlset>
