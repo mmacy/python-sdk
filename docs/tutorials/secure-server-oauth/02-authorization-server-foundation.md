@@ -69,7 +69,7 @@ Create `src/authorization_server/auth_provider.py`:
 
 This stub provider:
 
-- Implements the `AuthenticationProvider` interface from MCP SDK
+- Implements the [`AuthenticationProvider`][mcp.server.auth.base.AuthenticationProvider] interface from MCP SDK
 - Returns placeholder metadata for OAuth discovery
 - Will be expanded with real authentication in tutorial 03
 - Demonstrates the provider pattern for OAuth logic
@@ -88,7 +88,7 @@ Create `src/authorization_server/server.py`:
 The web layer:
 
 - Uses Starlette for HTTP routing (lightweight ASGI framework)
-- Leverages MCP SDK's `create_auth_routes` for OAuth endpoints
+- Leverages MCP SDK's [`create_auth_routes`][mcp.server.auth.routes.create_auth_routes] for OAuth endpoints
 - Exposes metadata at `/.well-known/oauth-authorization-server`
 - Enables dynamic client registration for the tutorial
 - Keeps all HTTP concerns separate from OAuth logic
@@ -148,7 +148,7 @@ The authorization server is completely separate from your resource server:
 - AS doesn't know about MCP tools
 - RS doesn't know how authentication works
 
-This separation is crucial for:
+This separation is important for:
 
 - Security (compromise of one doesn't affect the other)
 - Scalability (can run on different machines)
