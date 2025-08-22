@@ -7,12 +7,12 @@
 This is the $PLACE tutorial in a series:
 
 <!-- Checkbox list of tutorials (linked) in the series. -->
-<!-- Check ONLY this tutorial and those previous to this tutorial.
+<!-- Check ONLY this tutorial.
 <!-- Link ONLY other tutorials.
 
 Example list if TUT_02 is this file:
 
-- [x] [$TUT_01_TITLE](path/to/tut1.md)
+- [ ] [$TUT_01_TITLE](path/to/tut1.md)
 - [x] $TUT_02_TITLE
 - [ ] [$TUT_03_TITLE](path/to/tut3.md)
 -->
